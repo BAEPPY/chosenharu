@@ -42,24 +42,80 @@ test("reload preserves the chosen earlier round", () => {
     selected: 1,
   });
 });
-test("legacy storage preserves the known result and spent chances without inventing outcomes", () => {
+test("a legacy count or character alone never creates a draw", () => {
   const { model: m, statuses } = model();
-  const restored = m.restore({ draws: 4 }, "low", statuses);
-  assert.deepEqual(plain(restored), {
-    history: [null, null, null, "low"],
-    selected: 3,
-  });
-  assert.equal(m.canSelect(restored.history, 0), false);
+  for (const data of [{}, { draws: 0 }, { draws: 1 }, { draws: 4 }]) {
+    assert.deepEqual(plain(m.restore(data, "common", statuses)), {
+      history: [],
+      selected: -1,
+    });
+  }
 });
-test("invalid history entries and a mismatching selection cannot select an unearned status", () => {
+test("the already-persisted phantom fourth result is cleared", () => {
   const { model: m, statuses } = model();
-  const restored = m.restore(
-    { draws: 2, drawHistory: ["invented", "common"], selectedDraw: 0 },
+  const data = {
+    draws: 4,
+    drawHistory: [null, null, null, "common"],
+    selectedDraw: 3,
+  };
+  assert.deepEqual(plain(m.restore(data, "common", statuses)), {
+    history: [],
+    selected: -1,
+  });
+  assert.deepEqual(data.drawHistory, [null, null, null, "common"]);
+});
+test("invalid or incomplete histories cannot select an unearned status", () => {
+  const { model: m, statuses } = model();
+  for (const history of [
+    ["invented", "common"],
+    [null, "common"],
+    Array(2),
     "common",
-    statuses,
+  ]) {
+    assert.deepEqual(
+      plain(
+        m.restore(
+          { draws: 4, drawHistory: history, selectedDraw: 1 },
+          "common",
+          statuses,
+        ),
+      ),
+      { history: [], selected: -1 },
+    );
+  }
+});
+test("the recorded history alone determines the count and cannot invent a selection", () => {
+  const { model: m, statuses } = model();
+  assert.deepEqual(
+    plain(
+      m.restore(
+        { draws: 4, drawHistory: ["common"], selectedDraw: 3 },
+        "common",
+        statuses,
+      ),
+    ),
+    { history: ["common"], selected: 0 },
   );
-  assert.deepEqual(plain(restored), { history: [null, "common"], selected: 1 });
-  assert.equal(m.canSelect(restored.history, 0), false);
+  assert.deepEqual(
+    plain(
+      m.restore(
+        { draws: 4, drawHistory: [], selectedDraw: 3 },
+        "common",
+        statuses,
+      ),
+    ),
+    { history: [], selected: -1 },
+  );
+  assert.deepEqual(
+    plain(
+      m.restore(
+        { draws: 1, drawHistory: ["low"], selectedDraw: 0 },
+        "common",
+        statuses,
+      ),
+    ),
+    { history: ["low"], selected: -1 },
+  );
 });
 test("weighted selection respects boundaries, zero weights and the cited defaults", () => {
   const { model: m, statuses, history } = model();

@@ -53,9 +53,9 @@ document.addEventListener("click", async (e) => {
   }
   if (d.load) {
     state = { ...saved.find((x) => x.id === d.load) };
-    draws = 4;
-    drawHistory = [null, null, null, state.status];
-    selectedDraw = 3;
+    draws = 0;
+    drawHistory = [];
+    selectedDraw = -1;
     $("#modal").close();
     persist();
     go(1);

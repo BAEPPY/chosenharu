@@ -8,11 +8,11 @@ function drawHistoryHtml() {
       return `<button class="draw-card ${selected ? "is-selected" : ""}"
         data-draw-index="${index}" aria-pressed="${selected}"
         ${spinning || !result ? "disabled" : ""}
-        aria-label="${index + 1}번째 추첨: ${result?.name || (index < draws ? "이전 기록 없음" : "아직 뽑지 않음")}">
+        aria-label="${index + 1}번째 추첨: ${result?.name || "아직 뽑지 않음"}">
         <span class="draw-card-round">${index + 1}번째</span>
         ${result ? icon(result.id) : '<span class="draw-card-empty" aria-hidden="true">· · ·</span>'}
-        <strong>${result?.short || (index < draws ? "기록 없음" : "아직 안 뽑음")}</strong>
-        <span class="draw-card-state">${selected ? "선택됨" : result ? "선택하기" : index < draws ? "이전 버전 결과" : "추첨 대기"}</span>
+        <strong>${result?.short || "아직 안 뽑음"}</strong>
+        <span class="draw-card-state">${selected ? "선택됨" : result ? "선택하기" : "추첨 대기"}</span>
       </button>`;
     }).join("")}
   </div>`;

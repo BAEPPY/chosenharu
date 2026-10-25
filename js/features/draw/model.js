@@ -1,31 +1,30 @@
 "use strict";
 
-// Pure draw operations. Unknown legacy rounds remain null, never fabricated.
+// Only a complete sequence of recorded spins is draw history.
+// A saved character or legacy counter is not evidence that a spin occurred.
 const DrawModel = (() => {
   const limit = 4;
   function restore(data, status, statuses) {
     const valid = (id) => statuses.some((item) => item.id === id);
-    const count = Math.max(
-      status ? 1 : 0,
-      Math.min(limit, Math.floor(Number(data?.draws) || 0)),
-    );
-    const history = Array.from({ length: count }, (_, index) =>
-      valid(data?.drawHistory?.[index]) ? data.drawHistory[index] : null,
-    );
+    const recorded = data?.drawHistory;
+    // Earlier releases synthesized [null, null, null, character.status].
+    // Reset these unverifiable rounds without changing the character itself.
+    const history =
+      Array.isArray(recorded) &&
+      recorded.length <= limit &&
+      Array.from(recorded).every(valid)
+        ? [...recorded]
+        : [];
     let selected = Number.isInteger(data?.selectedDraw)
       ? data.selectedDraw
       : -1;
     if (
       selected < 0 ||
-      selected >= count ||
+      selected >= history.length ||
       !history[selected] ||
       history[selected] !== status
     ) {
       selected = status ? history.lastIndexOf(status) : -1;
-    }
-    if (selected < 0 && count && valid(status)) {
-      selected = count - 1;
-      history[selected] = status;
     }
     return { history, selected };
   }
