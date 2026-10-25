@@ -171,6 +171,31 @@ const root = path.resolve(__dirname, "..");
           if (visible < 1000) throw Error(`Empty rendering ${pose}/${outfit}`);
           count++;
         }
+      // Regression: the fan must occlude clothing, and belts cannot cross the bent arm.
+      for (const outfit of [
+        "royal",
+        "prince",
+        "emperor",
+        "official",
+        "military",
+        "student",
+        "apron",
+        "work_apron",
+        "saenggaksi",
+      ]) {
+        const s = outfitState(DEFAULT, outfit);
+        ctx.clearRect(0, 0, 360, 360);
+        await drawAvatar(ctx, s, 0, 0, 360);
+        const fan = [...ctx.getImageData(110, 140, 1, 1).data];
+        if (fan.join() !== "242,242,242,255")
+          throw Error(`Clothes cover the fan: ${outfit}`);
+        const sleeve = [...ctx.getImageData(237, 192, 1, 1).data];
+        const expected = s.top
+          .match(/[a-f0-9]{2}/gi)
+          .map((v) => parseInt(v, 16));
+        if (sleeve.slice(0, 3).some((value, i) => value !== expected[i]))
+          throw Error(`Belt or decoration crosses the sleeve: ${outfit}`);
+      }
       // Different construction remains visible with the SAME palette.
       for (const outfit of [
         "queen",

@@ -34,6 +34,11 @@ function tailoredGarment(s, n, base) {
       : nativeTop;
   const robe = garmentPaths(base, "dopo_baeja", "top");
   const body = garmentPaths(base, "chima_baeja", "layer");
+  const bodice = garmentPaths(base, "dopo_baeja", "layer");
+  const inverted = Math.abs(window.ART_LAYOUT[n.pose].angle || 0) > 90;
+  const upperInk = inverted
+    ? `<rect width="360" height="${f.t.y - 25}" fill="black"/>`
+    : `<rect y="${f.t.y + f.t.h + 30}" width="360" height="360" fill="black"/>`;
   const surface = kind === "dangui" ? robe : nativeTop;
   // Preserve the original hands, feet and objects; replace only cloth pixels.
   const native = imageAsset(base + `clothes/${n.cloth}_overlay@2x.png`);
@@ -41,7 +46,10 @@ function tailoredGarment(s, n, base) {
     <clipPath id="${id}-coat"><rect width="360" height="${coatHem}"/></clipPath>
     <clipPath id="${id}-top">${surface}</clipPath>
     <clipPath id="${id}-bottom">${bottom}</clipPath>
-    <clipPath id="${id}-sleeves">${top}</clipPath>
+    <clipPath id="${id}-sleeves">${nativeTop}</clipPath>
+    <mask id="${id}-bodice" maskUnits="userSpaceOnUse" x="0" y="0" width="360" height="360"><g fill="white" stroke="white" stroke-width="3">${bodice}</g></mask>
+    <mask id="${id}-native-arms" maskUnits="userSpaceOnUse" x="0" y="0" width="360" height="360"><rect width="360" height="360" fill="white"/><g fill="black" stroke="black" stroke-width="4">${bodice}${nativeBottom}</g>${upperInk}</mask>
+    ${garmentForegroundFilter(id)}
     <mask id="${id}-outside" maskUnits="userSpaceOnUse" x="0" y="0" width="360" height="360"><rect width="360" height="360" fill="white"/><g fill="black" stroke="black" stroke-width="2">${nativeTop}${nativeBottom}</g></mask>
     <mask id="${id}-arms" maskUnits="userSpaceOnUse" x="0" y="0" width="360" height="360"><rect width="360" height="360" fill="white"/><g fill="black" stroke="black" stroke-width="7">${body}${bottom}</g></mask>
     ${garmentPattern(id + "-pattern", kind, s.layer)}
@@ -55,7 +63,6 @@ function tailoredGarment(s, n, base) {
   art += `<g fill="${s.top}" stroke="#453D32" stroke-width="1.2" stroke-linejoin="round">${top}</g>`;
   // Keep sleeve bands separate from the bodice and skirt in all native poses.
 
-  const inverted = Math.abs(window.ART_LAYOUT[n.pose].angle || 0) > 90;
   const detailsFrame = inverted ? invertedGarmentFrame(f) : f;
   const details = robeDetails(
     s,
@@ -64,9 +71,16 @@ function tailoredGarment(s, n, base) {
     id + "-pattern",
     id + "-sleeves",
   );
-  // Sleeve-only details use a nested mask; other tailoring is clipped to the coat.
-  art += `<g ${longCoat && standing ? `clip-path="url(#${id}-coat)"` : ""}><g clip-path="url(#${id}-top)"><g ${inverted ? 'transform="rotate(180 180 180)"' : ""}>${details.replace(`clip-path="url(#${id}-sleeves)"`, `clip-path="url(#${id}-sleeves)" mask="url(#${id}-arms)"`)}</g></g></g>`;
+  // Clip front construction to the bodice; sleeves and props have their own layers.
+  const transform = inverted ? 'transform="rotate(180 180 180)"' : "";
+  art += `<g ${longCoat && standing ? `clip-path="url(#${id}-coat)"` : ""}><g clip-path="url(#${id}-top)">
+    ${garmentSurface(s, kind, detailsFrame, id + "-pattern", id)}
+    <g mask="url(#${id}-bodice)"><g ${transform}>${details}</g></g>
+    <g ${transform}>${courtShoulders(s, kind, detailsFrame)}</g>
+  </g></g>`;
+  art += `<image href="${native}" width="360" height="360" mask="url(#${id}-native-arms)"/>`;
+  art += garmentSleeveTrim(s, n, id);
   art += ceremonialCuffs(n.pose, kind, id + "-pattern");
-  art += `<image href="${native}" width="360" height="360" mask="url(#${id}-outside)"/>`;
+  art += `<image href="${native}" width="360" height="360" filter="url(#${id}-props)"/>`;
   return garmentInk(art);
 }
