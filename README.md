@@ -10,7 +10,7 @@
 
 1. 신분 돌림판: 최대 네 번 뽑은 결과를 회차별로 표시하고 그중 하나를 선택합니다. 네 번째 추첨 뒤에도 자동으로 넘어가지 않으며 중간 확정도 가능합니다. 결과와 선택은 새로고침해도 보존됩니다.
 2. 인물 정하기: 성별, 실제 역사 인물과 이름 추천, 직접 이름 쓰기, 신분별 대표 역할.
-3. 꾸미기: 원본의 신체 비례·손·옷 주름을 보존한 24개 동작, 신분·성별과 관계없이 직접 고르는 의상·모자·색·표정·동작. 직업을 바꿔도 꾸민 모습은 유지됩니다.
+3. 꾸미기: 원본의 신체 비례·손·옷 주름을 보존한 36개 기본 동작과 수업용 생활 동작, 신분·성별과 관계없이 직접 고르는 의상·모자·색·표정·동작. 직업을 바꿔도 꾸민 모습은 유지됩니다. 업로드에서 선별한 기뻐하기·춤·손동작·달리기·몸 풀기 12개를 생활 동작에서 고를 수 있습니다.
 4. 하루 이야기: 장소, 하루의 일과, 상상한 사건.
 5. 완성: 인물 카드 PNG, 투명 배경 인물 PNG, 작품 JSON 저장.
 6. 우리 반 풍속화: 최대 26명 배치, 이동·위치 고정, 겹침 알림과 빈자리 이동, 전체 PNG 저장.
@@ -55,8 +55,11 @@ Vercel: Framework Preset `Other`, Root Directory 저장소 루트, Build/Install
 - `js/features/home/`, `help/`: 시작 화면과 도움말
 - `styles/`: 디자인 토큰, 글꼴, 공용 요소, 기능별 스타일과 반응형 규칙
 - `fonts/`: Pretendard Variable, 원본 Tossface 웹폰트와 라이선스 (외부 CDN 없이 제공)
-- `art.js`, `art-layout.js`, `catalog.js`, `assets/`: 기존 그림 합성·부품
-- `art-library/pungsokdo/`: 현대 물품이 없는 동작과 부품을 선별한 [원본 자료집](art-library/pungsokdo/README.md). 동작별 PNG·SVG, 원본 출처, 제외 사유를 보관하며 앱에서 자동으로 로드하지 않습니다.
+- `art.js`: 미리보기와 PNG 출력에 공통으로 쓰는 레이어 합성
+- `js/art/`: 원본 부품 조회, 의상 선택, 문양, 관모, 생활 소품
+- `art-layout.js`, `catalog.js`, `assets/`: 기존 그림·좌표 데이터
+- `assets/poses/`, `js/data/pose-library.js`: 추가 12개 동작의 채색·피부 마스크·관모 좌표와 선택 목록
+- `art-library/pungsokdo/`: 현대 물품이 없는 그림을 선별한 [원본 자료](art-library/pungsokdo/README.md). 새 동작의 PNG를 여기서 직접 불러오며 원본 출처와 제외 사유도 보관합니다.
 
 추첨 횟수와 선택은 실제 회차별 기록으로만 복원합니다. 이전 버전의 횟수만 있거나 빈 회차를 포함한 잘못된 기록은 0회로 되돌립니다. 기존 인물·작품·이야기는 보존하며 ‘기존 인물 이어하기’로 계속할 수 있습니다. 인물 모음에서 불러오기도 추첨으로 세지 않습니다.
 
@@ -65,4 +68,6 @@ Vercel: Framework Preset `Other`, Root Directory 저장소 루트, Build/Install
 - `npm test`: 네 번 제한, 중복 결과, 선택 복원, 이전 저장 형식, 가중치 경계 검사 (Node 내장 테스트)
 - `python scripts/pungsokdo.py verify`: 선별한 원본 이미지의 크기·SHA-256·파일 목록과 현대 물품 제외 여부 확인
 - `npm ci && npm run test:browser`: Chromium에서 추첨 → 선택 → 꾸미기 → 이야기 → PNG 저장 → 반 풍속화 및 320/390px 화면 확인
+- `npm run test:poses`: 새 동작 12개 선택, 768개 꾸미기 조합 렌더링, 저장·복원·PNG 출력과 모바일 화면 확인
+- `npm run assets:poses`: 원본 레이어에서 피부 채색 마스크를 계산하고 동작별 실행 모듈 재생성 (Chromium 필요, 배포 시 실행할 필요 없음)
 - 브라우저 테스트는 Python 정적 서버를 직접 시작하고 종료합니다. `CHROMIUM_PATH`로 Chromium 실행 파일 위치를 지정할 수 있습니다 (기본 `/usr/bin/chromium`).

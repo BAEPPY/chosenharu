@@ -4,6 +4,8 @@
 
 `art-library/pungsokdo/`는 사용자가 제공한 이미지 자료에서 현대 물품이 있는 동작을 제외한 원본 자료집입니다. 동작별 `manifests/`에 원본 URL과 SHA-256을 보관하며, 그림 파일은 수정하지 않았습니다. 세부 범위와 선별 기준은 [자료집 설명](art-library/pungsokdo/README.md)에 있습니다.
 
+추가 동작 12개는 이 원본 부품을 실제 꾸미기에 사용합니다. 피부 채색 마스크는 원본 레이어의 윤곽에서 계산했으며, 추가 관모의 위치·각도는 앱에서 지정한 수업용 합성 정보입니다.
+
 - 원본 서비스: https://pungsokdo.com/main
 - 공식 이용 안내: https://kh.or.kr/program/view/menu/527?idx=852&viewType=date
 - 이용 문의: royalculture1@kh.or.kr
