@@ -120,6 +120,8 @@ const root = path.resolve(__dirname, "..");
     );
     await page.locator(".probability-details summary").click();
     await page.locator(".accept-button").click();
+    await page.locator('[data-pose-group="reading_writing"]').click();
+    await page.locator('[data-action="confirmPose"]').click();
     await page.locator('[data-field="name"]').fill("봄날");
     await page.locator('.chapter-footer [data-action="next"]').click();
     await page.locator('[data-palette="top"][data-color="#9ED6C0"]').click();
@@ -127,8 +129,7 @@ const root = path.resolve(__dirname, "..");
       await page.locator('[data-field="top"]').inputValue(),
       "#9ed6c0",
     );
-    await page.locator('[data-style="pose"]').click();
-    await page.locator('[data-choice="pose"]').nth(1).click();
+
     await page.locator('.chapter-footer [data-action="next"]').click();
     await page
       .locator('[data-field="story"]')
@@ -215,6 +216,7 @@ const root = path.resolve(__dirname, "..");
       assert.equal(await page.locator("#savedCount").innerText(), "1");
       assert.equal(await page.evaluate(() => board.length), 1);
       await page.locator(".accept-button").click();
+      await page.locator('.chapter-footer [data-action="next"]').click();
       assert.equal(
         await page.locator('[data-field="name"]').inputValue(),
         "옛 인물",

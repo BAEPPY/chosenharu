@@ -9,5 +9,5 @@ function portrait() {
 }
 
 function footer() {
-  return `<div class="chapter-footer"><button class="secondary" data-action="prev">← 이전 단계</button><span>${step + 1} / 5</span><button class="primary" data-action="next">${["이 신분으로 시작 →", "옷차림 꾸미기 →", "하루 이야기 쓰기 →", "인물 카드 확인 →", "인물 모음에 저장 ✓"][step]}</button></div>`;
+  return `<div class="chapter-footer"><button class="secondary" data-action="prev">← 이전 단계</button><span>${step + 1} / 6</span><button class="primary" data-action="next" ${step === FLOW.POSE && !state.poseConfirmed ? "disabled" : ""}>${["동작 정하기 →", "인물 정하기 →", "옷차림 꾸미기 →", "하루 이야기 쓰기 →", "인물 카드 확인 →", "인물 모음에 저장 ✓"][step]}</button></div>`;
 }

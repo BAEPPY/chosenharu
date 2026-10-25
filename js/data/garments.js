@@ -81,7 +81,7 @@ window.GARMENTS = {
   queen: {
     cloth: "chima",
     kind: "dangui",
-    colors: ["#9FBF7C", "#244C83", "#6D1B43"],
+    colors: ["#9DB881", "#2D4263", "#6D1B43"],
   },
   princess: {
     cloth: "dopo_baeja",
@@ -113,7 +113,11 @@ window.GARMENTS = {
     cloth: "hwangchosam",
     colors: ["#F6CF7A", "#B82647", "#D8B45F"],
   },
-  palace: { cloth: "nainbok", colors: ["#FFFFFF", "#2E674E", "#FFFFFF"] },
+  palace: {
+    cloth: "chima",
+    everyday: "apron",
+    colors: ["#A9CBB3", "#293F66", "#FFF9EA"],
+  },
 };
 
 function outfitState(s, outfit) {

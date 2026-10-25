@@ -67,6 +67,10 @@ function normalize(v) {
   ) {
     [n.top, n.bottom, n.layer] = window.GARMENTS[n.outfit].colors;
   }
+  n.poseConfirmed =
+    typeof v.poseConfirmed === "boolean"
+      ? v.poseConfirmed
+      : !!(v.pose && (v.name || v.id));
   n.outfitVersion = 1;
   return n;
 }

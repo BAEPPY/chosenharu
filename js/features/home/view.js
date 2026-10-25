@@ -15,5 +15,5 @@ function showHome(push = true) {
 }
 function startActivity() {
   landing = false;
-  go(step === 5 ? 0 : step);
+  go(step === FLOW.BOARD ? 0 : step);
 }

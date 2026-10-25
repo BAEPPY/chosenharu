@@ -42,33 +42,44 @@ const selection = require("../art-library/pungsokdo/selection.json");
     await page.evaluate(() => {
       state = normalize({
         ...DEFAULT,
+        poseConfirmed: true,
         status: "common",
         role: "farmer",
         name: "봄날",
         story: "이웃과 함께 춤추었다.",
       });
-      go(2);
+      go(FLOW.POSE);
     });
-    await page.locator('[data-style="pose"]').click();
     const poses = await page.evaluate(() =>
       window.LIBRARY_POSES.map((p) => p.alias),
     );
-    assert.equal(poses.length, 12);
-    assert.equal(await page.evaluate(() => D.lessonPoses.length), 36);
+    assert.equal(poses.length, 13);
+    assert.equal(await page.evaluate(() => D.lessonPoses.length), 37);
     const enabled = await page.evaluate(() =>
       posesFor(state).map((p) => p.alias),
     );
     for (const excluded of Object.keys(selection.excludedPoses))
       assert.ok(!enabled.includes(excluded), excluded);
+    async function choosePose(alias) {
+      const group = await page.evaluate((alias) => {
+        go(FLOW.POSE);
+        const p = D.lessonPoses.find((p) => p.alias === alias);
+        return p.group || alias.replace(/_\d+$/, "");
+      }, alias);
+      await page.locator(`[data-pose-group="${group}"]`).click();
+      while (
+        await page.evaluate(
+          (alias) =>
+            groupedPoses(posePicker.group)[posePicker.index].alias !== alias,
+          alias,
+        )
+      )
+        await page.locator('[data-pose-turn="1"]').click();
+      await page.locator('[data-action="confirmPose"]').click();
+    }
     for (const pose of poses) {
-      await page.locator(`[data-choice="pose"][data-value="${pose}"]`).click();
+      await choosePose(pose);
       assert.equal(await page.evaluate(() => state.pose), pose);
-      assert.equal(
-        await page
-          .locator(`[data-choice="pose"][data-value="${pose}"]`)
-          .getAttribute("aria-pressed"),
-        "true",
-      );
       assert.equal(
         await page.evaluate(
           () => normalize(JSON.parse(JSON.stringify(state))).pose,
@@ -146,7 +157,7 @@ const selection = require("../art-library/pungsokdo/selection.json");
       }
       return count;
     });
-    await page.locator('[data-choice="pose"][data-value="dancing_04"]').click();
+    await choosePose("dancing_04");
     await page.evaluate(() => {
       state.hair = "ikseongwan";
       state.top = "#9ED6C0";
@@ -157,7 +168,6 @@ const selection = require("../art-library/pungsokdo/selection.json");
     assert.equal(await page.evaluate(() => state.hair), "ikseongwan");
     const screenshotDir = process.env.SCREENSHOT_DIR || "/tmp/joseon-poses";
     fs.mkdirSync(screenshotDir, { recursive: true });
-    await page.locator('[data-style="pose"]').click();
     await page.screenshot({
       path: path.join(screenshotDir, "customize-desktop.png"),
       fullPage: true,
@@ -196,7 +206,7 @@ const selection = require("../art-library/pungsokdo/selection.json");
     ).saveAs(path.join(screenshotDir, "new-pose-classroom.png"));
     assert.deepEqual(errors, []);
     console.log(
-      `PASS: 12 new choices, 36 native poses, ${combinations} rendered combinations, excluded modern props, skin changes, reload, collection/classroom persistence, character/classroom PNG and 320/390px layouts.`,
+      `PASS: 13 grouped choices, 37 native poses, ${combinations} rendered combinations, excluded modern props, skin changes, reload, collection/classroom persistence, character/classroom PNG and 320/390px layouts.`,
     );
   } finally {
     if (browser) await browser.close();

@@ -68,7 +68,7 @@ function addToBoard(id, quiet = false) {
   }
   board.push(p);
   persist();
-  if (step === 5) renderBoard();
+  if (step === FLOW.BOARD) renderBoard();
   return true;
 }
 

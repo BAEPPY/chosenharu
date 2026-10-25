@@ -20,6 +20,18 @@ const choose = (a) => a[Math.floor(Math.random() * a.length)],
       ? crypto.randomUUID()
       : Date.now() + "-" + Math.random().toString(36).slice(2);
 
+const FLOW = Object.freeze({
+  STATUS: 0,
+  POSE: 1,
+  IDENTITY: 2,
+  LOOK: 3,
+  STORY: 4,
+  CARD: 5,
+  BOARD: 6,
+});
+const FLOW_VERSION = 3;
+let restoredLegacyFlow = false;
+
 const DEFAULT = {
   id: "",
   status: "",
@@ -29,6 +41,7 @@ const DEFAULT = {
   role: "farmer",
   outfit: "daily",
   pose: "holding_fan_03",
+  poseConfirmed: false,
   hair: "sangtu",
   cloth: "baji",
   emotion: "smiling",

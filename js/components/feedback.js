@@ -8,7 +8,7 @@ function toast(text) {
 }
 
 function openModal(title, html) {
-  $("#modal").classList.remove("winner-dialog");
+  $("#modal").classList.remove("winner-dialog", "pose-dialog");
   $("#modalTitle").textContent = title;
   $("#modalBody").innerHTML = html;
   if (!$("#modal").open) $("#modal").showModal();
