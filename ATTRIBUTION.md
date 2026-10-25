@@ -2,6 +2,8 @@
 
 원본 그림 부품: **모두의 풍속도 2026 / 국가유산진흥원**
 
+`art-library/pungsokdo/`는 사용자가 제공한 이미지 자료에서 현대 물품이 있는 동작을 제외한 원본 자료집입니다. 동작별 `manifests/`에 원본 URL과 SHA-256을 보관하며, 그림 파일은 수정하지 않았습니다. 세부 범위와 선별 기준은 [자료집 설명](art-library/pungsokdo/README.md)에 있습니다.
+
 - 원본 서비스: https://pungsokdo.com/main
 - 공식 이용 안내: https://kh.or.kr/program/view/menu/527?idx=852&viewType=date
 - 이용 문의: royalculture1@kh.or.kr

@@ -1,0 +1,98 @@
+[
+  {
+    "path": "assets/images/options/clothes/baji_overlay@0.5x.png",
+    "source": "https://pungsokdo.com/assets/images/options/clothes/baji_overlay@0.5x.png",
+    "bytes": 1094,
+    "sha256": "462cbd4a03f18525ff503cd2402d59a46ac58ad28eeaa823d64f3413a6d24834"
+  },
+  {
+    "path": "assets/images/options/clothes/baji_overlay@2x.png",
+    "source": "https://pungsokdo.com/assets/images/options/clothes/baji_overlay@2x.png",
+    "bytes": 8298,
+    "sha256": "fc1d3b5a4daffc99ca053126095339014eedc34b4ed748187d68cca744d2834d"
+  },
+  {
+    "path": "assets/images/options/clothes/chima_baeja_overlay@0.5x.png",
+    "source": "https://pungsokdo.com/assets/images/options/clothes/chima_baeja_overlay@0.5x.png",
+    "bytes": 1278,
+    "sha256": "ce0a9e04cb2df0abf1ccea0237f8acce6e86853eb4906d5e0251945fe3b97b3c"
+  },
+  {
+    "path": "assets/images/options/clothes/chima_baeja_overlay@2x.png",
+    "source": "https://pungsokdo.com/assets/images/options/clothes/chima_baeja_overlay@2x.png",
+    "bytes": 10341,
+    "sha256": "89c9a32169be96c3526d8ff0c9da53493313e731c43ddabf60eccaed78b47e4f"
+  },
+  {
+    "path": "assets/images/options/clothes/chima_overlay@0.5x.png",
+    "source": "https://pungsokdo.com/assets/images/options/clothes/chima_overlay@0.5x.png",
+    "bytes": 1209,
+    "sha256": "0c579859902b237628f1b8f8b36f7e093c17bd0241d268e3b4d0ea1ae0c7c730"
+  },
+  {
+    "path": "assets/images/options/clothes/chima_overlay@2x.png",
+    "source": "https://pungsokdo.com/assets/images/options/clothes/chima_overlay@2x.png",
+    "bytes": 9685,
+    "sha256": "4c37174f7986ddfdd75f68f623689eb62f44556972e4265e6d197971c85caed5"
+  },
+  {
+    "path": "assets/images/options/clothes/dopo_baeja_overlay@0.5x.png",
+    "source": "https://pungsokdo.com/assets/images/options/clothes/dopo_baeja_overlay@0.5x.png",
+    "bytes": 1374,
+    "sha256": "1b261e9f97f51de0417887505f93feaceb9aa2fcb095c606d292a7dd9ce035f6"
+  },
+  {
+    "path": "assets/images/options/clothes/dopo_baeja_overlay@2x.png",
+    "source": "https://pungsokdo.com/assets/images/options/clothes/dopo_baeja_overlay@2x.png",
+    "bytes": 12052,
+    "sha256": "d202c8e5007ccb22f5b9220145ad124196527ddee667a64af418af6d8a303224"
+  },
+  {
+    "path": "assets/images/options/clothes/hwangchosam_overlay@0.5x.png",
+    "source": "https://pungsokdo.com/assets/images/options/clothes/hwangchosam_overlay@0.5x.png",
+    "bytes": 2834,
+    "sha256": "9e0f38b1198c7d46aa2a39e9a9646dc8cd381213eb09e77ce2b720c947d371f6"
+  },
+  {
+    "path": "assets/images/options/clothes/hwangchosam_overlay@2x.png",
+    "source": "https://pungsokdo.com/assets/images/options/clothes/hwangchosam_overlay@2x.png",
+    "bytes": 20755,
+    "sha256": "9e13fcbea4c9e88a4901e3cd46afbdc69bfbf7e2e59f039888a6c8a52619f033"
+  },
+  {
+    "path": "assets/images/options/clothes/nainbok_overlay@0.5x.png",
+    "source": "https://pungsokdo.com/assets/images/options/clothes/nainbok_overlay@0.5x.png",
+    "bytes": 2428,
+    "sha256": "b98d520508c6041e20fc51771d3a731c2d51b36e16f3cbaae8cddfbd2bb08b7e"
+  },
+  {
+    "path": "assets/images/options/clothes/nainbok_overlay@2x.png",
+    "source": "https://pungsokdo.com/assets/images/options/clothes/nainbok_overlay@2x.png",
+    "bytes": 16941,
+    "sha256": "4275c7bf763ae9096f202013cad639c4c61fd95cdfe1381873658a16769cdb0b"
+  },
+  {
+    "path": "assets/images/options/clothes/pojolbok_overlay@0.5x.png",
+    "source": "https://pungsokdo.com/assets/images/options/clothes/pojolbok_overlay@0.5x.png",
+    "bytes": 1871,
+    "sha256": "262cea4b028e2df58b9313982773887479b8b78323426fc03f2703495b1df103"
+  },
+  {
+    "path": "assets/images/options/clothes/pojolbok_overlay@2x.png",
+    "source": "https://pungsokdo.com/assets/images/options/clothes/pojolbok_overlay@2x.png",
+    "bytes": 14372,
+    "sha256": "1f887aaf22d12edfb555edafeeae66327a803d610ba4b157047c1a033386f2bd"
+  },
+  {
+    "path": "assets/images/options/clothes/pungmulbok_overlay@0.5x.png",
+    "source": "https://pungsokdo.com/assets/images/options/clothes/pungmulbok_overlay@0.5x.png",
+    "bytes": 2342,
+    "sha256": "26b2100f9f7a8ed8a9f2d99731c0daba4712510e030a483f74a33d731eced47e"
+  },
+  {
+    "path": "assets/images/options/clothes/pungmulbok_overlay@2x.png",
+    "source": "https://pungsokdo.com/assets/images/options/clothes/pungmulbok_overlay@2x.png",
+    "bytes": 16919,
+    "sha256": "45b8b7ebe155ff02310a1ed8836c258ab5010eb4839ff497c6aeac0f5166f7f9"
+  }
+]

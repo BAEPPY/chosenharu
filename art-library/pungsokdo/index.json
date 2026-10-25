@@ -1,0 +1,320 @@
+{
+  "source": "https://pungsokdo.com/",
+  "files": 2345,
+  "bytes": 21191578,
+  "poses": [
+    {
+      "alias": "cheering_04",
+      "label": "두 팔 들어 기뻐하기",
+      "resultFiles": 86
+    },
+    {
+      "alias": "crafting_02",
+      "label": "바느질",
+      "resultFiles": 0
+    },
+    {
+      "alias": "crafting_03",
+      "label": "꽃 다듬기",
+      "resultFiles": 0
+    },
+    {
+      "alias": "crafting_04",
+      "label": "물레 돌리기",
+      "resultFiles": 0
+    },
+    {
+      "alias": "dancing_01",
+      "label": "팔을 접고 춤추기",
+      "resultFiles": 86
+    },
+    {
+      "alias": "dancing_02",
+      "label": "한 발 들고 춤추기",
+      "resultFiles": 86
+    },
+    {
+      "alias": "dancing_03",
+      "label": "앉아서 다리 들기",
+      "resultFiles": 86
+    },
+    {
+      "alias": "dancing_04",
+      "label": "물구나무 동작",
+      "resultFiles": 86
+    },
+    {
+      "alias": "dancing_05",
+      "label": "서서 춤추기",
+      "resultFiles": 86
+    },
+    {
+      "alias": "dancing_hansam_01",
+      "label": "한삼춤 — 한 발 들기",
+      "resultFiles": 86
+    },
+    {
+      "alias": "dancing_hansam_02",
+      "label": "한삼춤 — 팔 펼치기",
+      "resultFiles": 86
+    },
+    {
+      "alias": "dancing_hansam_03",
+      "label": "한삼춤 — 몸 낮추기",
+      "resultFiles": 86
+    },
+    {
+      "alias": "dancing_hansam_04",
+      "label": "한삼춤 — 크게 돌기",
+      "resultFiles": 86
+    },
+    {
+      "alias": "eating_drinking_01",
+      "label": "국수 먹기",
+      "resultFiles": 86
+    },
+    {
+      "alias": "eating_drinking_04",
+      "label": "찻잔으로 마시기",
+      "resultFiles": 86
+    },
+    {
+      "alias": "holding_fan_01",
+      "label": "부채로 얼굴 가리기",
+      "resultFiles": 86
+    },
+    {
+      "alias": "holding_fan_02",
+      "label": "부채춤 추기",
+      "resultFiles": 86
+    },
+    {
+      "alias": "holding_fan_03",
+      "label": "부채 펴기",
+      "resultFiles": 86
+    },
+    {
+      "alias": "playing_music_01",
+      "label": "가로로 부는 전통 관악기",
+      "resultFiles": 0
+    },
+    {
+      "alias": "playing_music_04",
+      "label": "전통 악기 어 연주",
+      "resultFiles": 0
+    },
+    {
+      "alias": "playing_music_05",
+      "label": "전통 현악기 연주",
+      "resultFiles": 0
+    },
+    {
+      "alias": "posing_01",
+      "label": "손가락 펼쳐 서기",
+      "resultFiles": 86
+    },
+    {
+      "alias": "posing_02",
+      "label": "손으로 하트 만들기",
+      "resultFiles": 86
+    },
+    {
+      "alias": "posing_03",
+      "label": "두 팔 벌려 뛰기",
+      "resultFiles": 86
+    },
+    {
+      "alias": "reading_writing_01",
+      "label": "책 읽기",
+      "resultFiles": 86
+    },
+    {
+      "alias": "reading_writing_03",
+      "label": "붓글씨 쓰기",
+      "resultFiles": 86
+    },
+    {
+      "alias": "sitting_01",
+      "label": "앉아서 쉬기",
+      "resultFiles": 0
+    },
+    {
+      "alias": "sitting_02",
+      "label": "눈가를 훔치며 앉기",
+      "resultFiles": 0
+    },
+    {
+      "alias": "sitting_04",
+      "label": "나뭇가지로 땅에 쓰기",
+      "resultFiles": 0
+    },
+    {
+      "alias": "trudging_01",
+      "label": "걷기",
+      "resultFiles": 86
+    },
+    {
+      "alias": "trudging_03",
+      "label": "이마를 짚고 서기",
+      "resultFiles": 86
+    },
+    {
+      "alias": "with_child_01",
+      "label": "아이와 함께 뛰기",
+      "resultFiles": 0
+    },
+    {
+      "alias": "with_child_02",
+      "label": "아이 안고 걷기",
+      "resultFiles": 0
+    },
+    {
+      "alias": "with_child_03",
+      "label": "아이 손잡기",
+      "resultFiles": 0
+    },
+    {
+      "alias": "with_child_04",
+      "label": "아이 안아 주기",
+      "resultFiles": 0
+    },
+    {
+      "alias": "working_out_01",
+      "label": "한 발로 균형 잡기",
+      "resultFiles": 86
+    },
+    {
+      "alias": "working_out_02",
+      "label": "다리 들어 몸 풀기",
+      "resultFiles": 86
+    },
+    {
+      "alias": "working_out_03",
+      "label": "달리기",
+      "resultFiles": 86
+    }
+  ],
+  "manifests": [
+    {
+      "path": "manifests/options/clothes.json",
+      "files": 16
+    },
+    {
+      "path": "manifests/options/emotions.json",
+      "files": 54
+    },
+    {
+      "path": "manifests/options/hairs.json",
+      "files": 44
+    },
+    {
+      "path": "manifests/options/poses.json",
+      "files": 32
+    },
+    {
+      "path": "manifests/result/cheering_04.json",
+      "files": 86
+    },
+    {
+      "path": "manifests/result/dancing_01.json",
+      "files": 86
+    },
+    {
+      "path": "manifests/result/dancing_02.json",
+      "files": 86
+    },
+    {
+      "path": "manifests/result/dancing_03.json",
+      "files": 86
+    },
+    {
+      "path": "manifests/result/dancing_04.json",
+      "files": 86
+    },
+    {
+      "path": "manifests/result/dancing_05.json",
+      "files": 86
+    },
+    {
+      "path": "manifests/result/dancing_hansam_01.json",
+      "files": 86
+    },
+    {
+      "path": "manifests/result/dancing_hansam_02.json",
+      "files": 86
+    },
+    {
+      "path": "manifests/result/dancing_hansam_03.json",
+      "files": 86
+    },
+    {
+      "path": "manifests/result/dancing_hansam_04.json",
+      "files": 86
+    },
+    {
+      "path": "manifests/result/eating_drinking_01.json",
+      "files": 86
+    },
+    {
+      "path": "manifests/result/eating_drinking_04.json",
+      "files": 86
+    },
+    {
+      "path": "manifests/result/holding_fan_01.json",
+      "files": 86
+    },
+    {
+      "path": "manifests/result/holding_fan_02.json",
+      "files": 86
+    },
+    {
+      "path": "manifests/result/holding_fan_03.json",
+      "files": 86
+    },
+    {
+      "path": "manifests/result/posing_01.json",
+      "files": 86
+    },
+    {
+      "path": "manifests/result/posing_02.json",
+      "files": 86
+    },
+    {
+      "path": "manifests/result/posing_03.json",
+      "files": 86
+    },
+    {
+      "path": "manifests/result/reading_writing_01.json",
+      "files": 86
+    },
+    {
+      "path": "manifests/result/reading_writing_03.json",
+      "files": 86
+    },
+    {
+      "path": "manifests/result/trudging_01.json",
+      "files": 86
+    },
+    {
+      "path": "manifests/result/trudging_03.json",
+      "files": 86
+    },
+    {
+      "path": "manifests/result/working_out_01.json",
+      "files": 86
+    },
+    {
+      "path": "manifests/result/working_out_02.json",
+      "files": 86
+    },
+    {
+      "path": "manifests/result/working_out_03.json",
+      "files": 86
+    },
+    {
+      "path": "manifests/thumbnails.json",
+      "files": 49
+    }
+  ],
+  "note": "resultFiles counts uploaded image layers only. Skin vectors and headgear coordinates are required before enabling a new pose in the app."
+}

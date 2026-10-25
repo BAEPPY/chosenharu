@@ -1,0 +1,518 @@
+[
+  {
+    "path": "assets/images/result/eating_drinking_01/clothes/baji_fill.svg",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/clothes/baji_fill.svg",
+    "bytes": 1073,
+    "sha256": "3c7026e2623267ac229d9c2b5437861996300a899ba0b722e330716370cecb64"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/clothes/baji_overlay@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/clothes/baji_overlay@2x.png",
+    "bytes": 36023,
+    "sha256": "d0dfc16faf01d76b5977c08041db5e457205d8f11adf1c8c37b643bae1a19b0b"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/clothes/chima_baeja_fill.svg",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/clothes/chima_baeja_fill.svg",
+    "bytes": 1398,
+    "sha256": "72aa202ad1a104ff7410b4897a4981faeb7813f2e4ead638f1b500f945bf2878"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/clothes/chima_baeja_overlay@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/clothes/chima_baeja_overlay@2x.png",
+    "bytes": 39692,
+    "sha256": "c8f75283a1bbaa814482204b9a3e4f42a6bca37df9ade221134b8c1b68b52eca"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/clothes/chima_fill.svg",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/clothes/chima_fill.svg",
+    "bytes": 1071,
+    "sha256": "3dcee1a9de938fc0272792a288fa99a1c3c16ca58379c22503d291100412699f"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/clothes/chima_overlay@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/clothes/chima_overlay@2x.png",
+    "bytes": 36556,
+    "sha256": "caa88a608edc8a54f55ea7669c02e62613022ad59b8faaf7ed422848225ee0e3"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/clothes/dopo_baeja_fill.svg",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/clothes/dopo_baeja_fill.svg",
+    "bytes": 1771,
+    "sha256": "5115c9495bd9142cf91d254a6fd5085439ba45212f55067ceac02fb1033b03a6"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/clothes/dopo_baeja_overlay@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/clothes/dopo_baeja_overlay@2x.png",
+    "bytes": 40707,
+    "sha256": "36e7c06d9550d7850b51da079fbdf37832db410b1a58ac6f4fa44b7fd04dbe05"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/clothes/hwangchosam_overlay@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/clothes/hwangchosam_overlay@2x.png",
+    "bytes": 65438,
+    "sha256": "29ad12c6770552fc1975ea57d558b4134aa8ba3b7d9a48351d6fc789b30bcf10"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/clothes/nainbok_overlay@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/clothes/nainbok_overlay@2x.png",
+    "bytes": 57615,
+    "sha256": "aba3b35f97b990116dd0b341e6d970fc9da72b981a5f6c03ee853f491d22356d"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/clothes/pojolbok_fill.svg",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/clothes/pojolbok_fill.svg",
+    "bytes": 1538,
+    "sha256": "d89644b6947c3c64c6f095d290eb8a8b3960d2c3918665bc08a9714ca5b4c8fd"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/clothes/pojolbok_overlay@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/clothes/pojolbok_overlay@2x.png",
+    "bytes": 43985,
+    "sha256": "839b94e1efc4834413e04ee37a82dfc8a6ec3a7a252338f4f7d5fe05e843b588"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/clothes/pungmulbok_fill.svg",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/clothes/pungmulbok_fill.svg",
+    "bytes": 1703,
+    "sha256": "0dbeae98496389500981683ba24e10516b1d6e6571c68b0176df93e34f3e50cd"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/clothes/pungmulbok_overlay@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/clothes/pungmulbok_overlay@2x.png",
+    "bytes": 44770,
+    "sha256": "23e7c5aa159d85965fc622907ac71d6215cf16bce643537cdce0d6f21debf247"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/emotions/absent_mindedly@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/emotions/absent_mindedly@2x.png",
+    "bytes": 2220,
+    "sha256": "02d7cdff2eccf3c0cd8d8430b3df4af3094194e18c16b8b4223e1d4e3d93d1e1"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/emotions/amazed@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/emotions/amazed@2x.png",
+    "bytes": 3769,
+    "sha256": "be5735311479e3092d888284a190e658f14a645e381244f107f850a8c2e89d26"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/emotions/anticipating@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/emotions/anticipating@2x.png",
+    "bytes": 9634,
+    "sha256": "765b1262a1baae2aa0fc5cf7838bf30f55152afb555027bd875bd0d6b6fa6635"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/emotions/concentrating@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/emotions/concentrating@2x.png",
+    "bytes": 2354,
+    "sha256": "4344c652567586065772d9a70dff8567b2d4b05e923396141ff8dfaec1f9cdb2"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/emotions/confident@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/emotions/confident@2x.png",
+    "bytes": 2186,
+    "sha256": "1d6ca1a1f54f80ce486bf614d7d9122a671734da38b575c031a8766ec0fc6250"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/emotions/disapproving@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/emotions/disapproving@2x.png",
+    "bytes": 2431,
+    "sha256": "592976312f5492504f43946c6039c9ee7ec52f0d6b588cd03823432bb7ff6180"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/emotions/disheartening@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/emotions/disheartening@2x.png",
+    "bytes": 2422,
+    "sha256": "696dd269f97261d1a415a2feb271825eee7efbefccdfb87d82ec3ddee8a663f2"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/emotions/dozing@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/emotions/dozing@2x.png",
+    "bytes": 5061,
+    "sha256": "6e169560dd17c7fd85249ce83991be8e39313d4d0bf086811afa9af016e71dc0"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/emotions/fascinated@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/emotions/fascinated@2x.png",
+    "bytes": 2310,
+    "sha256": "dbc4f6f49dcdcdb17e1d535ca477496a4d38e3bb43beaaa44ed18a8241524ebd"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/emotions/flustered@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/emotions/flustered@2x.png",
+    "bytes": 2492,
+    "sha256": "869fc4ac33dee78b145b8afbb0ed35b734e481374dbe21ccd6ae6dd6d93e738d"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/emotions/languid@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/emotions/languid@2x.png",
+    "bytes": 2548,
+    "sha256": "0388ecbe6f94bfe6f2fdd19ddf9854ea2d9010a2afecddd4bcc1bd8ca63802c2"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/emotions/lethargic@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/emotions/lethargic@2x.png",
+    "bytes": 2386,
+    "sha256": "5129c1f7df0a7dc7e4c9eab33a1a2dd072449c475548102ab78b14391797e729"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/emotions/limpid@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/emotions/limpid@2x.png",
+    "bytes": 5004,
+    "sha256": "461739d65449a09943dc4b7585c61bfaa820796f39c6a695dbe7182b5731d3f8"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/emotions/pleased@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/emotions/pleased@2x.png",
+    "bytes": 2237,
+    "sha256": "ca7c725170f5eb6fa8bc3c753ebabb4d4d0a3990c20c3f1a96dc4837420cb297"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/emotions/serious@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/emotions/serious@2x.png",
+    "bytes": 2157,
+    "sha256": "bc79bfe054d748bb21818b9d0f8feb3c0abbf571079615821d9813815ed2ad4b"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/emotions/shy@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/emotions/shy@2x.png",
+    "bytes": 9239,
+    "sha256": "4e438e44211cd8111529c714f1c3a2e8ed14d86896a73383db3964054e4bb0e4"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/emotions/smaking_lips@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/emotions/smaking_lips@2x.png",
+    "bytes": 3636,
+    "sha256": "9245d4c6910d20f55ac67d62b92ba23c907f5f55aaf72ba8819205c49194bef8"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/emotions/smiling@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/emotions/smiling@2x.png",
+    "bytes": 2416,
+    "sha256": "a8aed0f7931e346829c429c12aa99aef35bfa45763974ddcbf85ea17b2178e52"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/emotions/smiling_crying@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/emotions/smiling_crying@2x.png",
+    "bytes": 4206,
+    "sha256": "151c79eaa69d13ec9ad434fe630809020ef44af9e1e22d16e186d01384d3d47c"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/emotions/smizing@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/emotions/smizing@2x.png",
+    "bytes": 2244,
+    "sha256": "7681b749caa8a0ad50a950e8ab26f409622f9192a2850349b199637a8c203389"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/emotions/sulky@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/emotions/sulky@2x.png",
+    "bytes": 2088,
+    "sha256": "81b198a7c8e7f1aeeffe9f8d6853c7714f1c2291b97de7859620222819c27ae7"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/emotions/suspicious@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/emotions/suspicious@2x.png",
+    "bytes": 2187,
+    "sha256": "76f6532b248fc176b10dae47e081887e342bc7d2bec0af9eceb59c343f004d08"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/emotions/teary_eyed@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/emotions/teary_eyed@2x.png",
+    "bytes": 5590,
+    "sha256": "e3c863fbba61f6343a7375b49ee5c7b55d29f44710464e22be1b0035ccc72611"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/emotions/tipsy@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/emotions/tipsy@2x.png",
+    "bytes": 9872,
+    "sha256": "b70990e9d88fae1ff2e69f5f59fd1946aead163dfb95b6798939986bbdb8f138"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/emotions/tired@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/emotions/tired@2x.png",
+    "bytes": 4786,
+    "sha256": "71a720d1fcac715a809f1dd7499d84a2126096a948cd38a3a97c3872882e33d7"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/emotions/uninspiring@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/emotions/uninspiring@2x.png",
+    "bytes": 2252,
+    "sha256": "268d92b4e87002acbd63f4c35ac816478e3c84df6206a3f29f387faf7c9e3d9a"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/emotions/winking@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/emotions/winking@2x.png",
+    "bytes": 2540,
+    "sha256": "cfe7128b0d78b5d1d02721b50a753f52355582c7408abff8d3ce3d63a4441022"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/baetssi_daenggi_fill.svg",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/baetssi_daenggi_fill.svg",
+    "bytes": 277,
+    "sha256": "f19ae24b937a26c0560d550769a50bd9ccb4152973e131ea6ddddd850ec43282"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/baetssi_daenggi_overlay@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/baetssi_daenggi_overlay@2x.png",
+    "bytes": 12193,
+    "sha256": "85fa2f1c2f5a23efbe1ad2280dc5088da09349b9a306ce0e0aab9daf56d1e906"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/beonggeoji_fill.svg",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/beonggeoji_fill.svg",
+    "bytes": 266,
+    "sha256": "cc91c13c7c711680fcdea90446de76ebd64a7ca6b9063079fcd38f9c77b31393"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/beonggeoji_overlay@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/beonggeoji_overlay@2x.png",
+    "bytes": 14892,
+    "sha256": "5dad74dcb036503aaf92351d3c4a5a3ae630ba388f4b2aa955aefd260e37aff2"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/bokgeon_fill.svg",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/bokgeon_fill.svg",
+    "bytes": 270,
+    "sha256": "83bbf36c080f26e214c45e41e4feb7c6a327ec3b3edef28d645cabc5a25372ed"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/bokgeon_overlay@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/bokgeon_overlay@2x.png",
+    "bytes": 6160,
+    "sha256": "ff312376e3c498c04933b8a4315d5ba280633e508b8e70036a0499bff8e114b5"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/dugeon_meori_fill.svg",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/dugeon_meori_fill.svg",
+    "bytes": 405,
+    "sha256": "edc654dbe6835f56aa261df11d5210b3ffdf6d7638e4b85d6c3383abe0958d8a"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/dugeon_meori_overlay@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/dugeon_meori_overlay@2x.png",
+    "bytes": 7569,
+    "sha256": "be7babc85ad9af99ea877be419c08571d594045aee3527fa6e24b30fc26e7975"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/eosahwa_gwanmo_fill.svg",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/eosahwa_gwanmo_fill.svg",
+    "bytes": 265,
+    "sha256": "184434edb1230f14f8e001e2c3b22a11a9675f4f3943dd9f4d68b2138be05536"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/eosahwa_gwanmo_overlay@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/eosahwa_gwanmo_overlay@2x.png",
+    "bytes": 21239,
+    "sha256": "12e5a98371cbff4c1c5b813f86cf4cee2593df5e9d2c2acaeb09a8bbe0812bcb"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/gokkal_fill.svg",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/gokkal_fill.svg",
+    "bytes": 291,
+    "sha256": "9d646bb64eff60f435e6d208a5b3a7b0a9279215e067495021e5c1eb24d65e52"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/gokkal_overlay@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/gokkal_overlay@2x.png",
+    "bytes": 25240,
+    "sha256": "54a1f51570e8346cc4b0040d1f30b1973cff4ffa0a1c74ee8d920e63300d6943"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/headtowel_fill.svg",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/headtowel_fill.svg",
+    "bytes": 334,
+    "sha256": "4f35c0afe2728f0507faacb2e2e8700d5c5d0a5b4c1cb75c61c17998c78b36fd"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/headtowel_overlay@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/headtowel_overlay@2x.png",
+    "bytes": 8263,
+    "sha256": "ccb27bb814b1346230fda10fce4b10d2d9de62100b911f012c35651d03754102"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/heuklip_fill.svg",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/heuklip_fill.svg",
+    "bytes": 284,
+    "sha256": "a3e5e387d39a9ca6d947ce7e137b571cebfda82c206b47a79a7e7c827c3a2e9f"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/heuklip_overlay@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/heuklip_overlay@2x.png",
+    "bytes": 9575,
+    "sha256": "d253a4428241753067b54680bb836f92a1d57db1eaf3053a0f31dce44cb9bcd8"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/hwagwan_fill.svg",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/hwagwan_fill.svg",
+    "bytes": 695,
+    "sha256": "24b5bd8707abbcc771601072917f9865f51e61937e34b3aa2ec32f39bb96d946"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/hwagwan_overlay@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/hwagwan_overlay@2x.png",
+    "bytes": 16870,
+    "sha256": "b78fb1f451ffff755bc4b3860cb1a276f3b03310dd208f329d86c9e436b30b03"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/jeongja_gwan_fill.svg",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/jeongja_gwan_fill.svg",
+    "bytes": 281,
+    "sha256": "97d0b1bc88c4a83d1ed84f52b58c830a0be5bcfeeed4dca90568fc15b17f262c"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/jeongja_gwan_overlay@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/jeongja_gwan_overlay@2x.png",
+    "bytes": 9781,
+    "sha256": "f13507dd192766c8aa953387e7c25ebf73ab12db06377995a5acf02d8dd0c59e"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/jjog_meori_fill.svg",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/jjog_meori_fill.svg",
+    "bytes": 389,
+    "sha256": "e6ed8760a549e5ab52e989543a1d91b2cc599db06b3edc009efc080b17109d37"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/jjog_meori_overlay@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/jjog_meori_overlay@2x.png",
+    "bytes": 3969,
+    "sha256": "3081e30741ec8f99685e3d440c97e46bb06845365e7849edbb8feac35d4d4bca"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/ko_meori_fill.svg",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/ko_meori_fill.svg",
+    "bytes": 635,
+    "sha256": "c4c46d0afef0b2b1923c7987207382875125ee81ba7d98487788d367220751f0"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/ko_meori_overlay@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/ko_meori_overlay@2x.png",
+    "bytes": 9043,
+    "sha256": "03335c5a8d32ea8d499b2515a74ded8ce8c84fc9e5879f931afa2bbcc5deda8a"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/pae_raeng_i_fill.svg",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/pae_raeng_i_fill.svg",
+    "bytes": 285,
+    "sha256": "5c20dac1b8bed6854aaa059031ac2529658d4053e769970d3d9d8d72059b847b"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/pae_raeng_i_overlay@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/pae_raeng_i_overlay@2x.png",
+    "bytes": 19379,
+    "sha256": "e76d8b93431a9342457848ab611ae792702bfa32092903fc80e4d67b783e56dd"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/saeang_meori_fill.svg",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/saeang_meori_fill.svg",
+    "bytes": 499,
+    "sha256": "470b58870a5d8a5a1417c5ccc193551ad5b4d38ba7ddfdf20f430f12425ef254"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/saeang_meori_overlay@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/saeang_meori_overlay@2x.png",
+    "bytes": 8795,
+    "sha256": "4675f0ab7fc17a08f46c11d40078e581ba1375370c27593b358390a6f68d3aed"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/sanbal_fill.svg",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/sanbal_fill.svg",
+    "bytes": 451,
+    "sha256": "31d73055d1a5c2022cd731612e8c0aaef387199f7efd455914fa174ec2e93061"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/sanbal_overlay@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/sanbal_overlay@2x.png",
+    "bytes": 6183,
+    "sha256": "40068657e3d3c849bf73ceda563907ed902c7087d974e4d35dbc5e2e5b4fc1c6"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/sangtu_fill.svg",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/sangtu_fill.svg",
+    "bytes": 376,
+    "sha256": "2f6ebd9f6f9c8ed8cacc38dd3527318f8665138ecc54e7a959174c041bc4d7eb"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/sangtu_overlay@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/sangtu_overlay@2x.png",
+    "bytes": 4831,
+    "sha256": "1b3dda3f3dd720bc7f4e411bebd2e11078c179538694998bb623b3b31ae8d881"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/satgat_fill.svg",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/satgat_fill.svg",
+    "bytes": 501,
+    "sha256": "c691f84ea1bcd42a8bdf138f378712bcaa4c581dcfa1ea386e0f843aee61b367"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/satgat_overlay@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/satgat_overlay@2x.png",
+    "bytes": 24026,
+    "sha256": "ea110592d19906fa421a90620d35c5e718665d000573423d54b5f80bd1a1c164"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/short_hair_fill.svg",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/short_hair_fill.svg",
+    "bytes": 292,
+    "sha256": "095ee421e4fccbd1c3d126be41fbaff5c02a24fe69922a68a8442fa217ec95aa"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/short_hair_overlay@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/short_hair_overlay@2x.png",
+    "bytes": 3443,
+    "sha256": "a907ebd89541a4cfc770228feadb137b67b7f612450680b881b55df3fc25782b"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/thick_daenggi_fill.svg",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/thick_daenggi_fill.svg",
+    "bytes": 731,
+    "sha256": "994d964a5bc9cfaebb514239472fdc064a7c2b16d0bb6d45942a55ba5d234617"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/thick_daenggi_overlay@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/thick_daenggi_overlay@2x.png",
+    "bytes": 9437,
+    "sha256": "b70f5563607eb631783d5ca4a5ed8254cea7fedf650e31448b5b3a4449f829e5"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/thin_daenggi_fill.svg",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/thin_daenggi_fill.svg",
+    "bytes": 616,
+    "sha256": "97b38784954758f5a649d59b762cf3332092cded9419f91bd9475871d390e1ae"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/thin_daenggi_overlay@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/thin_daenggi_overlay@2x.png",
+    "bytes": 4428,
+    "sha256": "8ebaa53ffdfa0878300397a2a83b9de66835a6a540d0a7a32f8749d6235bb460"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/tre_meori_fill.svg",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/tre_meori_fill.svg",
+    "bytes": 628,
+    "sha256": "f18c17c0aa107576debf6740c69407163931b354795aa6e559a5dbbc4aab44cf"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/tre_meori_overlay@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/tre_meori_overlay@2x.png",
+    "bytes": 7512,
+    "sha256": "9cccd3b9c405b53a73f30063179931cd4158476a6a966c644af4c512b0322438"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/yugeon_fill.svg",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/yugeon_fill.svg",
+    "bytes": 270,
+    "sha256": "83bbf36c080f26e214c45e41e4feb7c6a327ec3b3edef28d645cabc5a25372ed"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/hairs/yugeon_overlay@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/hairs/yugeon_overlay@2x.png",
+    "bytes": 8769,
+    "sha256": "5c91e8233f5efa51d8224a8a0695fa0a94fd21edcbb13b90bba2991fbcecb360"
+  },
+  {
+    "path": "assets/images/result/eating_drinking_01/skintones/face_overlay@2x.png",
+    "source": "https://pungsokdo.com/assets/images/result/eating_drinking_01/skintones/face_overlay@2x.png",
+    "bytes": 4275,
+    "sha256": "c1643ed9b7c631d54961e8cfa9814a40ab0ad2fdbbbfe74b3e707eca0c948d6a"
+  }
+]
