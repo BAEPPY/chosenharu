@@ -6,16 +6,24 @@ function applyRole(id) {
   state.role = r.id;
 }
 
+const suggestedFigures = new Map();
+
 function suggestName() {
   let pool = L.figures.filter(
     (f) => f.status === state.status && f.gender === state.gender,
   );
   if (pool.length) {
-    const f = choose(
-      pool.filter((f) => f.id !== state.figure).length
-        ? pool.filter((f) => f.id !== state.figure)
-        : pool,
-    );
+    const key = state.status + ":" + state.gender;
+    let seen = suggestedFigures.get(key) || new Set();
+    seen.add(state.figure);
+    let remaining = pool.filter((f) => !seen.has(f.id));
+    if (!remaining.length) {
+      seen = new Set([state.figure]);
+      remaining = pool.filter((f) => !seen.has(f.id));
+    }
+    const f = choose(remaining.length ? remaining : pool);
+    seen.add(f.id);
+    suggestedFigures.set(key, seen);
     state.figure = f.id;
     state.name = f.name;
     applyRole(f.role);

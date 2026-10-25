@@ -39,7 +39,7 @@
   font-weight: 400;
 }
 
-#steps button.active b {
+#steps .step-indicator.active b {
   font-weight: bold;
 }
 
@@ -137,7 +137,7 @@ main {
   gap: 25px;
 }
 
-#steps button {
+#steps .step-indicator {
   display: flex;
   align-items: center;
   padding: 6px 0;
@@ -156,11 +156,11 @@ main {
   font-size: 12px;
 }
 
-#steps button.active {
+#steps .step-indicator.active {
   color: #315859;
 }
 
-#steps button.active span {
+#steps .step-indicator.active span {
   color: white;
   background: #315859;
   border-color: #315859;
@@ -245,7 +245,7 @@ main {
     justify-content: space-between;
     gap: 3px;
   }
-  #steps button {
+  #steps .step-indicator {
     font-size: 9px;
     gap: 5px;
   }
@@ -326,7 +326,7 @@ main {
     width: 100%;
     justify-content: space-between;
   }
-  #steps button {
+  #steps .step-indicator {
     flex-direction: column;
     gap: 5px;
     font-size: 11px;

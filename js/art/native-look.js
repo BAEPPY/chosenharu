@@ -16,21 +16,17 @@ const NATIVE_POSE = {
 
 function nativeLook(s) {
   const pose = NATIVE_POSE[s.pose] || s.pose;
-  let cloth = s.cloth,
-    hair = s.hair,
-    palette = { ...s };
-  if (
-    ["royal", "prince", "official", "scholar", "student", "graduate"].includes(
-      s.outfit,
-    )
+  const garment = window.GARMENTS[s.outfit] || window.GARMENTS.daily;
+  const hair = ["ikseongwan", "samo", "myeonryugwan", "tanggeon"].includes(
+    s.hair,
   )
-    cloth = "dopo_baeja";
-  if (s.outfit === "military") cloth = "pojolbok";
-  if (["queen", "princess", "yangbanwoman"].includes(s.outfit))
-    cloth = "chima_baeja";
-  if (s.outfit === "performer") cloth = "pungmulbok";
-  if (s.outfit === "dance_robe") cloth = "hwangchosam";
-  if (s.outfit === "palace") cloth = "nainbok";
-  if (["ikseongwan", "samo"].includes(s.hair)) hair = "short_hair";
-  return { pose, cloth, hair, palette };
+    ? "short_hair"
+    : s.hair;
+  return {
+    pose,
+    cloth: garment.cloth || s.cloth,
+    hair,
+    palette: { ...s },
+    garment,
+  };
 }

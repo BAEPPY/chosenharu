@@ -57,5 +57,16 @@ function normalize(v) {
     if (!outfitsFor(n).some((o) => o.id === n.outfit))
       n.outfit = roleOf(n).outfit;
   }
+  // Old untouched palettes shared the same brown vest for every outfit.
+  if (
+    !v.outfitVersion &&
+    n.outfit !== "daily" &&
+    n.top.toUpperCase() === DEFAULT.top &&
+    n.bottom.toUpperCase() === DEFAULT.bottom &&
+    n.layer.toUpperCase() === DEFAULT.layer.toUpperCase()
+  ) {
+    [n.top, n.bottom, n.layer] = window.GARMENTS[n.outfit].colors;
+  }
+  n.outfitVersion = 1;
   return n;
 }

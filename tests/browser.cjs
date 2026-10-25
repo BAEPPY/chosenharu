@@ -145,7 +145,8 @@ const root = path.resolve(__dirname, "..");
     assert.equal(await page.locator("[data-person]").count(), 1);
     await page.locator('[data-action="home"]').first().click();
     await page.locator('[data-action="start"]').click();
-    await page.locator('[data-step="0"]').click();
+    while (await page.locator('.chapter-footer [data-action="prev"]').count())
+      await page.locator('.chapter-footer [data-action="prev"]').click();
     assert.equal(
       await page
         .locator(".draw-card.is-selected")
@@ -160,7 +161,8 @@ const root = path.resolve(__dirname, "..");
     // Gallery loading resumes a character, without synthesizing four spins.
     await page.locator('[data-action="gallery"]').first().click();
     await page.locator("[data-load]").first().click();
-    await page.locator('[data-step="0"]').click();
+    while (await page.locator('.chapter-footer [data-action="prev"]').count())
+      await page.locator('.chapter-footer [data-action="prev"]').click();
     assert.equal(await page.locator(".draw-card.is-selected").count(), 0);
     assert.equal(await page.locator(".spin-button").isDisabled(), false);
     assert.match(
@@ -217,7 +219,8 @@ const root = path.resolve(__dirname, "..");
         await page.locator('[data-field="name"]').inputValue(),
         "옛 인물",
       );
-      await page.locator('[data-step="0"]').click();
+      while (await page.locator('.chapter-footer [data-action="prev"]').count())
+        await page.locator('.chapter-footer [data-action="prev"]').click();
       await page.reload();
       assert.equal(await page.locator(".draw-card.is-selected").count(), 0);
       await page.evaluate(() => {
