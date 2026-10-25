@@ -19,7 +19,7 @@ function render() {
   ]
     .map(
       (t, i) =>
-        `<button data-step="${i}" ${spinning ? "disabled" : ""} class="${step === i ? "active" : ""}" ${step === i ? 'aria-current="step"' : ""}><span>${i + 1}</span><b>${t}</b></button>`,
+        `<div class="step-indicator ${step === i ? "active" : ""}" ${step === i ? 'aria-current="step"' : ""}><span>${i + 1}</span><b>${t}</b></div>`,
     )
     .join("");
   $("#main").classList.toggle("board-mode", step === 5);

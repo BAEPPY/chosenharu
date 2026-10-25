@@ -7,15 +7,18 @@ function avatarLayers(s) {
     m = D.skinVectors[n.pose],
     skin = D.skintones[s.skin].rgba;
   const layers = [{ svg: `<path fill="${skin}" d="${m.base}"/>` }];
-  if (!["nainbok", "hwangchosam"].includes(n.cloth)) {
+  const tailored = everydayGarment(s, n, base) || tailoredGarment(s, n, base);
+  if (tailored) layers.push({ svg: tailored });
+  else {
+    if (!["nainbok", "hwangchosam"].includes(n.cloth))
+      layers.push({
+        svg: colorVector(base + `clothes/${n.cloth}_fill.svg`, n.palette),
+      });
     layers.push({
-      svg: colorVector(base + `clothes/${n.cloth}_fill.svg`, n.palette),
+      src: imageAsset(base + `clothes/${n.cloth}_overlay@2x.png`),
     });
-    const decoration = clothDecoration(n.palette, n.pose, n.cloth, base);
-    if (decoration) layers.push({ svg: decoration });
   }
   layers.push(
-    { src: imageAsset(base + `clothes/${n.cloth}_overlay@2x.png`) },
     { svg: `<path fill="${skin}" d="${m.face}"/>` },
     { src: imageAsset(base + "skintones/face_overlay@2x.png") },
     { svg: colorVector(base + `hairs/${n.hair}_fill.svg`, n.palette) },
@@ -48,7 +51,7 @@ async function drawAvatar(ctx, s, x, y, size) {
     pic.src =
       l.svg !== undefined
         ? "data:image/svg+xml;charset=utf-8," +
-          encodeURIComponent(wrapSvg(l.svg))
+          encodeURIComponent(wrapSvg(await inlineSvgImages(l.svg)))
         : l.src;
     await pic.decode();
     ctx.drawImage(pic, x, y, size, size);

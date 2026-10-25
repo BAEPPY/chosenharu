@@ -51,7 +51,7 @@ function lookHtml() {
     h += `<div class="choice-grid outfit-grid">${outfitsFor(state)
       .map(
         (o) =>
-          `<button data-choice="outfit" data-value="${o.id}" class="choice ${state.outfit === o.id ? "selected" : ""}" aria-pressed="${state.outfit === o.id}">${avatarSvg({ ...state, outfit: o.id })}<span>${o.name}</span></button>`,
+          `<button data-choice="outfit" data-value="${o.id}" class="choice ${state.outfit === o.id ? "selected" : ""}" aria-pressed="${state.outfit === o.id}">${avatarSvg(outfitState(state, o.id))}<span>${o.name}</span></button>`,
       )
       .join("")}</div>`;
     if (state.outfit === "daily")
@@ -74,7 +74,7 @@ function lookHtml() {
           )
           .join(
             "",
-          )}</div><p class="small-note">옷을 바꿔도 고른 머리·표정·동작·색은 그대로예요. 자유롭게 조합한 모습이 당시의 옷차림과 어떻게 다른지도 이야기해 보세요.</p>`;
+          )}</div><p class="small-note">옷을 고르면 기본 배색이 적용돼요. 색은 다시 바꿀 수 있어요.</p>`;
   }
   if (styleTab === "pose") h += thumbChoice(posesFor(state), "pose");
   if (styleTab === "hair")

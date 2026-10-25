@@ -16,10 +16,6 @@ document.addEventListener("click", async (e) => {
     render();
     return;
   }
-  if (d.step !== undefined) {
-    go(Number(d.step));
-    return;
-  }
   if (d.gender) {
     setGender(d.gender);
     return;
@@ -39,7 +35,7 @@ document.addEventListener("click", async (e) => {
     undo.push({ ...state });
     if (undo.length > 25) undo.shift();
     if (d.choice === "outfit") {
-      state.outfit = d.value;
+      state = outfitState(state, d.value);
       if (!posesFor(state).some((p) => p.alias === state.pose))
         state.pose = "audience";
     } else state[d.choice] = d.choice === "skin" ? Number(d.value) : d.value;
@@ -236,8 +232,11 @@ document.addEventListener("input", (e) => {
   persist();
   if ($("#previewName"))
     $("#previewName").textContent = state.name || "이름을 지어 주세요";
-  if (["top", "bottom", "layer"].includes(k))
+  if (["top", "bottom", "layer"].includes(k)) {
     $("#avatar").innerHTML = avatarSvg(state);
+    const selected = $(".outfit-grid .choice.selected svg");
+    if (selected) selected.outerHTML = avatarSvg(state);
+  }
 });
 
 document.addEventListener("change", (e) => {
