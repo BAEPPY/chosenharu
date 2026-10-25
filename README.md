@@ -56,11 +56,13 @@ Vercel: Framework Preset `Other`, Root Directory 저장소 루트, Build/Install
 - `styles/`: 디자인 토큰, 글꼴, 공용 요소, 기능별 스타일과 반응형 규칙
 - `fonts/`: Pretendard Variable, 원본 Tossface 웹폰트와 라이선스 (외부 CDN 없이 제공)
 - `art.js`, `art-layout.js`, `catalog.js`, `assets/`: 기존 그림 합성·부품
+- `art-library/pungsokdo/`: 현대 물품이 없는 동작과 부품을 선별한 [원본 자료집](art-library/pungsokdo/README.md). 동작별 PNG·SVG, 원본 출처, 제외 사유를 보관하며 앱에서 자동으로 로드하지 않습니다.
 
 추첨 횟수와 선택은 실제 회차별 기록으로만 복원합니다. 이전 버전의 횟수만 있거나 빈 회차를 포함한 잘못된 기록은 0회로 되돌립니다. 기존 인물·작품·이야기는 보존하며 ‘기존 인물 이어하기’로 계속할 수 있습니다. 인물 모음에서 불러오기도 추첨으로 세지 않습니다.
 
 ## 검증
 
 - `npm test`: 네 번 제한, 중복 결과, 선택 복원, 이전 저장 형식, 가중치 경계 검사 (Node 내장 테스트)
+- `python scripts/pungsokdo.py verify`: 선별한 원본 이미지의 크기·SHA-256·파일 목록과 현대 물품 제외 여부 확인
 - `npm ci && npm run test:browser`: Chromium에서 추첨 → 선택 → 꾸미기 → 이야기 → PNG 저장 → 반 풍속화 및 320/390px 화면 확인
 - 브라우저 테스트는 Python 정적 서버를 직접 시작하고 종료합니다. `CHROMIUM_PATH`로 Chromium 실행 파일 위치를 지정할 수 있습니다 (기본 `/usr/bin/chromium`).

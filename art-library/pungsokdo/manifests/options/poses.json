@@ -1,0 +1,194 @@
+[
+  {
+    "path": "assets/images/options/poses/cheering_04@0.5x.png",
+    "source": "https://pungsokdo.com/assets/images/options/poses/cheering_04@0.5x.png",
+    "bytes": 2225,
+    "sha256": "712bf81faa66eb328590008e198c2082646517d99c1a2bed1cea6bbfdcfb04ac"
+  },
+  {
+    "path": "assets/images/options/poses/cheering_04@2x.png",
+    "source": "https://pungsokdo.com/assets/images/options/poses/cheering_04@2x.png",
+    "bytes": 11744,
+    "sha256": "b2f0ef7a6eca9b781caaae6a3c27bb1651f0de35f6438cba33a826ba34c12bdc"
+  },
+  {
+    "path": "assets/images/options/poses/dancing_hansam_01@0.5x.png",
+    "source": "https://pungsokdo.com/assets/images/options/poses/dancing_hansam_01@0.5x.png",
+    "bytes": 2810,
+    "sha256": "72598e9e0766ab2d021173ad2f4630647e6b6c6d4ab06f1a1941dfc42d79ab66"
+  },
+  {
+    "path": "assets/images/options/poses/dancing_hansam_01@2x.png",
+    "source": "https://pungsokdo.com/assets/images/options/poses/dancing_hansam_01@2x.png",
+    "bytes": 14760,
+    "sha256": "db8af13f3dcc1848ec2265d2947bcab0ba00471d2e20a69e0be698675acd8ac3"
+  },
+  {
+    "path": "assets/images/options/poses/dancing_hansam_02@0.5x.png",
+    "source": "https://pungsokdo.com/assets/images/options/poses/dancing_hansam_02@0.5x.png",
+    "bytes": 2841,
+    "sha256": "8de592796badc7c51cd23cb764a64d0eb4f53984352e7314244eb995429b037e"
+  },
+  {
+    "path": "assets/images/options/poses/dancing_hansam_02@2x.png",
+    "source": "https://pungsokdo.com/assets/images/options/poses/dancing_hansam_02@2x.png",
+    "bytes": 14584,
+    "sha256": "5d77805aa2ff7e0d4299ba5ff1a8e82a8fddd23b83f4b6bdf7ca04a41559f65a"
+  },
+  {
+    "path": "assets/images/options/poses/dancing_hansam_03@0.5x.png",
+    "source": "https://pungsokdo.com/assets/images/options/poses/dancing_hansam_03@0.5x.png",
+    "bytes": 2836,
+    "sha256": "f79715e3f4eab05cf1c1cec86e2707d929f8df5395af6b6aaa62bb61673d163b"
+  },
+  {
+    "path": "assets/images/options/poses/dancing_hansam_03@2x.png",
+    "source": "https://pungsokdo.com/assets/images/options/poses/dancing_hansam_03@2x.png",
+    "bytes": 13906,
+    "sha256": "cc0ada94550e557ac9cc39f1de43c2a141e9b726ae4b63b9e898934e51ca67a4"
+  },
+  {
+    "path": "assets/images/options/poses/dancing_hansam_04@0.5x.png",
+    "source": "https://pungsokdo.com/assets/images/options/poses/dancing_hansam_04@0.5x.png",
+    "bytes": 2933,
+    "sha256": "2cbbf1fd85bbaead411c8271c1a71e2470b7227bcbbb63e91c82750c20e4db88"
+  },
+  {
+    "path": "assets/images/options/poses/dancing_hansam_04@2x.png",
+    "source": "https://pungsokdo.com/assets/images/options/poses/dancing_hansam_04@2x.png",
+    "bytes": 14831,
+    "sha256": "9fd625fe2b676c72a520be8041d7a7bebb551ba6d4917ca66e31abd55e64a630"
+  },
+  {
+    "path": "assets/images/options/poses/holding_fan_01@0.5x.png",
+    "source": "https://pungsokdo.com/assets/images/options/poses/holding_fan_01@0.5x.png",
+    "bytes": 2035,
+    "sha256": "36f06cbf8ef7feab705d4f5b51b3742c688ceaf10e79f312393cffbbca617541"
+  },
+  {
+    "path": "assets/images/options/poses/holding_fan_01@2x.png",
+    "source": "https://pungsokdo.com/assets/images/options/poses/holding_fan_01@2x.png",
+    "bytes": 10938,
+    "sha256": "a5de372a98fe7c53eb7baacd5ee04e4a62f65cf40420a657856fb6f720815229"
+  },
+  {
+    "path": "assets/images/options/poses/holding_fan_02@0.5x.png",
+    "source": "https://pungsokdo.com/assets/images/options/poses/holding_fan_02@0.5x.png",
+    "bytes": 2297,
+    "sha256": "2ced4d5349fcd8b6ba03e72cb939c46f286e2feecffc5b37f3e22bc2dade5223"
+  },
+  {
+    "path": "assets/images/options/poses/holding_fan_02@2x.png",
+    "source": "https://pungsokdo.com/assets/images/options/poses/holding_fan_02@2x.png",
+    "bytes": 12720,
+    "sha256": "62c9999917d3457ba2e76e6c5dc58adeba0c81f87559ef292eaa49c54b66cc12"
+  },
+  {
+    "path": "assets/images/options/poses/holding_fan_03@0.5x.png",
+    "source": "https://pungsokdo.com/assets/images/options/poses/holding_fan_03@0.5x.png",
+    "bytes": 2412,
+    "sha256": "9081097d359ae436ceb32f95858b70d9b0e713dc29536573550798fdc414785d"
+  },
+  {
+    "path": "assets/images/options/poses/holding_fan_03@2x.png",
+    "source": "https://pungsokdo.com/assets/images/options/poses/holding_fan_03@2x.png",
+    "bytes": 12983,
+    "sha256": "551c245b1ac92bde0b3cd2afa6256ea336566f99935ab57462b4b100c15e1dde"
+  },
+  {
+    "path": "assets/images/options/poses/posing_01@0.5x.png",
+    "source": "https://pungsokdo.com/assets/images/options/poses/posing_01@0.5x.png",
+    "bytes": 2138,
+    "sha256": "870637bb351458b05a025e681f1837220811dce967ee6d25a057327be225d1c3"
+  },
+  {
+    "path": "assets/images/options/poses/posing_01@2x.png",
+    "source": "https://pungsokdo.com/assets/images/options/poses/posing_01@2x.png",
+    "bytes": 11205,
+    "sha256": "a7cd850aca117ca5fbdc3d0366a009910fffcd7293f7c044eb92910d5dd3bba6"
+  },
+  {
+    "path": "assets/images/options/poses/posing_02@0.5x.png",
+    "source": "https://pungsokdo.com/assets/images/options/poses/posing_02@0.5x.png",
+    "bytes": 2031,
+    "sha256": "4cce280f5d6c926d7fff05340f4d9231004f8172022d7f51801e2d9af78628d9"
+  },
+  {
+    "path": "assets/images/options/poses/posing_02@2x.png",
+    "source": "https://pungsokdo.com/assets/images/options/poses/posing_02@2x.png",
+    "bytes": 11066,
+    "sha256": "162695a55411ac5d26149147bb23d14a5c28b10386587ef8a4a062a2c24a521c"
+  },
+  {
+    "path": "assets/images/options/poses/posing_03@0.5x.png",
+    "source": "https://pungsokdo.com/assets/images/options/poses/posing_03@0.5x.png",
+    "bytes": 2161,
+    "sha256": "eca6abd90e11fc41acd04965860e4cfbeda8b49d32f5a6eb8cb3e1d651f8e217"
+  },
+  {
+    "path": "assets/images/options/poses/posing_03@2x.png",
+    "source": "https://pungsokdo.com/assets/images/options/poses/posing_03@2x.png",
+    "bytes": 11095,
+    "sha256": "5e663e432e65d3297bc87ab1362bdf858e5ceb36f1c39c568fd8e031e76700cf"
+  },
+  {
+    "path": "assets/images/options/poses/reading_writing_01@0.5x.png",
+    "source": "https://pungsokdo.com/assets/images/options/poses/reading_writing_01@0.5x.png",
+    "bytes": 2988,
+    "sha256": "10bf77c477effadd02aa57f162c372909e2697e9814399e9e143d1061e07b04b"
+  },
+  {
+    "path": "assets/images/options/poses/reading_writing_01@2x.png",
+    "source": "https://pungsokdo.com/assets/images/options/poses/reading_writing_01@2x.png",
+    "bytes": 17787,
+    "sha256": "90fc277ca3d4ddb0f844d667fad91230cc7885565e7323c9feb8844046e610ec"
+  },
+  {
+    "path": "assets/images/options/poses/reading_writing_03@0.5x.png",
+    "source": "https://pungsokdo.com/assets/images/options/poses/reading_writing_03@0.5x.png",
+    "bytes": 3426,
+    "sha256": "3d5d8181a86f34c6d9d1e3992d9f966ef7dbdd6671c2d20fc9561c3c5cbaffdf"
+  },
+  {
+    "path": "assets/images/options/poses/reading_writing_03@2x.png",
+    "source": "https://pungsokdo.com/assets/images/options/poses/reading_writing_03@2x.png",
+    "bytes": 19415,
+    "sha256": "b3236863b1b8dbb2713aa702f2a3f6ed70f65f9047a76c0b8d9975d739bd73bc"
+  },
+  {
+    "path": "assets/images/options/poses/working_out_01@0.5x.png",
+    "source": "https://pungsokdo.com/assets/images/options/poses/working_out_01@0.5x.png",
+    "bytes": 2261,
+    "sha256": "bf6b1de87f3ed7ed6afdec7de0b858fa1db5c03ece9e021409d5e88b34d38f9c"
+  },
+  {
+    "path": "assets/images/options/poses/working_out_01@2x.png",
+    "source": "https://pungsokdo.com/assets/images/options/poses/working_out_01@2x.png",
+    "bytes": 12673,
+    "sha256": "af5c5e22047387880a4eaa882720ee637bba392acee3238df3357477258d2a57"
+  },
+  {
+    "path": "assets/images/options/poses/working_out_02@0.5x.png",
+    "source": "https://pungsokdo.com/assets/images/options/poses/working_out_02@0.5x.png",
+    "bytes": 2346,
+    "sha256": "10521139d27381a27a8dd01976cd3662166cb3e84da0abe3e61aba0d8f242b6c"
+  },
+  {
+    "path": "assets/images/options/poses/working_out_02@2x.png",
+    "source": "https://pungsokdo.com/assets/images/options/poses/working_out_02@2x.png",
+    "bytes": 12271,
+    "sha256": "d251d249b69489ceec79615f62ad86e3e672c783c410b7e2f8d4690e7aa1c99e"
+  },
+  {
+    "path": "assets/images/options/poses/working_out_03@0.5x.png",
+    "source": "https://pungsokdo.com/assets/images/options/poses/working_out_03@0.5x.png",
+    "bytes": 2231,
+    "sha256": "4022ff84e0f2ad8ad89c7286605ba188440dc8b58cf4936ba1dee3156e233e94"
+  },
+  {
+    "path": "assets/images/options/poses/working_out_03@2x.png",
+    "source": "https://pungsokdo.com/assets/images/options/poses/working_out_03@2x.png",
+    "bytes": 12255,
+    "sha256": "fbceddc4149cbeab9abaccf0aa179015b0eb6ee8b42cdcd1662e310461337399"
+  }
+]
