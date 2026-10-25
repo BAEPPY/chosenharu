@@ -1,0 +1,103 @@
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+summary:focus-visible {
+  outline: 3px solid #b77e46;
+  outline-offset: 4px;
+}
+
+button:hover:not(:disabled) {
+  filter: brightness(0.96);
+}
+
+.chapter-footer .secondary {
+  font-weight: 400;
+}
+
+button {
+  cursor: pointer;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  transition:
+    background 0.15s,
+    box-shadow 0.15s;
+  touch-action: manipulation;
+}
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid #1878d0;
+  outline-offset: 5px;
+}
+
+button:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.primary,
+.secondary {
+  line-height: 1.5;
+  min-height: 48px;
+  padding: 13px 22px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.primary {
+  border: 1px solid var(--green);
+  background: #315859;
+  border-color: #315859;
+  color: #fff;
+}
+
+.secondary {
+  background: #fff;
+  border: 1px solid #b2b2b2;
+  color: #222;
+}
+
+.text-button {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  padding: 9px 0;
+  font-size: 14px;
+  color: #404b4b;
+}
+
+.accept-button {
+  margin-top: 11px;
+  font-size: 16px;
+}
+
+.chapter-footer button {
+  font-size: 14px;
+  min-height: 48px;
+}
+
+@media (max-width: 760px) {
+  .chapter-footer button {
+    padding: 10px 12px;
+    font-size: 11px;
+  }
+  .chapter-footer button {
+    font-size: 12px;
+    padding: 11px 13px;
+  }
+}

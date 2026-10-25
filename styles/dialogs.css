@@ -1,0 +1,133 @@
+dialog::backdrop {
+  background: #23322677;
+  backdrop-filter: blur(3px);
+}
+
+#modalBody li {
+  padding: 5px 0;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.record-names {
+  line-height: 2.4;
+  color: #8a816d;
+}
+
+.toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translate(-50%, 12px);
+  max-width: calc(100% - 32px);
+  border-radius: 9px;
+  padding: 14px 23px;
+  box-shadow: 0 7px 30px #243b3433;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
+  z-index: 1000;
+  text-align: center;
+  line-height: 1.7;
+  min-width: 280px;
+  background: #263e40;
+  color: white;
+  font-size: 14px;
+}
+
+dialog {
+  border: 1px solid #d5dbc7;
+  max-width: 850px;
+  width: calc(100% - 34px);
+  max-height: 85vh;
+  padding: 0;
+  box-shadow: 0 20px 80px #22332144;
+  background: #fff;
+  border-color: #ccc;
+  border-radius: 6px;
+  color: #222;
+}
+
+.modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 23px 28px;
+  border-bottom: 1px solid #e0e3d3;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: #fff;
+  border-color: #ddd;
+}
+
+.modal-head h2 {
+  margin: 0;
+  font-size: 23px;
+}
+
+#modalBody {
+  padding: 22px 28px 30px;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+#modalBody h3 {
+  margin-top: 24px;
+  font-size: 17px;
+}
+
+.weight-row {
+  display: grid;
+  gap: 20px;
+  align-items: center;
+  margin: 12px 0;
+  grid-template-columns: 1fr 110px 100px;
+}
+
+.weight-row input {
+  min-width: 0;
+  border: 1px solid #ccd3bd;
+  border-radius: 4px;
+  padding: 9px;
+  background: #fff;
+  border-color: #aaa;
+}
+
+.weight-row small {
+  color: #666;
+  font-size: 12px;
+}
+
+@media (max-width: 760px) {
+  #modalBody {
+    padding: 18px;
+    font-size: 12px;
+  }
+  #modalBody {
+    font-size: 14px;
+    padding: 20px;
+  }
+  .modal-head {
+    padding: 18px;
+  }
+  .modal-head h2 {
+    font-size: 20px;
+  }
+  .weight-row {
+    grid-template-columns: 1fr 74px 80px;
+    gap: 12px;
+  }
+  .toast {
+    padding: 12px 17px;
+    font-size: 12px;
+  }
+  .weight-row small {
+    font-size: 11px;
+  }
+}

@@ -13,3 +13,17 @@
 ## 시작 화면
 
 마을 배경, 시작 인물 스프라이트와 말풍선: 모두의 풍속도(pungsokdo.com)의 공개 시작 화면 이미지. 축제 로고와 공식 서비스 명칭은 사용하지 않았습니다. 원본 출처: https://pungsokdo.com/main
+
+## 신분별 비율
+
+국사편찬위원회 우리역사넷, 「각 신분의 존재 양상」 표 3의 1717년 단성현 호주 신분구성비를 참고했습니다.
+https://contents.history.go.kr/front/nh/view.do?levelId=nh_031_0030_0040_0030
+
+## 글꼴과 아이콘
+
+- Pretendard: Copyright (c) 2021, Kil Hyung-jin. SIL Open Font License 1.1. `fonts/Pretendard-LICENSE.txt`, https://github.com/orioncactus/pretendard
+- Tossface: Copyright (c) 2022, 2023 Viva Republica, with Reserved Font Name Tossface. 원본 웹폰트 파일을 수정 없이 포함합니다. `fonts/Tossface-LICENSE.txt`, https://github.com/toss/tossface, https://toss.im/tossface/copyright
+
+## 전통색
+
+사용자가 제공한 한국 전통색 및 일반 남녀 복식의 배색 참고 이미지에서 옥색, 남색, 치자색, 송화색, 갈색 등 색상값을 참고했습니다. 특정 신분에 색을 강제로 제한하지 않습니다.

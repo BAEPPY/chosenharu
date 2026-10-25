@@ -1,0 +1,31 @@
+:root {
+  --color-white: #ffffff;
+  --color-paper: #fffdf7;
+  --color-canvas: #f7f5ef;
+  --color-ink: #302e2b;
+  --color-muted: #68665f;
+  --color-border: #deded3;
+  --color-jade: #9ed6c0;
+  --color-deep-jade: #2e674e;
+  --color-jade-wash: #edf5ee;
+  --color-indigo: #6a5ba8;
+  --color-gardenia: #f6cf7a;
+  --color-light-brown: #bd8a63;
+  --color-brown: #966147;
+  --color-gray: #a4aaa7;
+  --font-body: "Pretendard", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --ink: var(--color-ink);
+  --green: var(--color-deep-jade);
+  --muted: var(--color-muted);
+  --paper: var(--color-paper);
+  --line: var(--color-border);
+  --accent: var(--color-brown);
+  --serif: var(--font-body);
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--color-canvas);
+  font-synthesis: none;
+}

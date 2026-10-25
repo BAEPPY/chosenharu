@@ -1,0 +1,101 @@
+.field input:read-only {
+  background: #eeeede;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #a4aa94;
+  font-size: 12px;
+}
+
+.field-hint {
+  font-size: 10px;
+  font-weight: 400;
+  color: #8d967f;
+}
+
+.segmented {
+  display: flex;
+  border: 1px solid #d4dac6;
+  border-radius: 6px;
+  overflow: hidden;
+  max-width: 230px;
+}
+
+.name-row .field {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  font-size: 15px;
+  font-weight: 700;
+  gap: 10px;
+  margin: 22px 0;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  border: 1px solid #d9ddca;
+  font-weight: 400;
+  line-height: 1.7;
+  min-width: 0;
+  font-size: 16px;
+  padding: 13px 14px;
+  border-radius: 4px;
+  border-color: #bbb;
+  background: #fff;
+  color: #222;
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+.segmented button {
+  flex: 1;
+  font-size: 16px;
+  padding: 12px 25px;
+  border-color: #bbb;
+  background: #fff;
+}
+
+.segmented .selected {
+  font-weight: bold;
+  background: #315859;
+  color: #fff;
+  border-color: #315859;
+}
+
+.name-row > button {
+  margin-bottom: 0;
+  white-space: nowrap;
+  height: 49px;
+  font-size: 13px;
+  padding: 12px 14px;
+}
+
+.name-row {
+  display: flex;
+  align-items: end;
+  gap: 12px;
+}
+
+@media (max-width: 760px) {
+  .name-row {
+    gap: 8px;
+  }
+  .field {
+    font-size: 14px;
+  }
+  .name-row > button {
+    font-size: 12px;
+    max-width: 105px;
+    padding: 10px;
+  }
+}
