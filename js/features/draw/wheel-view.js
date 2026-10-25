@@ -40,7 +40,10 @@ function wheelSvg() {
 }
 
 function renderWheel() {
-  const selected = statusOf(state);
+  const selected = DrawModel.canSelect(drawHistory, selectedDraw)
+    ? L.statuses.find((status) => status.id === drawHistory[selectedDraw])
+    : null;
+  const canResume = !selected && !!state.status;
   $("#page").innerHTML =
     `<section class="roulette-page" aria-labelledby="rouletteTitle">
     <div class="roulette-heading"><h1 id="rouletteTitle">나는 어떤 사람일까?</h1><p>최대 네 번 뽑고, 마음에 드는 신분을 골라요.</p></div>
@@ -56,7 +59,7 @@ function renderWheel() {
         ${drawHistoryHtml()}
         <p class="selection-hint">${draws === 4 ? "네 번 모두 뽑았어요. 하나를 선택하세요." : "나온 결과를 눌러 선택하세요."}</p>
         <button class="primary spin-button" data-action="spin" ${spinning || draws >= DrawModel.limit ? "disabled" : ""}>${icon("draw")} ${spinning ? "돌아가는 중…" : draws === 0 ? "첫 번째 신분 뽑기" : draws >= 4 ? "네 번의 추첨 완료" : `${draws + 1}번째 신분 뽑기`}</button>
-        <button class="secondary accept-button" data-action="next" ${spinning || !selected ? "disabled" : ""}>${selected ? `선택한 신분으로 시작하기` : "신분을 뽑고 선택해 주세요"} <span aria-hidden="true">→</span></button>
+        <button class="secondary accept-button" data-action="next" ${spinning || (!selected && !canResume) ? "disabled" : ""}>${selected ? "선택한 신분으로 시작하기" : canResume ? "기존 인물 이어하기" : "신분을 뽑고 선택해 주세요"} <span aria-hidden="true">→</span></button>
       </div>
     </div>
     <details class="probability-details"><summary>신분별 추첨 확률</summary>${probabilityHistoryHtml()}<button class="text-button" data-action="weights" ${spinning ? "disabled" : ""}>선생님용 확률 설정</button></details>

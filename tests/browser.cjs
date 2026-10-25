@@ -157,23 +157,92 @@ const root = path.resolve(__dirname, "..");
     await page.locator('[data-action="new"]').click();
     assert.equal(await page.locator(".draw-card:disabled").count(), 4);
     assert.equal(await page.locator("#savedCount").innerText(), "1");
-    // Historical saved browser state: keep spent chances and teacher custom weights.
-    await page.evaluate(() =>
-      localStorage.setItem(
-        "joseon-classroom-v2",
-        JSON.stringify({
-          state: { status: "common", name: "옛 인물" },
-          draws: 4,
-          weights: [0, 10, 10, 70, 10],
-        }),
-      ),
+    // Gallery loading resumes a character, without synthesizing four spins.
+    await page.locator('[data-action="gallery"]').first().click();
+    await page.locator("[data-load]").first().click();
+    await page.locator('[data-step="0"]').click();
+    assert.equal(await page.locator(".draw-card.is-selected").count(), 0);
+    assert.equal(await page.locator(".spin-button").isDisabled(), false);
+    assert.match(
+      await page.locator(".draw-history-heading").innerText(),
+      /0 \/ 4회/,
     );
-    await page.reload();
-    assert.equal(await page.locator(".draw-card:disabled").count(), 3);
-    assert.equal(
-      await page.locator('[data-draw-index="3"]').getAttribute("aria-pressed"),
-      "true",
+    assert.match(
+      await page.locator(".accept-button").innerText(),
+      /기존 인물 이어하기/,
     );
+    assert.equal(await page.evaluate(() => state.name), "봄날");
+
+    // Both old storage and the already-persisted screenshot state repair on reload.
+    for (const history of [undefined, [null, null, null, "common"], []]) {
+      await page.evaluate((history) => {
+        const data = JSON.parse(localStorage.getItem("joseon-classroom-v2"));
+        localStorage.setItem(
+          "joseon-classroom-v2",
+          JSON.stringify({
+            ...data,
+            state: {
+              ...data.state,
+              status: "common",
+              name: "옛 인물",
+              story: "보존할 이야기",
+              top: "#9ED6C0",
+            },
+            draws: 4,
+            drawHistory: history,
+            selectedDraw: 3,
+            weights: [0, 10, 10, 70, 10],
+            step: 0,
+          }),
+        );
+      }, history);
+      await page.reload();
+      assert.equal(await page.locator(".draw-card:disabled").count(), 4);
+      assert.equal(await page.locator(".draw-card.is-selected").count(), 0);
+      assert.equal(await page.locator(".spin-button").isDisabled(), false);
+      assert.match(
+        await page.locator(".draw-history-heading").innerText(),
+        /0 \/ 4회/,
+      );
+      assert.doesNotMatch(
+        await page.locator(".draw-result").innerText(),
+        /4번째|상민/,
+      );
+      assert.equal(await page.evaluate(() => state.story), "보존할 이야기");
+      assert.equal(await page.evaluate(() => state.top), "#9ED6C0");
+      assert.equal(await page.locator("#savedCount").innerText(), "1");
+      assert.equal(await page.evaluate(() => board.length), 1);
+      await page.locator(".accept-button").click();
+      assert.equal(
+        await page.locator('[data-field="name"]').inputValue(),
+        "옛 인물",
+      );
+      await page.locator('[data-step="0"]').click();
+      await page.reload();
+      assert.equal(await page.locator(".draw-card.is-selected").count(), 0);
+      await page.evaluate(() => {
+        Math.random = () => 0.5;
+      });
+      await page.locator(".spin-button").click();
+      await page.waitForFunction(
+        () =>
+          document
+            .querySelector('[data-draw-index="0"]')
+            .getAttribute("aria-pressed") === "true",
+      );
+      assert.match(
+        await page.locator(".draw-history-heading").innerText(),
+        /1 \/ 4회/,
+      );
+      await page.reload();
+      assert.equal(
+        await page
+          .locator(".draw-card.is-selected")
+          .getAttribute("data-draw-index"),
+        "0",
+      );
+      assert.equal(await page.locator(".draw-card:disabled").count(), 3);
+    }
     assert.deepEqual(await page.evaluate(() => weights), [0, 10, 10, 70, 10]);
     await page.locator(".probability-details summary").click();
     assert.match(
@@ -188,7 +257,7 @@ const root = path.resolve(__dirname, "..");
     assert.equal(await page.locator("#modal").evaluate((el) => el.open), true);
     await page.locator('[name="weight2"]').fill("100");
     await page.locator('#weightForm [type="submit"]').click();
-    assert.equal(await page.locator(".spin-button").isDisabled(), true);
+    assert.equal(await page.locator(".spin-button").isDisabled(), false);
     for (const width of [390, 320]) {
       await page.setViewportSize({ width, height: 844 });
       await page.screenshot({
