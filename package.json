@@ -1,0 +1,13 @@
+{
+  "name": "chosenharu",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Buildless Joseon classroom activity",
+  "scripts": {
+    "test": "node tests/draw-model.test.cjs",
+    "test:browser": "node tests/browser.cjs"
+  },
+  "devDependencies": {
+    "playwright-core": "1.64.1"
+  }
+}

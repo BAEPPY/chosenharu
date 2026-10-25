@@ -1,0 +1,121 @@
+.probability-details {
+  margin: 32px 0 0;
+  padding: 0;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+.probability-details > summary {
+  padding: 20px 24px;
+  color: var(--ink);
+  font-size: 14px;
+}
+.probability-details > summary .toss-icon {
+  font-size: 20px;
+  margin: 0 8px;
+}
+.probability-details > summary > span:last-child {
+  float: right;
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 450;
+}
+.probability-details > .probability-history {
+  border-top: 1px solid var(--line);
+  padding: 24px;
+}
+.probability-details > .text-button {
+  margin: 0 24px 20px;
+}
+.probability-intro {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.probability-intro > .toss-icon {
+  font-size: 30px;
+}
+.probability-intro h3 {
+  margin: 0 0 5px;
+  font-size: 17px;
+  letter-spacing: -0.03em;
+}
+.probability-intro p {
+  margin: 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+.probability-table-wrap {
+  overflow-x: auto;
+}
+.probability-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+.probability-table th,
+.probability-table td {
+  padding: 12px;
+  border-bottom: 1px solid var(--line);
+  text-align: right;
+  white-space: nowrap;
+}
+.probability-table th:first-child {
+  text-align: left;
+}
+.probability-table thead {
+  background: var(--color-jade-wash);
+}
+.probability-table tbody th {
+  font-weight: 550;
+}
+.probability-table td:last-child {
+  color: var(--green);
+  font-weight: 700;
+}
+.probability-history > p {
+  font-size: 12px;
+  line-height: 1.85;
+  color: var(--muted);
+  margin: 14px 0 0;
+}
+.history-source {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 12px;
+  line-height: 1.7;
+  text-underline-offset: 4px;
+}
+.weight-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+@media (max-width: 760px) {
+  .probability-details {
+    margin-top: 22px;
+  }
+  .probability-details > summary {
+    padding: 17px 14px;
+  }
+  .probability-details > summary > span:last-child {
+    display: none;
+  }
+  .probability-details > .probability-history {
+    padding: 18px 14px;
+  }
+  .probability-table th,
+  .probability-table td {
+    padding: 10px 7px;
+    font-size: 11px;
+  }
+  .probability-intro h3 {
+    font-size: 15px;
+  }
+  .probability-intro p {
+    font-size: 11px;
+  }
+}

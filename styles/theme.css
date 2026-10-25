@@ -1,0 +1,246 @@
+/* Shared visual language across all five steps and classroom tools. */
+body {
+  background: var(--color-canvas);
+  font-family: var(--font-body);
+  color: var(--ink);
+}
+button,
+input,
+select,
+textarea {
+  font-family: var(--font-body);
+}
+h1,
+h2,
+.brand,
+.brand small,
+.board-title {
+  font-family: var(--font-body);
+  color: var(--ink);
+}
+button:focus-visible,
+a:focus-visible,
+summary:focus-visible {
+  outline: 3px solid var(--color-indigo);
+  outline-offset: 4px;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  outline-color: var(--green);
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.site-header {
+  background: var(--paper);
+  border-color: var(--line);
+}
+.brand {
+  color: var(--ink);
+  letter-spacing: -0.06em;
+  font-weight: 750;
+}
+.top-actions > button,
+.top-actions > button:nth-child(2) {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  background: var(--paper);
+  color: var(--ink);
+}
+.top-actions .toss-icon {
+  font-size: 18px;
+}
+.top-actions #savedCount,
+#steps button.active span {
+  background: var(--green);
+}
+#steps button.active {
+  color: var(--green);
+}
+#steps button.active span {
+  border-color: var(--green);
+}
+#steps button {
+  color: var(--muted);
+}
+.primary,
+.start-button {
+  background: var(--green);
+  color: var(--color-white);
+  border-color: var(--green);
+  border-radius: var(--radius-sm);
+}
+.secondary {
+  background: var(--paper);
+  color: var(--ink);
+  border-color: var(--line);
+  border-radius: var(--radius-sm);
+}
+.text-button,
+a {
+  color: var(--green);
+}
+.lead,
+.small-note,
+.field-hint {
+  color: var(--muted);
+}
+.is-home .home-course {
+  color: var(--ink);
+}
+.is-home .top-actions > button {
+  background: #fffdf7e8;
+}
+.welcome-credit {
+  color: var(--green);
+}
+.portrait-top,
+.portrait-caption h2 {
+  color: var(--ink);
+}
+.portrait-caption > span {
+  color: var(--muted);
+}
+.status-banner,
+.prompt-box,
+.segmented .selected,
+.choice.selected {
+  background: var(--color-jade-wash);
+  color: var(--green);
+}
+.status-banner,
+.prompt-box,
+.fact-box,
+.figure-info,
+.story-card {
+  border-radius: var(--radius-md);
+}
+.status-banner span,
+.fact-box p,
+.figure-info p,
+.prompt-box p {
+  color: var(--muted);
+}
+.field input,
+.field select,
+.field textarea {
+  background: var(--paper);
+  color: var(--ink);
+  border-color: var(--line);
+  border-radius: var(--radius-sm);
+}
+.field input:read-only {
+  background: var(--color-canvas);
+}
+.choice,
+.segmented,
+.gallery-grid article {
+  border-radius: var(--radius-sm);
+  border-color: var(--line);
+  background: var(--paper);
+}
+.choice.selected {
+  border-color: var(--green);
+}
+.segmented .selected {
+  font-weight: 700;
+}
+.fact-box,
+.figure-info {
+  background: #f0ece3;
+}
+.style-tabs button.active {
+  color: var(--green);
+  border-color: var(--green);
+}
+.story-card {
+  background: var(--paper);
+  border-color: var(--line);
+}
+.chapter-footer,
+.style-tabs,
+.site-footer {
+  border-color: var(--line);
+}
+.toast {
+  background: var(--color-ink);
+}
+dialog,
+.modal-head {
+  background: var(--paper);
+  color: var(--ink);
+  border-color: var(--line);
+}
+dialog {
+  border-radius: var(--radius-lg);
+  max-width: calc(100vw - 32px);
+}
+.traditional-palette {
+  margin-top: 24px;
+  padding: 20px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+}
+.traditional-palette h2 {
+  margin: 0;
+  font-size: 16px;
+  letter-spacing: -0.02em;
+}
+.traditional-palette p {
+  margin: 8px 0 16px;
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.palette-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 12px 0 0;
+}
+.palette-row > span {
+  width: 60px;
+  flex-shrink: 0;
+  font-size: 12px;
+}
+.palette-swatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.palette-swatch {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--swatch);
+  border: 1px solid #302e2b24;
+}
+.palette-swatch[aria-pressed="true"] {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+}
+@media (max-width: 760px) {
+  .traditional-palette {
+    padding: 16px;
+  }
+  .palette-row {
+    gap: 6px;
+  }
+  .palette-swatches {
+    gap: 10px;
+  }
+  .palette-swatch {
+    width: 26px;
+    height: 26px;
+  }
+}

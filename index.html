@@ -1,9 +1,146 @@
 <!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f9e7c8"><meta name="description" content="신분과 직업을 정하고, 조선 시대 인물의 하루를 상상하는 초등 사회 창작 활동."><title>조선의 하루 · 우리 반 풍속화</title><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="experience.css"><link rel="preload" href="images/village.jpg" as="image"><link rel="preload" href="images/welcome-sprite.png" as="image"></head>
-<body class="is-home"><a class="skip" href="#main">활동으로 건너뛰기</a>
-<header class="site-header"><button class="brand" data-action="home" aria-label="조선의 하루 처음 화면">조선의 하루</button><span class="home-course">우리 반 사회 시간</span><nav class="top-actions" aria-label="수업 도구"><button data-action="gallery">인물 모음 <span id="savedCount">0</span></button><button data-action="board">우리 반 풍속화</button><button data-action="guide" class="icon-btn" aria-label="수업 도움말">?</button></nav></header>
-<main id="main" tabindex="-1"><div class="chapter-bar"><nav id="steps" aria-label="만들기 단계"></nav></div><div id="page"><section class="welcome"><div class="welcome-heading"><p>사회 시간에 만나는 옛사람들의 생활</p><h1>조선의 하루</h1></div><div class="welcome-figure" aria-hidden="true"><div class="welcome-sprite"></div><img class="welcome-speech" src="images/speech.png" alt=""></div><div class="welcome-bottom"><button class="start-button" disabled>그림 불러오는 중…</button></div></section></div></main>
-<footer class="site-footer"><button data-action="sources">자료와 그림 출처</button><button data-action="guide">저장·수업 도움말</button></footer>
-<dialog id="modal"><div class="modal-head"><h2 id="modalTitle"></h2><button data-action="close" class="close" aria-label="닫기">×</button></div><div id="modalBody"></div></dialog>
-<input id="importFile" type="file" accept=".json,application/json" multiple hidden><div id="toast" class="toast" role="status" aria-live="polite"></div>
-<script defer src="catalog.js"></script><script defer src="assets.js"></script><script defer src="assets/crafting_02.js"></script><script defer src="assets/crafting_03.js"></script><script defer src="assets/crafting_04.js"></script><script defer src="assets/dancing_hansam_01.js"></script><script defer src="assets/dancing_hansam_02.js"></script><script defer src="assets/dancing_hansam_03.js"></script><script defer src="assets/dancing_hansam_04.js"></script><script defer src="assets/eating_drinking_01.js"></script><script defer src="assets/eating_drinking_04.js"></script><script defer src="assets/holding_fan_01.js"></script><script defer src="assets/holding_fan_02.js"></script><script defer src="assets/holding_fan_03.js"></script><script defer src="assets/playing_music_01.js"></script><script defer src="assets/playing_music_04.js"></script><script defer src="assets/playing_music_05.js"></script><script defer src="assets/reading_writing_01.js"></script><script defer src="assets/reading_writing_03.js"></script><script defer src="assets/sitting_01.js"></script><script defer src="assets/sitting_02.js"></script><script defer src="assets/sitting_04.js"></script><script defer src="assets/trudging_01.js"></script><script defer src="assets/trudging_03.js"></script><script defer src="assets/with_child_02.js"></script><script defer src="assets/with_child_04.js"></script><script defer src="lesson.js"></script><script defer src="art-layout.js"></script><script defer src="art.js"></script><script defer src="experience.js"></script><script defer src="app.js"></script></body></html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#F7F5EF" />
+    <meta
+      name="description"
+      content="신분과 직업을 정하고, 조선 시대 인물의 하루를 상상하는 초등 사회 창작 활동."
+    />
+    <title>조선의 하루 · 우리 반 풍속화</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preload" href="images/village.jpg" as="image" />
+    <link rel="preload" href="images/welcome-sprite.png" as="image" />
+  </head>
+  <body class="is-home">
+    <a class="skip" href="#main">활동으로 건너뛰기</a>
+    <header class="site-header">
+      <button
+        class="brand"
+        data-action="home"
+        aria-label="조선의 하루 처음 화면"
+      >
+        조선의 하루</button
+      ><span class="home-course">우리 반 사회 시간</span>
+      <nav class="top-actions" aria-label="수업 도구">
+        <button data-action="gallery">
+          <span class="toss-icon" aria-hidden="true">🖼️</span> 인물 모음
+          <span id="savedCount">0</span></button
+        ><button data-action="board">
+          <span class="toss-icon" aria-hidden="true">🏡</span> 우리 반 풍속화</button
+        ><button data-action="guide" class="icon-btn" aria-label="수업 도움말">
+          <span class="toss-icon" aria-hidden="true">💡</span>
+        </button>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1">
+      <div class="chapter-bar">
+        <nav id="steps" aria-label="만들기 단계"></nav>
+      </div>
+      <div id="page">
+        <section class="welcome">
+          <div class="welcome-heading">
+            <p>사회 시간에 만나는 옛사람들의 생활</p>
+            <h1>조선의 하루</h1>
+          </div>
+          <div class="welcome-figure" aria-hidden="true">
+            <div class="welcome-sprite"></div>
+            <img class="welcome-speech" src="images/speech.png" alt="" />
+          </div>
+          <div class="welcome-bottom">
+            <button class="start-button" disabled>그림 불러오는 중…</button>
+          </div>
+        </section>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <button data-action="sources">자료와 그림 출처</button
+      ><button data-action="guide">저장·수업 도움말</button>
+    </footer>
+    <dialog id="modal">
+      <div class="modal-head">
+        <h2 id="modalTitle"></h2>
+        <button data-action="close" class="close" aria-label="닫기">×</button>
+      </div>
+      <div id="modalBody"></div>
+    </dialog>
+    <input
+      id="importFile"
+      type="file"
+      accept=".json,application/json"
+      multiple
+      hidden
+    />
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <script defer src="catalog.js"></script>
+    <script defer src="assets.js"></script>
+    <script defer src="assets/crafting_02.js"></script>
+    <script defer src="assets/crafting_03.js"></script>
+    <script defer src="assets/crafting_04.js"></script>
+    <script defer src="assets/dancing_hansam_01.js"></script>
+    <script defer src="assets/dancing_hansam_02.js"></script>
+    <script defer src="assets/dancing_hansam_03.js"></script>
+    <script defer src="assets/dancing_hansam_04.js"></script>
+    <script defer src="assets/eating_drinking_01.js"></script>
+    <script defer src="assets/eating_drinking_04.js"></script>
+    <script defer src="assets/holding_fan_01.js"></script>
+    <script defer src="assets/holding_fan_02.js"></script>
+    <script defer src="assets/holding_fan_03.js"></script>
+    <script defer src="assets/playing_music_01.js"></script>
+    <script defer src="assets/playing_music_04.js"></script>
+    <script defer src="assets/playing_music_05.js"></script>
+    <script defer src="assets/reading_writing_01.js"></script>
+    <script defer src="assets/reading_writing_03.js"></script>
+    <script defer src="assets/sitting_01.js"></script>
+    <script defer src="assets/sitting_02.js"></script>
+    <script defer src="assets/sitting_04.js"></script>
+    <script defer src="assets/trudging_01.js"></script>
+    <script defer src="assets/trudging_03.js"></script>
+    <script defer src="assets/with_child_02.js"></script>
+    <script defer src="assets/with_child_04.js"></script>
+    <script defer src="js/data/history.js"></script>
+    <script defer src="js/data/statuses.js"></script>
+    <script defer src="js/data/roles.js"></script>
+    <script defer src="js/data/figures.js"></script>
+    <script defer src="js/data/names.js"></script>
+    <script defer src="js/data/recordNames.js"></script>
+    <script defer src="js/data/outfits.js"></script>
+    <script defer src="js/data/headgear.js"></script>
+    <script defer src="js/data/poses.js"></script>
+    <script defer src="lesson.js"></script>
+    <script defer src="art-layout.js"></script>
+    <script defer src="art.js"></script>
+    <script defer src="js/data/palette.js"></script>
+    <script defer src="js/components/icon.js"></script>
+    <script defer src="js/features/draw/model.js"></script>
+    <script defer src="js/core/context.js"></script>
+    <script defer src="js/core/normalize.js"></script>
+    <script defer src="js/core/storage.js"></script>
+    <script defer src="js/core/navigation.js"></script>
+    <script defer src="js/core/render.js"></script>
+    <script defer src="js/components/feedback.js"></script>
+    <script defer src="js/components/character-preview.js"></script>
+    <script defer src="js/features/identity/controller.js"></script>
+    <script defer src="js/features/identity/view.js"></script>
+    <script defer src="js/features/customize/palette-view.js"></script>
+    <script defer src="js/features/customize/view.js"></script>
+    <script defer src="js/features/story/view.js"></script>
+    <script defer src="js/features/collection/records.js"></script>
+    <script defer src="js/features/collection/files.js"></script>
+    <script defer src="js/features/export/png.js"></script>
+    <script defer src="js/features/classroom/layout.js"></script>
+    <script defer src="js/features/classroom/view.js"></script>
+    <script defer src="js/features/classroom/interactions.js"></script>
+    <script defer src="js/features/help/dialogs.js"></script>
+    <script defer src="js/core/events.js"></script>
+    <script defer src="js/features/home/view.js"></script>
+    <script defer src="js/features/draw/probabilities.js"></script>
+    <script defer src="js/features/draw/weight-settings.js"></script>
+    <script defer src="js/features/draw/history-view.js"></script>
+    <script defer src="js/features/draw/wheel-view.js"></script>
+    <script defer src="js/features/draw/audio.js"></script>
+    <script defer src="js/features/draw/controller.js"></script>
+    <script defer src="app.js"></script>
+  </body>
+</html>

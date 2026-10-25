@@ -1,0 +1,189 @@
+.chapter-content .lead {
+  font-size: 15px;
+  margin-bottom: 24px;
+}
+
+.figure-info {
+  padding: 17px 20px;
+  border: 1px dashed #c5cfb8;
+  border-radius: 7px;
+  background: #f7f8ef;
+  font-size: 12px;
+  line-height: 1.8;
+  margin-top: 17px;
+}
+
+.figure-info strong {
+  font-size: 13px;
+}
+
+.figure-info p {
+  margin: 7px 0;
+  color: #707e64;
+}
+
+.fact-box {
+  padding: 17px 20px;
+  border-radius: 7px;
+  background: #ecefdf;
+  margin: 17px 0;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.fact-box p {
+  margin: 6px 0 0;
+  color: #778369;
+}
+
+.figure-info[hidden] {
+  display: none;
+}
+
+.chapter-content {
+  min-width: 0;
+  padding-top: 7px;
+  padding: 6px 0;
+}
+
+.chapter-content h1 {
+  font-size: 29px;
+  line-height: 1.4;
+  letter-spacing: -1px;
+}
+
+.status-banner {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin: 0 0 23px;
+  background: #f1f4f3;
+  border-radius: 4px;
+  border: 0;
+  padding: 15px 18px;
+}
+
+.status-banner b {
+  white-space: nowrap;
+  font-size: 15px;
+}
+
+.status-banner span {
+  line-height: 1.8;
+  font-size: 13px;
+  color: #555;
+}
+
+.small-heading {
+  font-family: inherit;
+  font-weight: 600;
+  margin: 28px 0 13px;
+  font-size: 17px;
+}
+
+.fact-box,
+.figure-info {
+  background: #f5f5f2;
+  color: #333;
+  border: 0;
+  border-radius: 4px;
+  padding: 16px 18px;
+}
+
+.fact-box strong,
+.figure-info strong {
+  font-size: 15px;
+}
+
+.fact-box p,
+.figure-info p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #555;
+}
+
+.figure-info a {
+  font-size: 13px;
+  color: #315859;
+}
+
+.chapter-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  border-top: 1px solid var(--line);
+  padding-top: 24px;
+  margin-top: 26px;
+  border-color: #ddd;
+}
+
+.chapter-footer > span {
+  white-space: nowrap;
+  font-size: 13px;
+  color: #777;
+}
+
+@media (max-width: 1050px) {
+  .chapter-content h1 {
+    font-size: 27px;
+  }
+}
+
+@media (max-width: 760px) {
+  .chapter-content h1 {
+    font-size: 27px;
+  }
+  .chapter-content .lead {
+    margin-bottom: 20px;
+  }
+  .status-banner {
+    padding: 13px;
+    gap: 11px;
+  }
+  .status-banner span {
+    font-size: 10px;
+  }
+  .status-banner b {
+    font-size: 12px;
+  }
+  .chapter-footer {
+    gap: 8px;
+  }
+  .chapter-footer > span {
+    font-size: 9px;
+  }
+}
+
+@media print {
+  .chapter-content {
+    padding-top: 20px;
+  }
+}
+
+@media (max-width: 760px) {
+  .chapter-content h1 {
+    font-size: 25px;
+  }
+  .chapter-content .lead {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+  .status-banner {
+    padding: 13px;
+    gap: 12px;
+  }
+  .status-banner b {
+    font-size: 14px;
+  }
+  .status-banner span {
+    font-size: 12px;
+  }
+  .chapter-footer > span {
+    font-size: 11px;
+  }
+  .fact-box p,
+  .figure-info p {
+    font-size: 13px;
+  }
+}

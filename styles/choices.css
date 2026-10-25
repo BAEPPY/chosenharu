@@ -1,0 +1,39 @@
+.choice-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.choice {
+  padding: 13px 9px;
+  min-width: 0;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #222;
+  font-size: 14px;
+}
+
+.choice.selected {
+  border: 2px solid #315859;
+  background: #edf5f4;
+  box-shadow: none;
+  color: #213f40;
+}
+
+.roles .choice {
+  min-height: 54px;
+  font-size: 15px;
+  padding: 14px;
+}
+
+@media (max-width: 760px) {
+  .choice-grid {
+    gap: 8px;
+  }
+  .roles .choice {
+    font-size: 14px;
+    padding: 13px 5px;
+  }
+}

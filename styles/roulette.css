@@ -1,0 +1,173 @@
+.is-roulette main {
+  max-width: 1200px;
+  padding: 24px 32px 40px;
+}
+.is-roulette .chapter-bar {
+  margin-bottom: 36px;
+}
+.roulette-heading {
+  text-align: center;
+  margin-bottom: 32px;
+}
+.roulette-heading .eyebrow {
+  color: var(--green);
+  font-size: 12px;
+  letter-spacing: 0.09em;
+  font-weight: 650;
+  margin-bottom: 12px;
+}
+.roulette-heading h1 {
+  font-size: clamp(28px, 3.5vw, 42px);
+  font-weight: 750;
+  letter-spacing: -0.055em;
+  margin: 0 0 12px;
+}
+.roulette-heading > p:last-child {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0;
+}
+.roulette-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 60px;
+}
+.roulette-stage {
+  min-width: 0;
+  padding-right: 12px;
+}
+.roulette-frame {
+  width: 100%;
+  max-width: 540px;
+  aspect-ratio: 1;
+  position: relative;
+  margin: auto;
+}
+.roulette-disc {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transition: transform 6.2s cubic-bezier(0.12, 0.78, 0.12, 1);
+  filter: drop-shadow(0 8px 14px #302e2b0d);
+}
+.roulette-disc svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.roulette-disc text {
+  font: 550 30px var(--font-body);
+  letter-spacing: -0.04em;
+}
+.roulette-pointer {
+  position: absolute;
+  right: -12px;
+  top: calc(50% - 17px);
+  width: 34px;
+  height: 34px;
+  background: var(--color-ink);
+  clip-path: polygon(0 50%, 100% 0, 100% 100%);
+  z-index: 2;
+}
+.wheel-center {
+  position: absolute;
+  top: 40.2%;
+  left: 40.2%;
+  width: 19.6%;
+  height: 19.6%;
+  border-radius: 50%;
+  background: var(--paper);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-size: 16px;
+  font-weight: 750;
+}
+.wheel-center .toss-icon {
+  font-size: 29px;
+}
+.wheel-center:disabled {
+  opacity: 1;
+  color: var(--muted);
+}
+.wheel-caption {
+  text-align: center;
+  font-size: 12px;
+  color: var(--muted);
+  margin: 24px 0 0;
+}
+.wheel-caption .toss-icon {
+  margin-right: 5px;
+  font-size: 16px;
+}
+.roulette-controls {
+  padding: 28px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  min-width: 0;
+}
+.roulette-bottom {
+  margin: 12px 0 0;
+}
+@media (max-width: 1050px) {
+  .roulette-layout {
+    gap: 26px;
+    grid-template-columns: minmax(0, 1fr) minmax(330px, 1fr);
+  }
+  .roulette-controls {
+    padding: 22px;
+  }
+}
+@media (max-width: 760px) {
+  .is-roulette main {
+    padding: 20px 18px 30px;
+  }
+  .is-roulette .chapter-bar {
+    margin-bottom: 26px;
+  }
+  .roulette-heading {
+    margin-bottom: 24px;
+  }
+  .roulette-heading > p:last-child {
+    font-size: 13px;
+  }
+  .roulette-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+  .roulette-stage {
+    width: 100%;
+    max-width: 420px;
+    padding-right: 12px;
+  }
+  .roulette-frame {
+    max-width: 360px;
+  }
+  .roulette-controls {
+    width: 100%;
+    max-width: 480px;
+    padding: 22px 18px;
+  }
+  .wheel-center {
+    font-size: 13px;
+    gap: 3px;
+  }
+  .wheel-center .toss-icon {
+    font-size: 22px;
+  }
+  .wheel-caption {
+    font-size: 10px;
+    margin-top: 16px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .roulette-disc {
+    transition: none;
+  }
+}
