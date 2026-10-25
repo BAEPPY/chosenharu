@@ -46,7 +46,12 @@ try {
         ? L.statuses.map((s) => s.weight)
         : data.weights;
     board = cleanBoard(data.board, saved);
-    step = Math.max(0, Math.min(4, Number(data.step) || 0));
+    restoredLegacyFlow = data.flowVersion !== FLOW_VERSION;
+    const storedStep = Math.max(0, Number(data.step) || 0);
+    step = Math.min(
+      FLOW.CARD,
+      storedStep + (restoredLegacyFlow && storedStep > 0 ? 1 : 0),
+    );
   } else {
     const old = JSON.parse(localStorage.getItem("joseon-records") || "[]");
     saved = Array.isArray(old) ? old.map(normalize).filter((s) => s.id) : [];
@@ -62,6 +67,7 @@ function persist() {
     localStorage.setItem(
       KEY,
       JSON.stringify({
+        flowVersion: FLOW_VERSION,
         state,
         saved,
         board,
@@ -69,7 +75,7 @@ function persist() {
         drawHistory,
         selectedDraw,
         weights,
-        step: step === 5 ? returnStep : step,
+        step: step === FLOW.BOARD ? returnStep : step,
       }),
     );
     return true;

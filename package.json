@@ -8,7 +8,11 @@
     "test:browser": "node tests/browser.cjs",
     "test:poses": "node tests/pose-library.cjs",
     "assets:poses": "node scripts/build-pose-library.cjs",
-    "test:identity-garments": "node tests/identity-garments.cjs"
+    "test:identity-garments": "node tests/identity-garments.cjs",
+    "test:pose-workflow": "node tests/pose-workflow.cjs",
+    "test:garment-anatomy": "node tests/garment-anatomy.cjs",
+    "test:garment-drape": "node tests/garment-drape.cjs",
+    "test:garment-props": "node tests/garment-props.cjs"
   },
   "devDependencies": {
     "playwright-core": "1.64.1"

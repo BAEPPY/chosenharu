@@ -31,14 +31,6 @@ function garmentFrame(pose) {
   };
 }
 
-function garmentCollar(f, color, round = false) {
-  const { x, t, unit: u } = f;
-  return `<g transform="translate(${x} ${t.y + 6}) scale(${u})" fill="none" stroke-linejoin="round">
-    <path d="${round ? "M-14 0Q-18 25 3 26Q22 21 17 1" : "M-13 0L-1 27L19 2"}" stroke="#3D3530" stroke-width="5"/>
-    <path d="${round ? "M-14 0Q-18 25 3 26Q22 21 17 1" : "M-13 0L-1 27L19 2"}" stroke="${color}" stroke-width="3"/>
-  </g>`;
-}
-
 function garmentRibbon(f, color, long = false) {
   const { x, y, unit: u } = f;
   return `<g transform="translate(${x - 5} ${y}) scale(${u})" fill="${color}" stroke="#46372F" stroke-width=".8">

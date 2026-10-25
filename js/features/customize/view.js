@@ -34,11 +34,10 @@ function lookHtml() {
     heading(
       3,
       "옷차림에 삶을 담아 볼까요?",
-      "옷·모자·표정·동작을 직접 골라 나만의 인물을 만들어 보세요.",
+      "옷·모자·표정을 직접 골라 나만의 인물을 만들어 보세요.",
     ) +
     `<div class="style-tabs" role="group" aria-label="꾸미기 종류">${[
       ["outfit", "의상"],
-      ["pose", "생활 동작"],
       ["hair", "머리·모자"],
       ["emotion", "표정·피부"],
     ]
@@ -76,7 +75,6 @@ function lookHtml() {
             "",
           )}</div><p class="small-note">옷을 고르면 기본 배색이 적용돼요. 색은 다시 바꿀 수 있어요.</p>`;
   }
-  if (styleTab === "pose") h += thumbChoice(posesFor(state), "pose");
   if (styleTab === "hair")
     h +=
       thumbChoice(hairsFor(), "hair") +
@@ -88,6 +86,6 @@ function lookHtml() {
   }
   return (
     h +
-    `<div class="look-tools"><button class="text-button" data-action="undo" ${undo.length ? "" : "disabled"}>↶ 꾸미기 되돌리기</button></div>`
+    `<div class="look-tools"><button class="text-button" data-action="changePose">동작 바꾸기</button><button class="text-button" data-action="undo" ${undo.length ? "" : "disabled"}>↶ 꾸미기 되돌리기</button></div>`
   );
 }

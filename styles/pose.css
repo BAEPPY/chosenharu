@@ -1,0 +1,98 @@
+.pose-chapter {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.pose-groups {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin: 28px 0;
+}
+.pose-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--paper, #fffdf7);
+  padding: 4px 10px 18px;
+}
+.pose-group.selected {
+  border-color: var(--green, #316650);
+  box-shadow: inset 0 0 0 1px var(--green, #316650);
+}
+.pose-group svg {
+  width: 100%;
+  height: auto;
+}
+.pose-group strong {
+  font-size: 15px;
+  font-weight: 600;
+}
+.pose-group > span {
+  margin-top: 7px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.pose-dialog {
+  width: min(440px, calc(100% - 28px));
+}
+.pose-dialog #modalTitle {
+  text-align: center;
+  padding-right: 16px;
+}
+.pose-stage {
+  max-width: 340px;
+  margin: 0 auto;
+}
+.pose-stage svg {
+  display: block;
+  width: 100%;
+}
+.pose-caption {
+  text-align: center;
+  color: var(--muted);
+  margin: 0 0 18px;
+}
+.pose-pager {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+}
+.pose-arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #e8efeb;
+  color: #315e50;
+  font-size: 20px;
+}
+.pose-dialog-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 26px;
+}
+.pose-dialog-actions .primary {
+  flex: 1;
+}
+@media (max-width: 760px) {
+  .pose-groups {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+@media (max-width: 480px) {
+  .pose-groups {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+  .pose-group strong {
+    font-size: 14px;
+  }
+  #steps .step-indicator {
+    min-width: 0;
+  }
+  #steps b {
+    font-size: 10px;
+  }
+}

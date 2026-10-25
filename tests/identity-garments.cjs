@@ -38,8 +38,13 @@ const root = path.resolve(__dirname, "..");
     await page.goto(`http://127.0.0.1:${port}`);
     await page.locator('[data-action="start"]').click();
     await page.evaluate(() => {
-      state = normalize({ ...DEFAULT, status: "yangban", name: "시험 인물" });
-      go(1);
+      state = normalize({
+        ...DEFAULT,
+        poseConfirmed: true,
+        status: "yangban",
+        name: "시험 인물",
+      });
+      go(FLOW.IDENTITY);
     });
     assert.equal(
       await page.locator("#steps button, #steps a, #steps [tabindex]").count(),
@@ -50,11 +55,11 @@ const root = path.resolve(__dirname, "..");
       .all()) {
       await indicator.click();
       await page.keyboard.press("Enter");
-      assert.equal(await page.evaluate(() => step), 1);
+      assert.equal(await page.evaluate(() => step), 2);
     }
     assert.equal(
       await page.locator('#steps [aria-current="step"]').innerText(),
-      "2\n인물 정하기",
+      "3\n인물 정하기",
     );
     for (const status of ["royal", "yangban"])
       for (const gender of ["male", "female"]) {
@@ -62,12 +67,13 @@ const root = path.resolve(__dirname, "..");
           ({ status, gender }) => {
             state = normalize({
               ...DEFAULT,
+              poseConfirmed: true,
               status,
               gender,
               name: "시험 인물",
             });
             suggestedFigures.clear();
-            go(1);
+            go(FLOW.IDENTITY);
           },
           { status, gender },
         );
@@ -100,7 +106,7 @@ const root = path.resolve(__dirname, "..");
         }
       }
     await page.locator('.chapter-footer [data-action="next"]').click();
-    assert.equal(await page.evaluate(() => step), 2);
+    assert.equal(await page.evaluate(() => step), 3);
     const outfits = await page.evaluate(() => L.outfits.map((o) => o.id));
     assert.equal(outfits.length, 25);
     for (const outfit of outfits) {
@@ -118,7 +124,7 @@ const root = path.resolve(__dirname, "..");
     assert.deepEqual(await page.evaluate(() => ({ ...state })), before);
     // The selected thumbnail and portrait must show the same custom colors.
     const same = await page.evaluate(() => {
-      const clean = (s) => s.replace(/garment\d+/g, "garment");
+      const clean = (s) => s.replace(/(garment|visible-hands|pleat)\d+/g, "$1");
       return (
         clean(document.querySelector("#avatar").innerHTML) ===
         clean(
@@ -132,7 +138,12 @@ const root = path.resolve(__dirname, "..");
     // Preserve authored palettes while repairing the old unedited brown default.
     assert.deepEqual(
       await page.evaluate(() => {
-        const a = normalize({ ...DEFAULT, status: "yangban", outfit: "royal" });
+        const a = normalize({
+          ...DEFAULT,
+          poseConfirmed: true,
+          status: "yangban",
+          outfit: "royal",
+        });
         const b = normalize({
           ...DEFAULT,
           status: "yangban",
@@ -171,6 +182,35 @@ const root = path.resolve(__dirname, "..");
           if (visible < 1000) throw Error(`Empty rendering ${pose}/${outfit}`);
           count++;
         }
+      // Regression: the fan must occlude clothing, and belts cannot cross the bent arm.
+      for (const outfit of [
+        "royal",
+        "prince",
+        "emperor",
+        "official",
+        "military",
+        "student",
+        "apron",
+        "work_apron",
+        "saenggaksi",
+      ]) {
+        const s = outfitState(DEFAULT, outfit);
+        ctx.clearRect(0, 0, 360, 360);
+        await drawAvatar(ctx, s, 0, 0, 360);
+        const fan = [...ctx.getImageData(110, 140, 1, 1).data];
+        if (fan.join() !== "242,242,242,255")
+          throw Error(`Clothes cover the fan: ${outfit}`);
+        const sleeve = [...ctx.getImageData(237, 192, 1, 1).data];
+        const expected = s.top
+          .match(/[a-f0-9]{2}/gi)
+          .map((v) => parseInt(v, 16));
+        if (
+          sleeve
+            .slice(0, 3)
+            .some((value, i) => Math.abs(value - expected[i]) > 2)
+        )
+          throw Error(`Belt or decoration crosses the sleeve: ${outfit}`);
+      }
       // Different construction remains visible with the SAME palette.
       for (const outfit of [
         "queen",
@@ -220,7 +260,7 @@ const root = path.resolve(__dirname, "..");
       }
       return { count, shapes: new Set(shapePNGs).size };
     });
-    assert.equal(checks.count, 900);
+    assert.equal(checks.count, 925);
     assert.equal(checks.shapes, 7);
     for (const hair of ["myeonryugwan", "tanggeon"]) {
       await page.locator('[data-style="hair"]').click();

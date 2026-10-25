@@ -3,26 +3,10 @@
 function robeDetails(s, kind, f, pattern, sleeveClip) {
   const { t, b, x, y, waist, hem, unit: u } = f;
   let art = "";
-  if (["hwarot", "noui"].includes(kind))
-    art += `<rect width="360" height="360" fill="url(#${pattern})"/>`;
-  if (kind === "dragon")
-    art += `<g opacity=".18"><rect width="360" height="360" fill="url(#${pattern})"/></g>`;
-  if (kind === "noui") {
-    art += `<path d="M${x - 12 * u} ${t.y + 6}L${x - 18 * u} ${hem}H${x + 19 * u}L${x + 12 * u} ${t.y + 6}Z" fill="${s.bottom}"/>
-      <path d="M${x - 12 * u} ${t.y + 6}L${x - 18 * u} ${hem}M${x + 12 * u} ${t.y + 6}L${x + 19 * u} ${hem}" fill="none" stroke="${s.layer}" stroke-width="2"/>
-      <rect x="${x - 19 * u}" y="${y + 20}" width="${38 * u}" height="${Math.max(1, hem - y - 20)}" fill="url(#${pattern})"/>`;
-  }
   if (kind === "dangui") {
-    art += `<path d="M${x - 25 * u} ${waist - 15 * u}Q${x - 29 * u} ${waist + 13 * u} ${x - 19 * u} ${waist + 35 * u}Q${x} ${waist + 53 * u} ${x + 21 * u} ${waist + 33 * u}L${x + 26 * u} ${waist - 14 * u}Z" fill="${s.top}" stroke="#453D32" stroke-width="1.2"/>
-      <g opacity=".55" color="#E1C983"><g transform="translate(${x - 8 * u} ${waist + 21 * u}) scale(.65)">${phoenixMedallion()}</g><g transform="translate(${x + 12 * u} ${waist - 13 * u}) scale(.6)">${phoenixMedallion()}</g></g>`;
+    art += `<g opacity=".55" color="#E1C983"><g transform="translate(${x - 8 * u} ${waist + 21 * u}) scale(.65)">${phoenixMedallion()}</g><g transform="translate(${x + 12 * u} ${waist - 13 * u}) scale(.6)">${phoenixMedallion()}</g></g>`;
   }
   if (["wonsam", "hwarot", "noui"].includes(kind)) {
-    // Sleeve decoration follows the pose's native sleeve area, outside the bodice.
-    art += `<g clip-path="url(#${sleeveClip})">${
-      kind === "noui"
-        ? `<rect width="360" height="360" fill="${s.bottom}"/><rect width="360" height="360" fill="url(#${pattern})"/>`
-        : `<path d="M0 ${y + 5 * u}H360V${y + 16 * u}H0Z" fill="#EFD06F"/><path d="M0 ${y + 16 * u}H360V${y + 27 * u}H0Z" fill="#315F9F"/><path d="M0 ${y + 27 * u}H360V${y + 38 * u}H0Z" fill="#B83850"/><path d="M0 ${y + 38 * u}H360V360H0Z" fill="#FFF9EA"/>${kind === "hwarot" ? `<rect width="360" height="360" fill="url(#${pattern})"/>` : ""}`
-    }</g>`;
     art += garmentBelt(f, s.layer, kind !== "wonsam");
     art += `<path d="M${x} ${waist + 8 * u}L${x - 8 * u} ${hem - 5}L${x + 5 * u} ${hem - 3}L${x + 5 * u} ${waist + 7 * u}Z" fill="${s.layer}" stroke="#453D32" stroke-width=".7"/>`;
   }
@@ -38,23 +22,11 @@ function robeDetails(s, kind, f, pattern, sleeveClip) {
     art += garmentRibbon({ ...f, y: waist - 4 * u }, s.layer, true);
   if (kind === "military") {
     art += garmentBelt(f, s.layer);
-    art += skirtFolds(
-      { ...f, b: { ...b, y: waist + 6, h: Math.max(1, hem - waist - 6) } },
-      true,
-    );
     art += `<path d="M${x - 5 * u} ${waist}L${x - 22 * u} ${waist + 42 * u}L${x - 15 * u} ${waist + 44 * u}L${x} ${waist}" fill="${s.layer}"/>`;
   }
-  if (!["jeogori", "samhoejang", "dangui"].includes(kind)) {
-    art += `<g fill="none" stroke="${GARMENT_INK.color}" stroke-width="${GARMENT_INK.seam}" opacity=".35">${[-1, 0, 1].map((side) => `<path d="M${x + side * 18 * u} ${waist + 11 * u}Q${x + side * 25 * u} ${(waist + hem) / 2} ${x + side * 30 * u} ${hem - 5}"/>`).join("")}</g>`;
-  }
   art += courtGarmentDetails(s, kind, f);
-  art += garmentCollar(f, "#FFF9EA", ["dragon", "official"].includes(kind));
   art += rankBadge(f, kind, s.layer, s.outfit === "prince");
   if (["jeogori", "dangui", "samhoejang"].includes(kind))
     art += garmentRibbon(f, s.layer, kind === "dangui");
-  if (kind === "samhoejang") {
-    art += garmentCollar(f, s.layer);
-    art += `<path d="M${t.x + 8 * u} ${waist - 15 * u}V${waist + 4 * u}H${t.x + 17 * u}V${waist - 15 * u}ZM${t.x + t.w - 19 * u} ${waist - 15 * u}V${waist + 4 * u}H${t.x + t.w - 10 * u}V${waist - 15 * u}Z" fill="${s.layer}"/>`;
-  }
   return art;
 }

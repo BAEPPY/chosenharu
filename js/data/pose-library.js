@@ -2,6 +2,7 @@
 
 // Reviewed poses with complete rendering modules.
 window.LIBRARY_POSES = [
+  { alias: "resting_02", label: "옆으로 누워 쉬기", group: "lying" },
   {
     alias: "cheering_04",
     label: "두 팔 들어 기뻐하기",

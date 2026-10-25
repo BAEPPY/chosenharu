@@ -4,6 +4,14 @@ document.addEventListener("click", async (e) => {
   const b = e.target.closest("button");
   if (!b || b.disabled) return;
   const d = b.dataset;
+  if (d.poseGroup) {
+    openPoseGroup(d.poseGroup);
+    return;
+  }
+  if (d.poseTurn) {
+    turnPose(Number(d.poseTurn));
+    return;
+  }
   if (d.drawIndex !== undefined) {
     selectDraw(Number(d.drawIndex));
     return;
@@ -54,7 +62,7 @@ document.addEventListener("click", async (e) => {
     selectedDraw = -1;
     $("#modal").close();
     persist();
-    go(1);
+    go(FLOW.IDENTITY);
     return;
   }
   if (d.delete) {
@@ -78,6 +86,12 @@ document.addEventListener("click", async (e) => {
     return;
   }
   switch (d.action) {
+    case "confirmPose":
+      confirmPose();
+      break;
+    case "changePose":
+      go(FLOW.POSE);
+      break;
     case "home":
       showHome();
       break;
@@ -161,8 +175,8 @@ document.addEventListener("click", async (e) => {
       break;
     case "board":
       if ($("#modal").open) $("#modal").close();
-      if (step !== 5) returnStep = step;
-      go(5);
+      if (step !== FLOW.BOARD) returnStep = step;
+      go(FLOW.BOARD);
       break;
     case "backFromBoard":
       go(returnStep);
@@ -170,8 +184,8 @@ document.addEventListener("click", async (e) => {
     case "addCurrent":
       if (saveRecord(true)) {
         addToBoard(state.id);
-        returnStep = 4;
-        go(5);
+        returnStep = FLOW.CARD;
+        go(FLOW.BOARD);
       }
       break;
     case "addAll":
@@ -271,6 +285,7 @@ window.addEventListener("popstate", () => {
     showHome(false);
     return;
   }
-  const n = hash === "#classroom" ? 5 : Number(hash.replace("#step-", "")) - 1;
-  go(Number.isInteger(n) && n >= 0 && n <= 5 ? n : 0, false);
+  const n =
+    hash === "#classroom" ? FLOW.BOARD : Number(hash.replace("#step-", "")) - 1;
+  go(Number.isInteger(n) && n >= 0 && n <= FLOW.BOARD ? n : 0, false);
 });

@@ -3,11 +3,15 @@
 function go(n, push = true) {
   if (spinning) return;
   landing = false;
-  if (n > 0 && n < 5 && !state.status) {
+  if (n > 0 && n < FLOW.BOARD && !state.status) {
     toast("먼저 신분 돌림판을 돌려 주세요.");
     return;
   }
-  if (n > 1 && n < 5 && !state.name.trim()) {
+  if (n > FLOW.POSE && n < FLOW.BOARD && !state.poseConfirmed) {
+    toast("동작을 먼저 선택해 주세요.");
+    return;
+  }
+  if (n > FLOW.IDENTITY && n < FLOW.BOARD && !state.name.trim()) {
     toast("인물 이름을 먼저 정해 주세요.");
     return;
   }
@@ -16,7 +20,7 @@ function go(n, push = true) {
     window.history.pushState(
       {},
       "",
-      n === 5 ? "#classroom" : "#step-" + (n + 1),
+      n === FLOW.BOARD ? "#classroom" : "#step-" + (n + 1),
     );
   persist();
   render();
@@ -26,11 +30,10 @@ function go(n, push = true) {
 
 function next() {
   if (step === 0) {
-    if (!state.name) suggestName();
-    go(1);
-  } else if (step === 3 && !state.story.trim())
+    go(FLOW.POSE);
+  } else if (step === FLOW.STORY && !state.story.trim())
     toast("하루 이야기를 한 문장 이상 적어 주세요.");
-  else if (step === 4) saveRecord();
+  else if (step === FLOW.CARD) saveRecord();
   else go(step + 1);
 }
 
