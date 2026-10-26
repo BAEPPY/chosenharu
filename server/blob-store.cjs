@@ -8,6 +8,9 @@ function blobStore(
       const result = await get(path(id), {
         access: "private",
         useCache: false,
+        // Compression changes large responses to weak HTTP ETags. Read the
+        // original representation so CAS can use the storage object's version.
+        headers: { "Accept-Encoding": "identity" },
         abortSignal: AbortSignal.timeout(12000),
       });
       if (!result) return null;
