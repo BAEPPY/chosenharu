@@ -1,230 +1,388 @@
-.is-home {
-  background: #f9e7c8 url("../images/village.jpg") center center/cover no-repeat;
-  min-height: 100svh;
-}
-
-.is-home .site-header {
-  position: absolute;
-  inset: 0 0 auto;
-  height: 76px;
-  background: transparent;
-  border: 0;
-  padding: 18px 28px;
-}
-
-.is-home .brand {
-  display: none;
-}
-
-.is-home .home-course {
-  display: block;
-  font-size: 15px;
-  font-weight: 700;
-}
-
-.is-home .top-actions > button {
-  background: #fffdf1dd;
-}
-
-.is-home .top-actions > button:first-child {
-  display: none;
-}
-
 .is-home main {
-  max-width: none;
-  padding: 0;
+  max-width: 1320px;
+  padding-top: 40px;
 }
-
-.is-home .chapter-bar,
-.is-home .site-footer {
+.is-home .chapter-bar {
   display: none;
 }
-
 .welcome {
-  position: relative;
-  min-height: 640px;
-  height: 100svh;
-  max-height: 1400px;
-  overflow: hidden;
+  display: grid;
+  grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.2fr);
+  align-items: center;
+  gap: 40px;
+  padding: 24px 0 50px;
+}
+.welcome-heading {
+  padding: 8px 0 8px 14px;
+}
+.welcome-heading .eyebrow {
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  margin-bottom: 23px;
+}
+.welcome-title-row {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+.welcome-title-row h1 {
+  font-family: var(--font-display);
+  font-size: clamp(44px, 5vw, 68px);
+  line-height: 1.25;
+  letter-spacing: -0.065em;
+  font-weight: 700;
+  margin: 0;
+  white-space: nowrap;
+}
+.title-seal {
+  border: 2px solid var(--color-cinnabar);
+  outline: 1px solid var(--color-cinnabar);
+  outline-offset: -5px;
+  color: var(--color-cinnabar);
+  font: 700 12px/1.4 var(--font-display);
+  padding: 9px 7px;
+  transform: rotate(-5deg);
   text-align: center;
 }
-
-.welcome-heading {
-  position: absolute;
-  top: 12%;
-  left: 0;
-  right: 0;
-  z-index: 3;
+.welcome-intro {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2.1vw, 29px);
+  line-height: 1.65;
+  margin: 22px 0 16px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
 }
-
-.welcome-heading p {
-  font-size: 17px;
-  letter-spacing: 0.02em;
-  margin: 0 0 12px;
+.welcome-intro em {
+  font-style: normal;
+  color: var(--green);
+  text-decoration: underline;
+  text-decoration-color: #aeb693;
+  text-underline-offset: 7px;
+  text-decoration-thickness: 2px;
 }
-
-.welcome-heading h1 {
-  font-size: clamp(48px, 6vw, 76px);
-  line-height: 1.15;
-  color: #080808;
-  font-weight: 900;
-  letter-spacing: -3px;
+.welcome-description {
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--muted);
   margin: 0;
 }
-
-.welcome-figure {
-  position: absolute;
-  width: 360px;
-  height: 640px;
-  left: 50%;
-  top: 25%;
-  margin-left: -180px;
-  transform-origin: top center;
-}
-
-.welcome-sprite {
-  position: absolute;
-  inset: 0;
-  background: url("../images/welcome-sprite.png") 0 0/4320px 640px no-repeat;
-  animation: welcome-motion 3s steps(11) infinite;
-}
-
-.welcome-speech {
-  position: absolute;
-  top: 20px;
-  right: -12px;
-  width: 130px;
-  z-index: 1;
-}
-
-.welcome-bottom {
-  position: absolute;
-  bottom: max(22px, env(safe-area-inset-bottom));
-  left: 0;
-  right: 0;
-  z-index: 4;
+.welcome-actions {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
   gap: 8px;
+  margin-top: 28px;
 }
-
 .start-button {
-  width: 300px;
-  max-width: calc(100vw - 64px);
-  height: 58px;
-  border-radius: 6px;
-  background: #315859;
-  color: #fff;
-  font-size: 23px;
-  font-weight: 800;
-  box-shadow: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 62px;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 13px 22px;
 }
-
-.welcome-credit {
+.start-button > span:last-child {
+  margin-left: 18px;
+}
+.welcome-actions .text-button {
+  font-size: 13px;
+  margin-left: 6px;
+}
+.welcome-subject {
   font-size: 11px;
-  color: #263e40;
-  text-decoration: underline;
-  padding: 3px 12px;
-  background: #f9e7c8cc;
-  border-radius: 2px;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+  margin: 19px 0 0;
 }
-
-@keyframes welcome-motion {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: -3960px 0;
-  }
+.welcome-subject span {
+  padding: 0 7px;
 }
-
-@media (min-width: 1400px) {
-  .welcome-figure {
-    transform: scale(1.1);
-    top: 24%;
-  }
+.welcome-art {
+  position: relative;
+  margin: 0;
+  padding: 8px;
+  border: 1px solid #a48b65;
+  background: var(--paper);
+  box-shadow: 6px 7px 0 #d4c3a34a;
+  transform: rotate(1deg);
 }
-
-@media (max-height: 750px) and (min-width: 761px) {
+.welcome-art > img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.welcome-people {
+  position: absolute;
+  inset: 8px 8px 44px;
+}
+.welcome-person {
+  position: absolute;
+  width: 24%;
+}
+.welcome-person svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.person-0 {
+  left: 27%;
+  bottom: 2%;
+}
+.person-1 {
+  left: 56%;
+  bottom: 9%;
+}
+.person-2 {
+  right: 0;
+  bottom: 0;
+}
+.welcome-art figcaption {
+  font-size: 11px;
+  line-height: 1.7;
+  padding: 12px 4px 3px;
+  text-align: center;
+  color: var(--muted);
+}
+.welcome-art figcaption span {
+  color: var(--color-cinnabar);
+  font-weight: 700;
+  margin-right: 10px;
+}
+.learning-path {
+  padding: 36px 14px 38px;
+  border-top: 3px double var(--line);
+  border-bottom: 1px solid var(--line);
+}
+.section-caption {
+  text-align: center;
+}
+.section-caption .eyebrow {
+  font-size: 11px;
+  margin-bottom: 10px;
+}
+.section-caption h2 {
+  font-size: 24px;
+  margin: 0;
+}
+.learning-path ol {
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 28px 0 0;
+  gap: 26px;
+}
+.learning-path li {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 4px 16px;
+}
+.learning-path li + li {
+  border-left: 1px solid var(--line);
+}
+.learning-path li > .ui-icon {
+  width: 92px;
+  height: 92px;
+  flex: 0 0 92px;
+}
+.path-number {
+  color: var(--color-cinnabar);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  font-weight: 700;
+}
+.learning-path h3 {
+  font-size: 18px;
+  margin: 6px 0 8px;
+  font-family: var(--font-display);
+}
+.learning-path p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.8;
+}
+.home-teacher {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  padding: 28px 32px;
+  margin-top: 30px;
+  background: #e1e5d5;
+  border: 1px solid #c4cbb3;
+}
+.home-teacher-title {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+.home-teacher-title > .ui-icon {
+  width: 100px;
+  height: 100px;
+  flex: 0 0 100px;
+}
+.home-teacher .eyebrow {
+  margin-bottom: 7px;
+}
+.home-teacher h2 {
+  font-size: 23px;
+  margin: 0 0 10px;
+}
+.home-teacher p:not(.eyebrow) {
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.7;
+  color: var(--muted);
+}
+.home-teacher > button {
+  white-space: nowrap;
+}
+@media (max-width: 1050px) {
+  .welcome {
+    gap: 20px;
+  }
   .welcome-heading {
-    top: 12%;
+    padding-left: 0;
   }
-  .welcome-heading h1 {
-    font-size: 57px;
+  .welcome-title-row {
+    gap: 12px;
   }
-  .welcome-figure {
-    top: 24%;
-    transform: scale(0.82);
+  .welcome-title-row h1 {
+    font-size: 48px;
   }
-  .welcome-heading p {
-    font-size: 15px;
+  .welcome-intro {
+    font-size: 24px;
+  }
+  .learning-path li {
+    padding: 0;
+    gap: 10px;
+  }
+  .learning-path li > .ui-icon {
+    width: 70px;
+    height: 70px;
+    flex-basis: 70px;
+  }
+  .learning-path ol {
+    gap: 15px;
+  }
+  .home-teacher {
+    padding: 24px;
+  }
+  .home-teacher h2 {
+    font-size: 20px;
   }
 }
-
 @media (max-width: 760px) {
-  .is-home .site-header {
-    height: 68px;
-    padding: 14px 18px;
-  }
-  .is-home .home-course {
-    font-size: 13px;
-  }
-  .is-home .top-actions > button:nth-child(2) {
-    display: none;
-  }
-  .is-home .top-actions .icon-btn {
-    width: 38px;
-    font-size: 20px;
-    background: #fff9;
+  .is-home main {
+    padding-top: 22px;
   }
   .welcome {
-    min-height: 620px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    padding: 14px 0 30px;
   }
   .welcome-heading {
-    top: 13%;
+    text-align: center;
   }
-  .welcome-heading p {
-    font-size: 13px;
-    margin-bottom: 10px;
+  .welcome-heading .eyebrow {
+    font-size: 11px;
+    margin-bottom: 14px;
   }
-  .welcome-heading h1 {
-    font-size: 48px;
-    letter-spacing: -2px;
+  .welcome-title-row {
+    justify-content: center;
+    gap: 14px;
   }
-  .welcome-figure {
-    top: 27%;
-    transform: scale(0.95);
+  .welcome-title-row h1 {
+    font-size: clamp(42px, 11vw, 60px);
   }
-  .welcome-bottom {
-    bottom: max(18px, env(safe-area-inset-bottom));
-    gap: 7px;
+  .welcome-intro {
+    font-size: 23px;
+    margin: 17px 0 12px;
+  }
+  .welcome-description {
+    font-size: 14px;
+  }
+  .welcome-actions {
+    align-items: center;
+    margin-top: 23px;
   }
   .start-button {
+    font-size: 16px;
+    padding: 12px 18px;
+    min-height: 56px;
+    max-width: 100%;
+  }
+  .welcome-subject {
+    margin-top: 12px;
+  }
+  .welcome-art {
+    margin: 0 5px;
+  }
+  .welcome-art figcaption {
+    font-size: 10px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .welcome-art figcaption span {
+    margin-right: 5px;
+  }
+  .learning-path {
+    padding: 28px 4px;
+  }
+  .section-caption h2 {
     font-size: 21px;
-    height: 56px;
-    width: 264px;
+    line-height: 1.5;
   }
-  .welcome-speech {
-    right: 0;
-    top: 10px;
-    width: 130px;
+  .learning-path ol {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+    max-width: 360px;
+    margin: 23px auto 0;
   }
-  .is-home {
-    background-size: auto 100svh;
-    background-position: center top;
+  .learning-path li {
+    gap: 24px;
+    padding: 10px;
   }
-}
-
-@media (max-width: 380px) {
-  .welcome-heading h1 {
-    font-size: 43px;
+  .learning-path li + li {
+    border-left: 0;
+    border-top: 1px dashed var(--line);
+    padding-top: 20px;
   }
-  .welcome-figure {
-    transform: scale(0.86);
-    top: 27%;
+  .learning-path li > .ui-icon {
+    width: 85px;
+    height: 85px;
+    flex-basis: 85px;
   }
-  .welcome-heading p {
-    font-size: 12px;
+  .learning-path h3 {
+    font-size: 18px;
+  }
+  .home-teacher {
+    display: block;
+    padding: 20px;
+    margin-top: 24px;
+  }
+  .home-teacher-title {
+    gap: 14px;
+    align-items: start;
+  }
+  .home-teacher-title > .ui-icon {
+    width: 62px;
+    height: 62px;
+    flex-basis: 62px;
+  }
+  .home-teacher h2 {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+  .home-teacher p:not(.eyebrow) {
+    font-size: 13px;
+  }
+  .home-teacher > button {
+    margin: 20px 0 0;
+    width: 100%;
   }
 }

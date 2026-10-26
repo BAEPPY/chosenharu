@@ -33,7 +33,7 @@ function wheelSvg() {
           : "")
       );
     })
-    .join("")}<circle cx="300" cy="300" r="59" fill="#fffdf7"/></svg>`;
+    .join("")}<circle cx="300" cy="300" r="59" fill="#fbf5e7"/></svg>`;
 }
 
 function wheelLegend() {
@@ -57,7 +57,7 @@ function renderWheel() {
   const canResume = !selected && !!state.status;
   $("#page").innerHTML =
     `<section class="roulette-page" aria-labelledby="rouletteTitle">
-    <div class="roulette-heading"><h1 id="rouletteTitle">나는 어떤 사람일까?</h1><p>최대 네 번 뽑고, 마음에 드는 신분을 골라요.</p></div>
+    <div class="roulette-heading"><div class="chapter-kicker">${icon("draw")}<span>활동 01 · 신분 뽑기</span></div><h1 id="rouletteTitle">나는 어떤 사람일까?</h1><p>최대 네 번 뽑고, 마음에 드는 신분을 골라요.</p></div>
     <div class="roulette-layout">
       <div class="roulette-stage"><div class="roulette-frame">
         <div id="wheel" class="roulette-disc" style="transform:rotate(${spinning ? wheelStart : rotation}deg)">${wheelSvg()}</div>

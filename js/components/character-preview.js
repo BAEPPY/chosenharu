@@ -1,7 +1,25 @@
 "use strict";
 
 function heading(k, title, sub) {
-  return `<h1>${title}</h1><p class="lead">${sub}</p>`;
+  const titles = [
+    "신분 뽑기",
+    "동작 정하기",
+    "인물 정하기",
+    "옷차림 꾸미기",
+    "하루 이야기",
+    "인물 완성",
+    "풍속화 마당",
+  ];
+  const art = [
+    "draw",
+    "fan",
+    "hanbok",
+    "palette",
+    "book",
+    "scroll",
+    "classroom",
+  ];
+  return `<div class="chapter-kicker">${icon(art[step])}<span>${step < FLOW.BOARD ? "활동 " + String(step + 1).padStart(2, "0") + " · " : ""}${titles[step] || "우리 반 풍속화"}</span></div><h1>${title}</h1><p class="lead">${sub}</p>`;
 }
 
 function portrait() {

@@ -105,3 +105,7 @@ Vercel: Framework Preset `Other`, Root Directory 저장소 루트, Install Comma
 - `npm run test:identity-garments`: 단계 표시 클릭 방지, 80명 선택·추천, 25종 의상 × 36개 동작(900조합), 같은 색에서도 다른 의상 형태, 색상 저장·복원, 미리보기/PNG 일치, 관모와 모바일 확인
 - `npm run assets:poses`: 원본 레이어에서 피부 채색 마스크를 계산하고 동작별 실행 모듈 재생성 (Chromium 필요, 배포 시 실행할 필요 없음)
 - 브라우저 테스트는 Python 정적 서버를 직접 시작하고 종료합니다. `CHROMIUM_PATH`로 Chromium 실행 파일 위치를 지정할 수 있습니다 (기본 `/usr/bin/chromium`).
+
+## 한옥 역사 작업실 디자인
+
+한지·황토·나무·빛바랜 녹색을 중심으로 시작 화면, 여섯 활동 단계, 작품 보관함, 공동 풍속화와 교사용 화면을 구성했습니다. 이미지 생성으로 제작한 한옥 마당, 처마·창호, 종이·나뭇결과 12종 학습 도구 그림은 `images/ui/`에 있습니다. 제목에는 고운바탕, 읽기·입력에는 Pretendard를 사용합니다. 생성 기록과 재료별 적용 기준은 `images/ui/README.md`, 공통 디자인은 `styles/craft.css`에서 관리합니다.
