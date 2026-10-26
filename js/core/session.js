@@ -27,6 +27,7 @@ function writeActivity(value) {
 }
 
 function resetActivityState() {
+  if (typeof leaveSharedView === "function") leaveSharedView();
   state = { ...DEFAULT };
   saved = [];
   board = [];

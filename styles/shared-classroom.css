@@ -1,0 +1,250 @@
+.teacher-start {
+  display: block;
+  margin: 16px auto 0;
+  font-size: 14px;
+  color: #315859;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.teacher-home {
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 20px 0;
+}
+.teacher-home h1 {
+  font-size: 34px;
+  line-height: 1.4;
+}
+.create-classroom {
+  display: flex;
+  gap: 16px;
+  align-items: end;
+  background: #fffdf6;
+  border: 1px solid #dfdece;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 32px 0;
+}
+.create-classroom .field {
+  flex: 1;
+  margin: 0;
+}
+.create-classroom button {
+  min-height: 48px;
+  margin-bottom: 2px;
+  white-space: nowrap;
+}
+.teacher-guide {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin: 28px 0 40px;
+}
+.teacher-guide strong {
+  font-size: 16px;
+  color: #315859;
+}
+.teacher-guide p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #62665c;
+}
+.teacher-rooms {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 20px 0;
+}
+.teacher-rooms button {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 12px;
+  padding: 20px;
+}
+.teacher-rooms span {
+  font-size: 12px;
+  font-weight: 400;
+}
+.shared-connection {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  font-size: 13px;
+  margin: 0 0 18px;
+}
+#sharedStatus {
+  color: #357459;
+}
+#sharedStatus::before {
+  content: "";
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  margin-right: 8px;
+}
+#sharedStatus.disconnected {
+  color: #9f603e;
+}
+.paused-note {
+  color: #8e533f;
+  font-size: 13px;
+}
+.shared-board-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  gap: 22px;
+  align-items: start;
+}
+.shared-classroom .board-toolbar {
+  justify-content: flex-start;
+}
+.shared-classroom .board-toolbar > span {
+  margin-right: 0;
+}
+.person-inspector {
+  padding: 22px;
+  border: 1px solid #dddccf;
+  border-radius: 10px;
+  background: #fffdf7;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.person-inspector h2 {
+  font-size: 25px;
+  margin: 8px 0 20px;
+}
+.inspector-empty {
+  text-align: center;
+  padding: 30px 0;
+}
+.inspector-empty > span {
+  font-size: 35px;
+}
+.inspector-empty h2 {
+  font-size: 19px;
+  margin: 18px 0;
+}
+.inspector-empty p {
+  font-size: 14px;
+  color: #777;
+  line-height: 1.8;
+}
+.inspector-portrait {
+  width: 140px;
+  margin: 0 auto;
+}
+.inspector-portrait svg {
+  width: 100%;
+  height: auto;
+}
+.person-details {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.8;
+}
+.person-details dt {
+  font-size: 12px;
+  color: #71806a;
+  margin-top: 16px;
+}
+.person-details dd {
+  margin: 3px 0 0;
+  white-space: pre-wrap;
+}
+.inspector-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+.inspector-actions button {
+  font-size: 12px;
+  padding: 10px;
+}
+.shared-storage-note {
+  border-top: 1px solid #dddccf;
+  padding-top: 18px;
+}
+.shared-classroom .board-person:not(.dragging) {
+  transition:
+    left 0.16s linear,
+    top 0.16s linear;
+}
+@media (max-width: 1100px) {
+  .shared-board-layout {
+    grid-template-columns: 1fr;
+  }
+  .person-inspector {
+    max-width: none;
+  }
+  .inspector-portrait {
+    float: right;
+  }
+  .person-details {
+    max-width: 650px;
+  }
+}
+@media (max-width: 600px) {
+  .teacher-home h1 {
+    font-size: 27px;
+  }
+  .create-classroom {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 18px;
+  }
+  .teacher-guide {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .teacher-guide p {
+    margin: 8px 0;
+  }
+  .teacher-rooms {
+    grid-template-columns: 1fr;
+  }
+  .shared-classroom .board-heading h1 {
+    font-size: 24px;
+  }
+  .shared-connection {
+    gap: 12px;
+    font-size: 12px;
+  }
+  .inspector-portrait {
+    width: 110px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .shared-classroom .board-person {
+    transition: none !important;
+  }
+}
+.shared-board-layout > div {
+  min-width: 0;
+}
+.is-teacher .chapter-bar {
+  display: none;
+}
+.shared-classroom .board-person.readonly {
+  cursor: pointer;
+}
+@media (max-width: 1100px) {
+  .shared-board-layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+@media (max-width: 380px) {
+  .site-header {
+    gap: 8px;
+  }
+  .top-actions {
+    gap: 4px;
+  }
+  .top-actions > .teacher-nav {
+    padding: 8px;
+  }
+}

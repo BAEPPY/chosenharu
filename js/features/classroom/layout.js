@@ -40,7 +40,7 @@ function freePosition(item, others) {
 }
 
 function boardInDepthOrder() {
-  return [...board].sort((a, b) => a.y - b.y);
+  return [...classroomBoard()].sort((a, b) => a.y - b.y);
 }
 
 function resolveBoard() {
@@ -49,6 +49,7 @@ function resolveBoard() {
 }
 
 function addToBoard(id, quiet = false) {
+  if (sharedRoom) return sharedAddCharacter(saved.find((s) => s.id === id));
   if (board.some((b) => b.id === id)) {
     if (!quiet) toast("이미 풍속화에 있는 인물이에요.");
     return false;
@@ -76,6 +77,7 @@ function addToBoard(id, quiet = false) {
 }
 
 function arrangeBoard() {
+  if (sharedRoom) return sharedOperation("arrange");
   const fixed = board.filter((x) => x.locked);
   const moving = board.filter((x) => !x.locked),
     placed = [...fixed];
@@ -92,7 +94,12 @@ function arrangeBoard() {
   toast("고정한 인물은 그대로 두고 나머지를 정돈했어요.");
 }
 
-function finishMove() {
+function finishMove(item) {
+  if (sharedRoom) {
+    queueSharedMove(item, true);
+    sharedDragFinished();
+    return;
+  }
   persist();
   renderBoard();
 }

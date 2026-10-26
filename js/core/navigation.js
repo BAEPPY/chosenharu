@@ -20,7 +20,7 @@ function go(n, push = true) {
     window.history.pushState(
       {},
       "",
-      n === FLOW.BOARD ? "#classroom" : "#step-" + (n + 1),
+      n === FLOW.BOARD ? roomHash() : "#step-" + (n + 1),
     );
   persist();
   render();
