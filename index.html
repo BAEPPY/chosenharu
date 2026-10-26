@@ -3,15 +3,21 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#F7F5EF" />
+    <meta name="theme-color" content="#F1E6CF" />
     <meta
       name="description"
       content="신분과 직업을 정하고, 조선 시대 인물의 하루를 상상하는 초등 사회 창작 활동."
     />
     <title>조선의 하루 · 우리 반 풍속화</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="preload" href="images/village.jpg" as="image" />
-    <link rel="preload" href="images/welcome-sprite.png" as="image" />
+    <link rel="preload" href="images/ui/hero.webp" as="image" />
+    <link
+      rel="preload"
+      href="fonts/GowunBatang-Bold.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin
+    />
   </head>
   <body class="is-home">
     <a class="skip" href="#main">활동으로 건너뛰기</a>
@@ -21,17 +27,29 @@
         data-action="home"
         aria-label="조선의 하루 처음 화면"
       >
-        조선의 하루</button
-      ><span class="home-course">우리 반 사회 시간</span>
+        <span class="brand-house"
+          ><svg viewBox="0 135 2172 380" aria-hidden="true">
+            <image href="images/ui/eaves.webp" width="2172" height="724" /></svg
+          ><span>조선의 하루</span></span
+        >
+        <small>우리 반 역사 작업실</small>
+      </button>
       <nav class="top-actions" aria-label="수업 도구">
         <button data-action="gallery">
-          <span class="toss-icon" aria-hidden="true">🖼️</span> 인물 모음
-          <span id="savedCount">0</span></button
-        ><button data-action="board">
-          <span class="toss-icon" aria-hidden="true">🏡</span> 우리 반 풍속화</button
-        ><button data-action="teacherHome" class="teacher-nav">교사용</button
-        ><button data-action="guide" class="icon-btn" aria-label="수업 도움말">
-          <span class="toss-icon" aria-hidden="true">💡</span>
+          <span class="ui-icon art-gallery" aria-hidden="true"></span
+          ><span>인물 모음 <b id="savedCount">0</b></span>
+        </button>
+        <button data-action="board">
+          <span class="ui-icon art-classroom" aria-hidden="true"></span
+          ><span><span class="nav-board-prefix">우리 반 </span>풍속화</span>
+        </button>
+        <button data-action="teacherHome" class="teacher-nav">
+          <span class="ui-icon art-teacher" aria-hidden="true"></span
+          ><span>교사용</span>
+        </button>
+        <button data-action="guide" class="icon-btn" aria-label="수업 도움말">
+          <span class="ui-icon art-help" aria-hidden="true"></span
+          ><span class="nav-help-label">도움말</span>
         </button>
       </nav>
     </header>
@@ -40,22 +58,16 @@
         <nav id="steps" aria-label="만들기 단계"></nav>
       </div>
       <div id="page">
-        <section class="welcome">
-          <div class="welcome-heading">
-            <p>사회 시간에 만나는 옛사람들의 생활</p>
-            <h1>조선의 하루</h1>
-          </div>
-          <div class="welcome-figure" aria-hidden="true">
-            <div class="welcome-sprite"></div>
-            <img class="welcome-speech" src="images/speech.png" alt="" />
-          </div>
-          <div class="welcome-bottom">
-            <button class="start-button" disabled>그림 불러오는 중…</button>
-          </div>
+        <section class="initial-page" aria-busy="true">
+          <h1>조선의 하루</h1>
+          <p role="status">우리들의 역사 작업실을 열고 있어요…</p>
         </section>
       </div>
     </main>
     <footer class="site-footer">
+      <span class="footer-motto"
+        >옛사람을 이해하는 한 걸음, 나의 하루에서.</span
+      >
       <button data-action="sources">자료와 그림 출처</button
       ><button data-action="guide">저장·수업 도움말</button>
     </footer>

@@ -98,12 +98,17 @@ const root = path.resolve(__dirname, "..");
     assert.ok(
       await page.evaluate(() => document.fonts.check("16px Pretendard")),
     );
-    assert.equal(
+    assert.ok(
+      await page.evaluate(() =>
+        document.fonts.check("700 16px 'Gowun Batang'"),
+      ),
+    );
+    assert.match(
       await page
-        .locator(".toss-icon")
+        .locator(".ui-icon")
         .first()
-        .evaluate((el) => getComputedStyle(el).fontFamily),
-      "Tossface, sans-serif",
+        .evaluate((el) => getComputedStyle(el).backgroundImage),
+      /images\/ui\/icons.webp/,
     );
     const screenshotDir = process.env.SCREENSHOT_DIR || "/tmp/joseon-qa";
     fs.mkdirSync(screenshotDir, { recursive: true });

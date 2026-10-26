@@ -35,3 +35,9 @@ https://contents.history.go.kr/front/nh/view.do?levelId=nh_031_0030_0040_0030
 ## 완성 카드와 우리 반 풍속화 배경
 
 `images/scenes/`의 개인 배경 6장과 단체 마을 1장은 사용자가 제공한 풍속화 참고 이미지의 색감·간결한 배치 방향을 바탕으로 OpenAI 이미지 생성 기능을 사용해 새로 제작했습니다. 기존 인물을 합성하기 위해 사람이 없는 풍경으로 생성했으며, 웹용 WebP로 압축했습니다. 파일별 용도와 생성 기록은 `images/scenes/README.md`에 있습니다.
+
+## 한옥 역사 작업실 UI (2026-10-26)
+
+`images/ui/`의 한옥 마당, 한지·나뭇결, 처마·창호, 12종 학습 도구 아이콘은 사용자 참고 사진에서 건축·재료의 특징을 참고하여 OpenAI 이미지 생성 기능으로 새로 제작했습니다. UI에는 참고 사진 원본을 사용하지 않았습니다. 제작 기록과 적용 범위는 `images/ui/README.md`에 있습니다.
+
+제목 글꼴 고운바탕 Bold는 Yanghee Ryu가 제작한 SIL Open Font License 1.1 글꼴입니다. Google Fonts의 `ofl/gowunbatang/GowunBatang-Bold.ttf`를 내용 변경 없이 WOFF2로 변환했습니다. 라이선스 전문은 `fonts/GowunBatang-LICENSE.txt`에 있습니다.
