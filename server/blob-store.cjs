@@ -13,7 +13,8 @@ function blobStore(
       if (!result) return null;
       return {
         data: JSON.parse(await new Response(result.stream).text()),
-        etag: result.blob.etag,
+        // HTTP GET returns a quoted ETag; the write API expects the opaque value.
+        etag: result.blob.etag.replace(/^"(.+)"$/, "$1"),
       };
     },
     async write(id, data, etag) {
