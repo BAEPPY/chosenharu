@@ -12,7 +12,8 @@
     "test:pose-workflow": "node tests/pose-workflow.cjs",
     "test:garment-anatomy": "node tests/garment-anatomy.cjs",
     "test:garment-drape": "node tests/garment-drape.cjs",
-    "test:garment-props": "node tests/garment-props.cjs"
+    "test:garment-props": "node tests/garment-props.cjs",
+    "test:scenes": "node tests/scenes-session.cjs"
   },
   "devDependencies": {
     "playwright-core": "1.64.1"

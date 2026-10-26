@@ -92,13 +92,8 @@
   background: #e2e8d6bb;
 }
 
-.board-person.overlap {
-  background: #c9806c33;
-  border-color: #bb6a50;
-}
-
 .board-person.dragging {
-  z-index: 40;
+  z-index: 10000 !important;
   cursor: grabbing;
 }
 
@@ -208,6 +203,9 @@
   font-size: 22px;
   color: #54704f;
   font-family: var(--serif);
+  background: #fbf7eced;
+  padding: 6px 12px;
+  border-radius: 4px;
 }
 
 @media (max-width: 760px) {

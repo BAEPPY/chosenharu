@@ -72,5 +72,13 @@ function normalize(v) {
       ? v.poseConfirmed
       : !!(v.pose && (v.name || v.id));
   n.outfitVersion = 1;
+  if (
+    SCENES[v.scene] &&
+    v.scenePose === n.pose &&
+    scenesFor(n).includes(v.scene)
+  ) {
+    n.scene = v.scene;
+    n.scenePose = n.pose;
+  }
   return n;
 }

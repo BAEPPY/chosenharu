@@ -48,5 +48,20 @@ const DrawModel = (() => {
     }
     return statuses[weights.findLastIndex((weight) => weight > 0)];
   }
-  return { limit, restore, append, canSelect, pick };
+  function segments(statuses, weights) {
+    const total = weights.reduce((sum, weight) => sum + weight, 0);
+    let start = 0;
+    return statuses.map((status, index) => {
+      const fraction = weights[index] / total;
+      const segment = {
+        ...status,
+        fraction,
+        start,
+        end: start + fraction * 360,
+      };
+      start = segment.end;
+      return segment;
+    });
+  }
+  return { limit, restore, append, canSelect, pick, segments };
 })();

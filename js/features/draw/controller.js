@@ -35,12 +35,13 @@ function commitDraw(result) {
 function spin() {
   if (spinning || draws >= DrawModel.limit) return;
   spinning = true;
+  const epoch = sessionEpoch;
   const result = weightedStatus();
-  const matches = WHEEL_ENTRIES.map((id, index) =>
-    id === result.id ? index : -1,
-  ).filter((index) => index >= 0);
-  const size = 360 / WHEEL_ENTRIES.length;
-  const middle = (choose(matches) + 0.35 + Math.random() * 0.3) * size;
+  const segment = DrawModel.segments(L.statuses, weights).find(
+    (s) => s.id === result.id,
+  );
+  const middle =
+    segment.start + (0.2 + Math.random() * 0.6) * (segment.end - segment.start);
   const target = (360 - middle) % 360;
   wheelStart = rotation;
   rotation += 360 * 7 + ((target - (rotation % 360) + 360) % 360);
@@ -55,6 +56,7 @@ function spin() {
     }),
   );
   setTimeout(() => {
+    if (!checkSession() || epoch !== sessionEpoch) return;
     spinning = false;
     commitDraw(result);
     render();

@@ -43,7 +43,10 @@ function render() {
   if (step === FLOW.IDENTITY) content = identityHtml();
   if (step === FLOW.LOOK) content = lookHtml();
   if (step === FLOW.STORY) content = storyHtml();
-  if (step === FLOW.CARD) content = cardHtml();
+  if (step === FLOW.CARD) {
+    if (ensureScene(state)) persist();
+    content = cardHtml();
+  }
   $("#page").innerHTML =
     `<div class="work-layout">${portrait()}<section class="chapter-content">${content}${footer()}</section></div>`;
 }

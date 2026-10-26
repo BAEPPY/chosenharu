@@ -13,3 +13,4 @@ if (window.location.hash === "#classroom") {
 }
 resolveBoard();
 render();
+bindSessionActivity();

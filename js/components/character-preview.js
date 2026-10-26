@@ -5,7 +5,7 @@ function heading(k, title, sub) {
 }
 
 function portrait() {
-  return `<aside class="portrait"><div class="portrait-top"><span>${esc(statusOf(state)?.name || "나의 인물")}</span></div><div id="avatar">${avatarSvg(state)}</div><div class="portrait-caption"><span id="previewRole">${esc(roleOf(state)?.name || "")}</span><h2 id="previewName">${esc(state.name || "어떤 사람을 만나게 될까요?")}</h2></div></aside>`;
+  return `<aside class="portrait ${step === FLOW.CARD ? "portrait-scene" : ""}"><div class="portrait-top"><span>${esc(statusOf(state)?.name || "나의 인물")}</span></div><div id="avatar">${step === FLOW.CARD ? sceneSvg(state) : avatarSvg(state)}</div><div class="portrait-caption"><span id="previewRole">${esc(roleOf(state)?.name || "")}</span><h2 id="previewName">${esc(state.name || "어떤 사람을 만나게 될까요?")}</h2></div></aside>`;
 }
 
 function footer() {

@@ -86,6 +86,9 @@ document.addEventListener("click", async (e) => {
     return;
   }
   switch (d.action) {
+    case "changeScene":
+      changeScene();
+      break;
     case "confirmPose":
       confirmPose();
       break;

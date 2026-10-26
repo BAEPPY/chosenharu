@@ -36,12 +36,14 @@ function exportRecords(records, withBoard = false) {
 }
 
 async function importFiles(files) {
+  const epoch = sessionEpoch;
   try {
     let imported = [],
       positions = [];
     for (const f of files) {
       if (f.size > 2000000) throw Error("파일 하나는 2MB 이하여야 해요.");
       const data = JSON.parse(await f.text());
+      if (!checkSession() || epoch !== sessionEpoch) return;
       if (
         !["joseon-day-v1", "joseon-day-v2"].includes(data.format) ||
         !Array.isArray(data.records) ||

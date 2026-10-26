@@ -20,6 +20,8 @@ function cleanBoard(items, records) {
     }));
 }
 
+openSession();
+
 try {
   const data = JSON.parse(localStorage.getItem(KEY) || "null");
   if (data) {
@@ -63,6 +65,7 @@ try {
 }
 
 function persist() {
+  if (!checkSession()) return false;
   try {
     localStorage.setItem(
       KEY,
