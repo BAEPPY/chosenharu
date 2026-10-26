@@ -13,9 +13,18 @@
     "test:garment-anatomy": "node tests/garment-anatomy.cjs",
     "test:garment-drape": "node tests/garment-drape.cjs",
     "test:garment-props": "node tests/garment-props.cjs",
-    "test:scenes": "node tests/scenes-session.cjs"
+    "test:scenes": "node tests/scenes-session.cjs",
+    "test:classroom": "node tests/classroom-service.cjs && node tests/classroom-browser.cjs",
+    "dev": "node scripts/classroom-dev-server.cjs",
+    "verify:classroom-store": "node tests/classroom-live-store.cjs"
   },
   "devDependencies": {
     "playwright-core": "1.64.1"
+  },
+  "dependencies": {
+    "@vercel/blob": "2.8.2"
+  },
+  "overrides": {
+    "zod": "4.6.6"
   }
 }

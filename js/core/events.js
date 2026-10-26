@@ -51,8 +51,15 @@ document.addEventListener("click", async (e) => {
     render();
     return;
   }
+  if (d.openClassroom) {
+    const access = storedClassrooms().find(
+      (x) => x.id === d.openClassroom && x.role === "teacher",
+    );
+    if (access) await enterClassroom(access.id, access.token, "teacher");
+    return;
+  }
   if (d.add) {
-    addToBoard(d.add);
+    await addToBoard(d.add);
     return;
   }
   if (d.load) {
@@ -86,6 +93,21 @@ document.addEventListener("click", async (e) => {
     return;
   }
   switch (d.action) {
+    case "teacherHome":
+      showTeacherHome();
+      break;
+    case "retryClassroom":
+      restoreSharedRoute();
+      break;
+    case "shareStudents":
+      await copyClassroomLink();
+      break;
+    case "shareTeacher":
+      await copyClassroomLink(true);
+      break;
+    case "pauseClassroom":
+      await sharedOperation("pause", { paused: !sharedRoom.paused });
+      break;
     case "changeScene":
       changeScene();
       break;
@@ -171,7 +193,7 @@ document.addEventListener("click", async (e) => {
       if (saveRecord(true)) exportRecords([state]);
       break;
     case "exportAll":
-      exportRecords(saved, true);
+      exportRecords(step === FLOW.BOARD ? classroomRecords() : saved, true);
       break;
     case "import":
       $("#importFile").click();
@@ -182,11 +204,11 @@ document.addEventListener("click", async (e) => {
       go(FLOW.BOARD);
       break;
     case "backFromBoard":
-      go(returnStep);
+      go(sharedRoom && !state.status ? FLOW.STATUS : returnStep);
       break;
     case "addCurrent":
       if (saveRecord(true)) {
-        addToBoard(state.id);
+        if (!(await addToBoard(state.id))) break;
         returnStep = FLOW.CARD;
         go(FLOW.BOARD);
       }
@@ -194,18 +216,24 @@ document.addEventListener("click", async (e) => {
     case "addAll":
       for (const s of saved) {
         if (board.length >= 26) break;
-        addToBoard(s.id, true);
+        await addToBoard(s.id, true);
       }
       renderBoard();
       toast(board.length + "명을 풍속화에 배치했어요.");
       break;
     case "arrange":
-      arrangeBoard();
+      await arrangeBoard();
       break;
     case "boardPng":
       await exportBoardPng();
       break;
     case "lock": {
+      if (sharedRoom) {
+        const item = sharedRoom.board.find((p) => p.id === selectedBoard);
+        if (item)
+          await sharedOperation("lock", { id: item.id, locked: !item.locked });
+        break;
+      }
       const p = board.find((p) => p.id === selectedBoard);
       if (p) {
         p.locked = !p.locked;
@@ -215,6 +243,10 @@ document.addEventListener("click", async (e) => {
       break;
     }
     case "removeBoard":
+      if (sharedRoom) {
+        await sharedOperation("remove", { id: selectedBoard });
+        break;
+      }
       board = board.filter((p) => p.id !== selectedBoard);
       selectedBoard = "";
       persist();
@@ -283,6 +315,7 @@ $("#modal").addEventListener("click", (e) => {
 
 window.addEventListener("popstate", () => {
   if (spinning) return;
+  if (restoreSharedRoute()) return;
   const hash = window.location.hash;
   if (!hash || hash === "#home") {
     showHome(false);

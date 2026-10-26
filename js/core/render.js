@@ -1,6 +1,12 @@
 "use strict";
 
 function render() {
+  document.body.classList.toggle(
+    "is-teacher",
+    !landing &&
+      step === FLOW.BOARD &&
+      (sharedView === "teacher-home" || isTeacherRoom()),
+  );
   document.body.classList.toggle("is-home", landing);
   document.body.classList.toggle("is-roulette", !landing && step === 0);
   if (landing) {

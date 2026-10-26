@@ -1,7 +1,15 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
-  "buildCommand": "",
-  "installCommand": "",
-  "outputDirectory": "."
+  "buildCommand": "npm run verify:classroom-store",
+  "installCommand": "npm ci",
+  "outputDirectory": ".",
+  "regions": [
+    "icn1"
+  ],
+  "functions": {
+    "api/classrooms.js": {
+      "maxDuration": 30
+    }
+  }
 }

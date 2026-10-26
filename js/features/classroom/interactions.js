@@ -6,12 +6,13 @@ function bindBoard() {
   el.addEventListener("pointerdown", (e) => {
     const target = e.target.closest("[data-person]");
     if (!target || e.button !== 0) return;
-    const item = board.find((b) => b.id === target.dataset.person);
-    selectedBoard = item.id;
-    if (item.locked) {
+    const item = classroomBoard().find((b) => b.id === target.dataset.person);
+    selectBoardPerson(item.id);
+    if (item.locked || !canEditPerson(item)) {
       renderBoard();
       return;
     }
+    if (sharedRoom) sharedDragging = item.id;
     const bounds = el.getBoundingClientRect();
     drag = {
       item,
@@ -39,24 +40,31 @@ function bindBoard() {
     );
     d.target.style.left = d.item.x / 10 + "%";
     d.target.style.top = d.item.y / 6.2 + "%";
+    if (sharedRoom) queueSharedMove(d.item);
   });
   el.addEventListener("pointerup", () => {
     if (!drag) return;
     const d = drag;
     drag = null;
-    finishMove(d.item, { x: d.x, y: d.y });
+    if (d.item.x !== d.x || d.item.y !== d.y) finishMove(d.item);
+    else if (sharedRoom) sharedDragFinished();
+    else renderBoard();
   });
   el.addEventListener("pointercancel", () => {
     if (!drag) return;
     Object.assign(drag.item, { x: drag.x, y: drag.y });
+    if (sharedRoom) {
+      queueSharedMove(drag.item, true);
+      sharedDragFinished();
+    }
     drag = null;
     renderBoard();
   });
   el.addEventListener("keydown", (e) => {
     const target = e.target.closest("[data-person]");
     if (!target) return;
-    const item = board.find((b) => b.id === target.dataset.person);
-    selectedBoard = item.id;
+    const item = classroomBoard().find((b) => b.id === target.dataset.person);
+    selectBoardPerson(item.id);
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
       renderBoard();
@@ -65,8 +73,12 @@ function bindBoard() {
     if (!["ArrowLeft", "ArrowRight", "ArrowUp", "ArrowDown"].includes(e.key))
       return;
     e.preventDefault();
-    if (item.locked) {
-      toast("위치 고정을 먼저 풀어 주세요.");
+    if (item.locked || !canEditPerson(item)) {
+      toast(
+        sharedRoom && !canEditPerson(item)
+          ? "자신이 만든 인물만 옮길 수 있어요."
+          : "위치 고정을 먼저 풀어 주세요.",
+      );
       return;
     }
     const prev = { x: item.x, y: item.y },

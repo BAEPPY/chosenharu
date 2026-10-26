@@ -21,7 +21,15 @@ function exportRecords(records, withBoard = false) {
     new Blob(
       [
         JSON.stringify(
-          { format: "joseon-day-v2", records, board: withBoard ? board : [] },
+          {
+            format: "joseon-day-v2",
+            records,
+            board: withBoard
+              ? step === FLOW.BOARD
+                ? classroomBoard()
+                : board
+              : [],
+          },
           null,
           2,
         ),

@@ -101,7 +101,7 @@ async function exportPng(characterOnly = false) {
 async function exportBoardPng() {
   try {
     await document.fonts.ready;
-    if (!board.length) {
+    if (!classroomBoard().length) {
       toast("풍속화에 인물을 먼저 넣어 주세요.");
       return;
     }
@@ -124,12 +124,12 @@ async function exportBoardPng() {
     ctx.fillText("조선의 하루", 32, 39);
     ctx.font = '12px "Pretendard", sans-serif';
     ctx.fillText(
-      "우리 반이 함께 만든 풍속화 · " + board.length + "명의 이야기",
+      "우리 반이 함께 만든 풍속화 · " + classroomBoard().length + "명의 이야기",
       190,
       38,
     );
     for (const p of boardInDepthOrder()) {
-      const s = saved.find((s) => s.id === p.id);
+      const s = classroomRecords().find((s) => s.id === p.id);
       await drawAvatar(ctx, s, p.x, p.y, BW);
       ctx.fillStyle = "#3b4d38";
       ctx.font = 'bold 10px "Pretendard", sans-serif';
