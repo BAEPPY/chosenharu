@@ -30,7 +30,45 @@ const assert = require("node:assert/strict");
   } finally {
     await store.remove(probe);
   }
-  await exercise(store);
+  const trace = [];
+  const record = (entry) => {
+    trace.push(entry);
+    if (trace.length > 50) trace.shift();
+  };
+  try {
+    await exercise({
+      async read(id) {
+        const value = await store.read(id);
+        record({ read: value?.data.revision, etag: value?.etag });
+        return value;
+      },
+      async write(id, data, etag) {
+        try {
+          const result = await store.write(id, data, etag);
+          record({
+            write: data.revision,
+            count: data.items?.length,
+            etag,
+            result: result.etag,
+          });
+          return result;
+        } catch (error) {
+          record({
+            conflict: !!error.conflict,
+            revision: data.revision,
+            count: data.items?.length,
+            etag,
+            error: error.name,
+          });
+          throw error;
+        }
+      },
+      remove: store.remove,
+    });
+  } catch (error) {
+    console.error("Storage verification trace:", JSON.stringify(trace));
+    throw error;
+  }
   console.log(
     "PASS: connected Blob store, 26 concurrent participants across independent service instances, atomic moves, permissions and cleanup.",
   );

@@ -16,7 +16,7 @@ function personInspectorHtml() {
     s = classroomRecords().find((x) => x.id === selectedBoard);
   if (!p || !s)
     return `<div class="inspector-empty"><span aria-hidden="true">☝</span><h2>인물을 눌러 보세요</h2><p>${isTeacherRoom() ? "이름과 신분, 인물의 하루 이야기를 여기에서 확인할 수 있어요." : "내 인물을 선택하면 위치를 옮기거나 작품을 확인할 수 있어요."}</p></div>`;
-  const own = canEditPerson(p),
+  const own = isTeacherRoom() || p.ownerId === sharedRoom.actorId,
     readStory = isTeacherRoom() || p.ownerId === sharedRoom.actorId;
   return `<div class="inspector-portrait">${avatarSvg(s)}</div><p class="eyebrow">${isTeacherRoom() ? "인물 이야기" : own ? "내가 만든 인물" : "함께 만든 친구의 인물"}</p><h2>${esc(s.name)}</h2><dl class="person-details"><dt>신분</dt><dd>${esc(statusOf(s)?.name || "")}</dd><dt>역할</dt><dd>${esc(roleOf(s)?.name || "")}</dd>${readStory ? `<dt>살아가는 곳</dt><dd>${esc(s.place || "아직 정하지 않았어요")}</dd><dt>인물의 하루</dt><dd>${esc(s.story || "아직 이야기가 없어요")}</dd>${s.imagination ? `<dt>상상을 더해요</dt><dd>${esc(s.imagination)}</dd>` : ""}` : ""}</dl>${p.locked ? '<p class="small-note">이 인물의 위치는 고정되어 있어요.</p>' : ""}<div class="inspector-actions">${isTeacherRoom() ? `<button class="secondary" data-action="lock">${p.locked ? "위치 고정 풀기" : "이 자리에 고정"}</button>` : ""}${own ? '<button class="text-button" data-action="removeBoard">풍속화에서 빼기</button>' : ""}</div>`;
 }
