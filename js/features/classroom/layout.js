@@ -1,7 +1,15 @@
 "use strict";
 
 const BW = 100,
-  BH = 130;
+  BH = 110;
+
+// Begin on the open ground, leaving the houses at upper left unobstructed.
+const BOARD_PLACES = [
+  ...Array.from({ length: 5 }, (_, i) => ({ x: 350 + i * 130, y: 130 })),
+  ...Array.from({ length: 6 }, (_, i) => ({ x: 250 + i * 130, y: 245 })),
+  ...Array.from({ length: 7 }, (_, i) => ({ x: 50 + i * 130, y: 360 })),
+  ...Array.from({ length: 8 }, (_, i) => ({ x: 10 + i * 125, y: 475 })),
+];
 
 function overlaps(a, b) {
   return (
@@ -14,10 +22,11 @@ function overlaps(a, b) {
 }
 
 function freePosition(item, others) {
+  if (!others.some((b) => overlaps(item, b))) return { ...item };
   let best = null,
     distance = Infinity;
-  for (let y = 65; y <= 470; y += 5)
-    for (let x = 20; x <= 880; x += 5) {
+  for (let y = 45; y <= 475; y += 5)
+    for (let x = 0; x <= 900; x += 5) {
       const candidate = { ...item, x, y };
       if (!others.some((b) => overlaps(candidate, b))) {
         const d = (x - item.x) ** 2 + (y - item.y) ** 2;
@@ -30,18 +39,13 @@ function freePosition(item, others) {
   return best;
 }
 
+function boardInDepthOrder() {
+  return [...board].sort((a, b) => a.y - b.y);
+}
+
 function resolveBoard() {
-  const placed = [];
-  for (const item of [
-    ...board.filter((b) => b.locked),
-    ...board.filter((b) => !b.locked),
-  ]) {
-    const target = placed.some((b) => overlaps(item, b))
-      ? freePosition(item, placed)
-      : item;
-    if (target) placed.push(target);
-  }
-  board = placed;
+  // Preserve intentional overlaps and imported positions exactly.
+  board = cleanBoard(board, saved);
 }
 
 function addToBoard(id, quiet = false) {
@@ -56,8 +60,7 @@ function addToBoard(id, quiet = false) {
   const p = freePosition(
     {
       id,
-      x: 50 + (board.length % 7) * 135,
-      y: 65 + Math.floor(board.length / 7) * 135,
+      ...BOARD_PLACES[board.length],
       locked: false,
     },
     board,
@@ -79,8 +82,7 @@ function arrangeBoard() {
   for (let i = 0; i < moving.length; i++) {
     const target = {
       ...moving[i],
-      x: 50 + (i % 7) * 135,
-      y: 65 + Math.floor(i / 7) * 135,
+      ...BOARD_PLACES[i],
     };
     placed.push(freePosition(target, placed) || moving[i]);
   }
@@ -90,15 +92,7 @@ function arrangeBoard() {
   toast("고정한 인물은 그대로 두고 나머지를 정돈했어요.");
 }
 
-function finishMove(item, previous) {
-  if (board.some((b) => overlaps(item, b))) {
-    toast("겹쳐요! 가까운 빈자리로 옮겼어요.");
-    const free = freePosition(
-      item,
-      board.filter((b) => b.id !== item.id),
-    );
-    Object.assign(item, free || previous);
-  }
+function finishMove() {
   persist();
   renderBoard();
 }

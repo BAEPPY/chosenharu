@@ -65,8 +65,10 @@ const root = path.resolve(__dirname, "..");
         await page.evaluate(() => {
           const style = document.querySelector("#wheel").style.transform;
           const angle = Number(style.match(/rotate\(([-\d.]+)deg\)/)[1]);
-          const wedge = Math.floor(((360 - (angle % 360)) % 360) / 18);
-          return WHEEL_ENTRIES[wedge];
+          const point = (360 - (angle % 360)) % 360;
+          return DrawModel.segments(L.statuses, weights).find(
+            (s) => point >= s.start && point < s.end,
+          ).id;
         }),
         expected[index],
       );

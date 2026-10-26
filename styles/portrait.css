@@ -195,3 +195,52 @@
     font-size: 20px;
   }
 }
+.portrait-scene #avatar {
+  margin: 16px 0;
+  overflow: hidden;
+  border-radius: 8px;
+}
+.scene-choice {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 20px 0;
+}
+.scene-choice span {
+  display: block;
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 5px;
+}
+.scene-choice strong {
+  font-size: 17px;
+}
+.scene-choice button {
+  font-size: 13px;
+  padding: 10px 12px;
+}
+.session-note {
+  border-top: 1px solid #deded7;
+  padding-top: 14px;
+}
+@media (max-width: 760px) {
+  .portrait.portrait-scene {
+    display: block;
+    padding: 0 0 20px;
+    text-align: center;
+  }
+  .portrait-scene .portrait-top {
+    justify-content: center;
+    padding-top: 0;
+  }
+  .portrait.portrait-scene #avatar {
+    width: 100%;
+    max-width: 440px;
+    margin: 14px auto;
+  }
+  .portrait-scene .portrait-caption {
+    padding: 0;
+  }
+}

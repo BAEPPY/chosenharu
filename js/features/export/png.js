@@ -29,6 +29,7 @@ async function exportPng(characterOnly = false) {
   try {
     await document.fonts.ready;
     toast("그림을 준비하고 있어요…");
+    if (!characterOnly && ensureScene(state)) persist();
     const s = { ...state };
     const c = document.createElement("canvas");
     c.width = 1200;
@@ -48,10 +49,10 @@ async function exportPng(characterOnly = false) {
     ctx.fillStyle = "#777e6b";
     ctx.font = '22px "Pretendard", sans-serif';
     ctx.fillText("역사 속 생활에 나의 상상을 더한 인물 이야기", 80, 128);
-    await drawAvatar(ctx, s, 270, 160, 660);
+    await drawScene(ctx, s, 80, 170, 1040);
     ctx.fillStyle = "#304837";
     ctx.font = 'bold 45px "Pretendard", sans-serif';
-    let y = drawLines(ctx, s.name || "나의 인물", 80, 875, 1040, 60);
+    let y = drawLines(ctx, s.name || "나의 인물", 80, 1280, 1040, 60);
     ctx.font = '25px "Pretendard", sans-serif';
     y =
       drawLines(
@@ -112,9 +113,12 @@ async function exportBoardPng() {
     ctx.scale(2.4, 2.4);
     const bg = new Image();
     bg.src =
-      "data:image/svg+xml;charset=utf-8," + encodeURIComponent(landscape());
+      "data:image/svg+xml;charset=utf-8," +
+      encodeURIComponent(await inlineSvgImages(landscape()));
     await bg.decode();
     ctx.drawImage(bg, 0, 0, 1000, 620);
+    ctx.fillStyle = "#fbf7eced";
+    ctx.fillRect(20, 12, 470, 39);
     ctx.fillStyle = "#3d5741";
     ctx.font = 'bold 23px "Pretendard", sans-serif';
     ctx.fillText("조선의 하루", 32, 39);
@@ -124,7 +128,7 @@ async function exportBoardPng() {
       190,
       38,
     );
-    for (const p of [...board].sort((a, b) => a.y - b.y)) {
+    for (const p of boardInDepthOrder()) {
       const s = saved.find((s) => s.id === p.id);
       await drawAvatar(ctx, s, p.x, p.y, BW);
       ctx.fillStyle = "#3b4d38";

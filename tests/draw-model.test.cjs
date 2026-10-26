@@ -136,3 +136,32 @@ test("weighted selection respects boundaries, zero weights and the cited default
   assert.equal(m.pick(statuses, [0, 0, 1, 0, 0], 0).id, "technical");
   assert.equal(m.pick(statuses, [0, 0, 1, 0, 0], 0.999999).id, "technical");
 });
+
+test("wheel sectors and draws use identical normalized probabilities", () => {
+  const { model: m, statuses } = model();
+  for (const weights of [
+    statuses.map((s) => s.weight),
+    [0, 0, 1, 0, 0],
+    [1, 2, 3, 4, 90],
+    [0.1, 1000, 0, 1000, 1000],
+  ]) {
+    const segments = m.segments(statuses, weights);
+    assert.ok(Math.abs(segments.at(-1).end - 360) < 1e-10);
+    const total = weights.reduce((sum, x) => sum + x, 0);
+    segments.forEach((s, i) => {
+      assert.ok(Math.abs((s.end - s.start) / 360 - weights[i] / total) < 1e-12);
+      if (!weights[i]) assert.equal(s.start, s.end);
+      else
+        assert.equal(
+          m.pick(statuses, weights, (s.start + s.end) / 720).id,
+          s.id,
+        );
+    });
+    for (let point = 0; point < 1; point += 0.00037) {
+      const sector = segments.find(
+        (s) => point * 360 >= s.start && point * 360 < s.end,
+      );
+      assert.equal(sector.id, m.pick(statuses, weights, point).id);
+    }
+  }
+});

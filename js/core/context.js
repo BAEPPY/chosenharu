@@ -53,6 +53,8 @@ const DEFAULT = {
   place: "",
   story: "",
   imagination: "",
+  scene: "",
+  scenePose: "",
 };
 
 const statusOf = (s) => L.statuses.find((x) => x.id === s.status),

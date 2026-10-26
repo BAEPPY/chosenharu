@@ -39,12 +39,6 @@ function bindBoard() {
     );
     d.target.style.left = d.item.x / 10 + "%";
     d.target.style.top = d.item.y / 6.2 + "%";
-    const clash = board.some((b) => overlaps(d.item, b));
-    d.target.classList.toggle("overlap", clash);
-    if (clash && !d.warned) {
-      toast("겹쳐요! 놓으면 빈자리로 옮겨져요.");
-      d.warned = true;
-    }
   });
   el.addEventListener("pointerup", () => {
     if (!drag) return;

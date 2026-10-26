@@ -5,6 +5,7 @@ function saveRecord(quiet = false) {
     toast("이름과 하루 이야기를 먼저 완성해 주세요.");
     return false;
   }
+  ensureScene(state);
   const next = { ...state, id: state.id || uid() },
     idx = saved.findIndex((x) => x.id === next.id);
   if (idx < 0 && saved.length >= 100) {
