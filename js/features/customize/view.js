@@ -47,10 +47,13 @@ function lookHtml() {
       )
       .join("")}</div>`;
   if (styleTab === "outfit") {
-    h += `<div class="choice-grid outfit-grid">${outfitsFor(state)
+    const recommendations = recommendedOutfits(state);
+    h += `<p class="outfit-guide">${recommendationBadge()} ${esc(roleOf(state)?.name || "선택한 역할")} · ${state.gender === "female" ? "여성" : "남성"} 인물에게 어울리는 옷이에요. 다른 옷도 자유롭게 골라요.</p><div class="choice-grid outfit-grid">${outfitsFor(
+      state,
+    )
       .map(
         (o) =>
-          `<button data-choice="outfit" data-value="${o.id}" class="choice ${state.outfit === o.id ? "selected" : ""}" aria-pressed="${state.outfit === o.id}">${avatarSvg(outfitState(state, o.id))}<span>${o.name}</span></button>`,
+          `<button data-choice="outfit" data-value="${o.id}" class="choice ${state.outfit === o.id ? "selected" : ""}" aria-pressed="${state.outfit === o.id}"><span class="outfit-badge-slot">${recommendations.includes(o.id) ? recommendationBadge() : ""}</span>${avatarSvg(outfitState(state, o.id))}<span>${o.name}</span></button>`,
       )
       .join("")}</div>`;
     if (state.outfit === "daily")
@@ -88,4 +91,8 @@ function lookHtml() {
     h +
     `<div class="look-tools"><button class="text-button" data-action="changePose">동작 바꾸기</button><button class="text-button" data-action="undo" ${undo.length ? "" : "disabled"}>↶ 꾸미기 되돌리기</button></div>`
   );
+}
+
+function recommendationBadge() {
+  return '<span class="recommendation-badge">추천</span>';
 }

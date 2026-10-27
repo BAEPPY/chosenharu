@@ -69,6 +69,11 @@ const rolesFor = (s) =>
 
 const outfitsFor = (s) => L.outfits;
 
+function recommendedOutfits(s) {
+  const role = rolesFor(s).find((r) => r.id === s.role);
+  return role ? window.OUTFIT_SUGGESTIONS[role.id]?.[s.gender] || [] : [];
+}
+
 const hairsFor = () => [
   ...L.headgear,
   ...D.hairs.filter((h) => h.alias !== "jjimjilbang_yangmeori"),
