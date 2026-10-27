@@ -27,6 +27,7 @@ function writeActivity(value) {
 }
 
 function resetActivityState() {
+  resetTeacherEntry();
   if (typeof leaveSharedView === "function") leaveSharedView();
   state = { ...DEFAULT };
   saved = [];

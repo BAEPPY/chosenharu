@@ -37,6 +37,10 @@ const { join } = require("node:path");
     for (const p of [teacher, alice, bob])
       p.on("pageerror", (e) => errors.push(e.message));
     await teacher.goto(origin + "/#teacher");
+    assert.equal(await teacher.locator("#createClassroom").count(), 0);
+    for (let i = 0; i < 4; i++) await teacher.locator(".brand").click();
+    assert.equal(await teacher.locator("#createClassroom").count(), 0);
+    await teacher.locator(".brand").click();
     await teacher.locator('[name="title"]').fill("5학년 2반의 하루");
     await teacher.locator("#createClassroom button").click();
     await teacher.locator(".teacher-classroom").waitFor();
@@ -209,6 +213,7 @@ const { join } = require("node:path");
     assert.equal(await bob.evaluate(() => sharedRoom.board.length), 2);
     const teacherAgain = await contexts[0].newPage();
     await teacherAgain.goto(links.teacher);
+    for (let i = 0; i < 5; i++) await teacherAgain.locator(".brand").click();
     await teacherAgain.locator(".teacher-classroom").waitFor();
     assert.equal(await teacherAgain.locator("[data-person]").count(), 2);
     await teacherAgain.close();

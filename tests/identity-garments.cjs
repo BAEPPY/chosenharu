@@ -110,6 +110,22 @@ const root = path.resolve(__dirname, "..");
     const outfits = await page.evaluate(() => L.outfits.map((o) => o.id));
     assert.equal(outfits.length, 25);
     for (const outfit of outfits) {
+      await page.evaluate((outfit) => {
+        const role =
+          outfit === "prince" ? "prince" : outfit === "noui" ? "queen" : "king";
+        const gender = role === "queen" ? "female" : "male";
+        const figure = L.figures.find(
+          (f) => f.role === role && f.status === "royal",
+        );
+        state = normalize({
+          ...state,
+          status: "royal",
+          gender,
+          role,
+          figure: figure.id,
+        });
+        go(FLOW.LOOK);
+      }, outfit);
       const button = page.locator(
         `[data-choice="outfit"][data-value="${outfit}"]`,
       );
@@ -141,12 +157,14 @@ const root = path.resolve(__dirname, "..");
         const a = normalize({
           ...DEFAULT,
           poseConfirmed: true,
-          status: "yangban",
+          status: "royal",
+          role: "king",
           outfit: "royal",
         });
         const b = normalize({
           ...DEFAULT,
-          status: "yangban",
+          status: "royal",
+          role: "king",
           outfit: "royal",
           top: "#123456",
         });

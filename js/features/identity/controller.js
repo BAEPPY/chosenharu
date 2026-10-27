@@ -4,6 +4,8 @@ function applyRole(id) {
   const r = rolesFor(state).find((x) => x.id === id);
   if (!r) return;
   state.role = r.id;
+  state = enforceWardrobe(state);
+  undo = [];
 }
 
 const suggestedFigures = new Map();
