@@ -3,6 +3,11 @@
 document.addEventListener("click", async (e) => {
   const b = e.target.closest("button");
   if (!b || b.disabled) return;
+  if (b.matches(".brand")) {
+    handleBrandClick();
+    return;
+  }
+  resetTeacherClicks();
   const d = b.dataset;
   if (d.poseGroup) {
     openPoseGroup(d.poseGroup);
@@ -40,6 +45,12 @@ document.addEventListener("click", async (e) => {
     return;
   }
   if (d.choice) {
+    if (
+      (d.choice === "outfit" &&
+        !outfitsFor(state).some((o) => o.id === d.value)) ||
+      (d.choice === "hair" && !hairsFor(state).some((h) => h.alias === d.value))
+    )
+      return;
     undo.push({ ...state });
     if (undo.length > 25) undo.shift();
     if (d.choice === "outfit") {
@@ -181,7 +192,7 @@ document.addEventListener("click", async (e) => {
       break;
     case "undo":
       if (undo.length) {
-        state = undo.pop();
+        state = enforceWardrobe(undo.pop());
         persist();
         render();
       }

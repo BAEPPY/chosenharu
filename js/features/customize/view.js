@@ -80,8 +80,8 @@ function lookHtml() {
   }
   if (styleTab === "hair")
     h +=
-      thumbChoice(hairsFor(), "hair") +
-      '<p class="small-note">옷과 모자는 따로 골라요. 익선관·사모도 직접 써 보며 조합해 보세요.</p>';
+      thumbChoice(hairsFor(state), "hair") +
+      '<p class="small-note">옷과 모자는 따로 골라요. 왕실 전용 의복과 관모는 신분과 역할에 맞는 인물만 고를 수 있어요.</p>';
   if (styleTab === "emotion") {
     h +=
       `<div class="skin-choices"><span>피부 색</span>${D.skintones.map((s, i) => `<button class="swatch ${i === state.skin ? "selected" : ""}" data-choice="skin" data-value="${i}" style="--swatch:${s.rgba}" aria-label="피부 색 ${i + 1}" aria-pressed="${i === state.skin}"></button>`).join("")}</div>` +

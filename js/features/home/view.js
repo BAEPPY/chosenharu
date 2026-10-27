@@ -52,8 +52,7 @@ function landingHtml() {
       ([art, title, copy], i) =>
         `<li>${icon(art)}<div><span class="path-number">0${i + 1}</span><h3>${title}</h3><p>${copy}</p></div></li>`,
     )
-    .join("")}</ol></section>
-  <section class="home-teacher"><div class="home-teacher-title">${icon("teacher")}<div><p class="eyebrow">선생님과 함께</p><h2>각자의 하루가 모이는 우리 반 교실</h2><p>학생 참여 링크를 나누고, 함께 만드는 풍속화를 살펴보세요.</p></div></div><button class="secondary" data-action="teacherHome">교사용 교실 열기 <span aria-hidden="true">→</span></button></section>`;
+    .join("")}</ol></section>`;
 }
 function renderLanding() {
   $("#page").innerHTML = landingHtml();

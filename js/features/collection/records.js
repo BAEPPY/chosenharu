@@ -1,6 +1,7 @@
 "use strict";
 
 function saveRecord(quiet = false) {
+  state = enforceWardrobe(state);
   if (!state.name.trim() || !state.status || !state.story.trim()) {
     toast("이름과 하루 이야기를 먼저 완성해 주세요.");
     return false;

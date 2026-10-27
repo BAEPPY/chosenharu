@@ -1,6 +1,7 @@
 "use strict";
 
 function renderTeacherHome() {
+  if (!requireTeacherEntry()) return;
   const rooms = storedClassrooms()
     .filter((x) => x.role === "teacher")
     .reverse();
@@ -21,6 +22,7 @@ function personInspectorHtml() {
   return `<div class="inspector-portrait">${avatarSvg(s)}</div><p class="eyebrow">${isTeacherRoom() ? "인물 이야기" : own ? "내가 만든 인물" : "함께 만든 친구의 인물"}</p><h2>${esc(s.name)}</h2><dl class="person-details"><dt>신분</dt><dd>${esc(statusOf(s)?.name || "")}</dd><dt>역할</dt><dd>${esc(roleOf(s)?.name || "")}</dd>${readStory ? `<dt>살아가는 곳</dt><dd>${esc(s.place || "아직 정하지 않았어요")}</dd><dt>인물의 하루</dt><dd>${esc(s.story || "아직 이야기가 없어요")}</dd>${s.imagination ? `<dt>상상을 더해요</dt><dd>${esc(s.imagination)}</dd>` : ""}` : ""}</dl>${p.locked ? '<p class="small-note">이 인물의 위치는 고정되어 있어요.</p>' : ""}<div class="inspector-actions">${isTeacherRoom() ? `<button class="secondary" data-action="lock">${p.locked ? "위치 고정 풀기" : "이 자리에 고정"}</button>` : ""}${own ? '<button class="text-button" data-action="removeBoard">풍속화에서 빼기</button>' : ""}</div>`;
 }
 function renderSharedRoom() {
+  if (isTeacherRoom() && !requireTeacherEntry(roomHash())) return;
   const teacher = isTeacherRoom(),
     mine = sharedRoom.board.filter((p) => p.ownerId === sharedRoom.actorId);
   $("#page").innerHTML =
@@ -36,7 +38,7 @@ function renderBoard() {
   }
   if (sharedView === "error") {
     $("#page").innerHTML =
-      `<section class="teacher-home"><h1>교실에 연결하지 못했어요</h1><p class="lead">${esc(sharedError)}</p><button class="primary" data-action="retryClassroom">다시 연결</button> <button class="secondary" data-action="teacherHome">교사용 페이지</button></section>`;
+      `<section class="teacher-home"><h1>교실에 연결하지 못했어요</h1><p class="lead">${esc(sharedError)}</p><button class="primary" data-action="retryClassroom">다시 연결</button> <button class="secondary" data-action="home">처음 화면</button></section>`;
     return;
   }
   if (sharedRoom) return renderSharedRoom();

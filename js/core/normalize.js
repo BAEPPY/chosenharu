@@ -32,7 +32,13 @@ function normalize(v) {
     : roleOf(n)?.pose || "farming";
   if (!posesFor(n).some((x) => x.alias === n.pose)) n.pose = "study";
   for (const [k, list] of [
-    ["hair", hairsFor()],
+    [
+      "hair",
+      [
+        ...L.headgear,
+        ...D.hairs.filter((h) => h.alias !== "jjimjilbang_yangmeori"),
+      ],
+    ],
     ["cloth", D.clothes],
     ["emotion", D.emotions],
   ])
@@ -80,5 +86,5 @@ function normalize(v) {
     n.scene = v.scene;
     n.scenePose = n.pose;
   }
-  return n;
+  return enforceWardrobe(n);
 }

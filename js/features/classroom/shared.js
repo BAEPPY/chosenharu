@@ -81,6 +81,8 @@ function leaveSharedView() {
   sharedRefreshNeeded = false;
 }
 function showTeacherHome(push = true) {
+  if (!requireTeacherEntry()) return;
+  if (step !== FLOW.BOARD) returnStep = step;
   leaveSharedView();
   sharedView = "teacher-home";
   landing = false;
@@ -228,6 +230,7 @@ function resumeClassroomContext() {
       (x) => x.id === current.id && x.role === current.role,
     );
   if (!access) return;
+  if (access.role === "teacher" && !teacherEntryUnlocked) return;
   sharedRoom = {
     ...access,
     actorId: access.role === "teacher" ? "teacher" : access.token.split(".")[1],
@@ -249,6 +252,11 @@ function resumeClassroomContext() {
     });
 }
 async function enterClassroom(id, token, role, invite) {
+  if (
+    role === "teacher" &&
+    !requireTeacherEntry(`#teacher/${id}${token ? "/" + token : ""}`)
+  )
+    return;
   leaveSharedView();
   sharedView = "loading";
   landing = false;
@@ -310,6 +318,7 @@ function restoreSharedRoute() {
   return false;
 }
 async function createClassroom(form) {
+  if (!requireTeacherEntry()) return;
   const button = form.querySelector("button");
   button.disabled = true;
   try {

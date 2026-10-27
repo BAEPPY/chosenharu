@@ -52,8 +52,8 @@ const { chromium } = require(
             .map((n) => n.dataset.value),
         );
     assert.deepEqual(await recommended(), ["daily", "work_skirt"]);
-    assert.equal(await page.locator('[data-choice="outfit"]').count(), 25);
-    await page.locator('[data-choice="outfit"][data-value="royal"]').click();
+    assert.equal(await page.locator('[data-choice="outfit"]').count(), 20);
+    await page.locator('[data-choice="outfit"][data-value="official"]').click();
     assert.deepEqual(
       await recommended(),
       ["daily", "work_skirt"],
@@ -139,7 +139,7 @@ const { chromium } = require(
     assert.ok(coverage.every((row) => row.ids.length && row.valid));
     assert.deepEqual(errors, []);
     console.log(
-      "PASS: separate new/continue, resume after reload/board, cancellation and saved-work preservation, role/gender badges before selection, 25 choices and 320px layout.",
+      "PASS: separate new/continue, resume after reload/board, cancellation and saved-work preservation, role/gender badges before selection, allowed choices and 320px layout.",
     );
   } finally {
     await browser.close();

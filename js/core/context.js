@@ -67,17 +67,32 @@ const rolesFor = (s) =>
       r.status === s.status && (r.gender === "any" || r.gender === s.gender),
   );
 
-const outfitsFor = (s) => L.outfits;
+const outfitsFor = (s) =>
+  L.outfits.filter((o) => window.WARDROBE_POLICY.allows("outfit", o.id, s));
 
 function recommendedOutfits(s) {
   const role = rolesFor(s).find((r) => r.id === s.role);
   return role ? window.OUTFIT_SUGGESTIONS[role.id]?.[s.gender] || [] : [];
 }
 
-const hairsFor = () => [
-  ...L.headgear,
+const hairsFor = (s = state) => [
+  ...L.headgear.filter((h) =>
+    window.WARDROBE_POLICY.allows("hair", h.alias, s),
+  ),
   ...D.hairs.filter((h) => h.alias !== "jjimjilbang_yangmeori"),
 ];
+
+function enforceWardrobe(person) {
+  const repaired = window.WARDROBE_POLICY.repair(person);
+  if (repaired.outfit !== person.outfit) {
+    const preferred = roleOf(person)?.outfit || "daily";
+    const fallback = window.WARDROBE_POLICY.allows("outfit", preferred, person)
+      ? preferred
+      : "daily";
+    Object.assign(repaired, outfitState(repaired, fallback));
+  }
+  return repaired;
+}
 
 const posesFor = (s) => [...L.poses, ...D.lessonPoses];
 

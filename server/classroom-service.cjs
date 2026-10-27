@@ -4,6 +4,7 @@ const {
   createHmac,
   timingSafeEqual,
 } = require("node:crypto");
+const wardrobe = require("../js/data/wardrobe-policy.js");
 const secret = () => randomBytes(24).toString("base64url");
 const hash = (value) => createHash("sha256").update(value).digest("hex");
 const equal = (a, b) =>
@@ -79,6 +80,14 @@ function character(raw) {
     Number.isInteger(raw.skin) && raw.skin >= 0 && raw.skin < 5 ? raw.skin : 2;
   result.poseConfirmed = true;
   result.outfitVersion = 1;
+  if (
+    !wardrobe.allows("outfit", result.outfit, result) ||
+    !wardrobe.allows("hair", result.hair, result)
+  )
+    fail(
+      400,
+      "왕실 전용 의복과 관모는 신분과 역할에 맞는 인물만 착용할 수 있어요.",
+    );
   return result;
 }
 function actor(room, token) {
@@ -107,7 +116,7 @@ function snapshot(room, who) {
     actorId: who.id,
     inviteToken: who.role === "teacher" ? room.inviteToken : undefined,
     records: room.items.map((item) => {
-      const c = { ...item.character };
+      const c = wardrobe.repair(item.character);
       if (who.role !== "teacher" && item.ownerId !== who.id) {
         c.place = "";
         c.story = "";
