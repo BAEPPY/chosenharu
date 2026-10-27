@@ -349,6 +349,63 @@ main {
 .outfit-grid .choice {
   position: relative;
 }
+.recommendation-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 28px;
+  flex: 0 0 64px;
+  background: url("../images/ui/recommend-scroll.webp") center / 100% 100%
+    no-repeat;
+  color: #693c26;
+  font: 700 13px/1 var(--font-display);
+  letter-spacing: 0.03em;
+  padding-top: 1px;
+}
+.outfit-badge-slot {
+  display: flex;
+  align-items: center;
+  height: 29px;
+  padding-left: 3px;
+}
+.outfit-guide {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: -7px 0 15px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+.student-activity-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.student-activity-actions > button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  white-space: nowrap;
+  min-height: 48px;
+}
+.welcome-actions .student-activity-actions {
+  width: 100%;
+}
+.welcome-actions .student-activity-actions > button {
+  flex: 1;
+  min-height: 58px;
+  font-size: 16px;
+  padding: 10px 12px;
+}
+.welcome-actions .resume-note {
+  font-size: 12px;
+  line-height: 1.7;
+  color: var(--muted);
+  margin: 2px 0 0;
+}
 .outfit-grid .choice.selected::after {
   content: "✓";
   position: absolute;

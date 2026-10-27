@@ -12,7 +12,7 @@ window.JOSEON_HISTORY = {
     { id: "yangban", label: "양반", historical: 18.6, applied: 18.3 },
     {
       id: "technical",
-      label: "중인 → 기술관 계층",
+      label: "중인",
       historical: 8.6,
       applied: 8.7,
     },

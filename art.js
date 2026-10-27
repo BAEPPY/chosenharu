@@ -18,11 +18,13 @@ function avatarLayers(s, options = {}) {
       src: imageAsset(base + `clothes/${n.cloth}_overlay@2x.png`),
     });
   }
-  if (tailored && GARMENT_HAND_OPENINGS[n.pose]) {
-    const id = "visible-hands" + ++garmentSerial;
-    layers.push({
-      svg: `<defs><mask id="${id}" maskUnits="userSpaceOnUse" x="0" y="0" width="360" height="360"><rect width="360" height="360" fill="white"/><g fill="black">${["top", "bottom", "layer"].map((part) => garmentPaths(base, n.cloth, part)).join("")}</g></mask></defs><path fill="${skin}" d="${GARMENT_HAND_OPENINGS[n.pose]}" mask="url(#${id})"/>`,
-    });
+  if (
+    GARMENT_HAND_OPENINGS[n.pose] &&
+    (tailored ||
+      (n.cloth === "dopo_baeja" &&
+        ["trudging_01", "trudging_03"].includes(n.pose)))
+  ) {
+    layers.push({ svg: garmentVisibleHands(s, n, base) });
   }
   layers.push(
     { svg: `<path fill="${skin}" d="${m.face}"/>` },

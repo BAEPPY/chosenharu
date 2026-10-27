@@ -28,3 +28,32 @@ window.LESSON_OUTFITS = [
   ["dance_robe", "황초삼", ["low"]],
   ["palace", "앞치마 나인복", ["royal", "low"]],
 ].map(([id, name, statuses]) => ({ id, name, statuses }));
+
+// Suggestions describe the selected historical role, not the selected outfit.
+// Ceremonial garments remain available without being everyday recommendations.
+window.OUTFIT_SUGGESTIONS = {
+  king: { male: ["royal", "myeonbok"] },
+  prince: { male: ["prince"] },
+  queen: { female: ["queen", "noui", "wonsam"] },
+  princess: { female: ["queen", "yangbanwoman"] },
+  civil: { male: ["official", "scholar"] },
+  military: { male: ["military"] },
+  student: { male: ["student", "scholar"] },
+  graduate: { male: ["graduate", "scholar"] },
+  scholar: { male: ["scholar"] },
+  artist: { female: ["yangbanwoman"] },
+  doctor: { male: ["scholar", "daily"] },
+  medicalwoman: { female: ["daily", "yangbanwoman"] },
+  interpreter: { male: ["scholar", "daily"] },
+  law: { male: ["scholar", "daily"] },
+  accountant: { male: ["scholar", "daily"] },
+  painter: { male: ["scholar", "daily"] },
+  farmer: { male: ["daily", "work"], female: ["daily", "work_skirt"] },
+  merchant: { male: ["daily", "vest"], female: ["daily", "apron"] },
+  artisan: { male: ["work", "work_apron"], female: ["apron", "work_apron"] },
+  farmservant: { male: ["daily", "work"], female: ["daily", "work_skirt"] },
+  housework: { male: ["work", "apron"], female: ["work_skirt", "apron"] },
+  publicservant: { male: ["daily", "work"], female: ["daily", "work_skirt"] },
+  performer: { male: ["performer"], female: ["performer", "dance_robe"] },
+  gisaeng: { female: ["gisaeng", "dance_robe"] },
+};

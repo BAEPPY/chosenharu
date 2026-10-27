@@ -121,6 +121,9 @@ document.addEventListener("click", async (e) => {
       showHome();
       break;
     case "start":
+      startNewActivity();
+      break;
+    case "resume":
       startActivity();
       break;
     case "retryDraw":

@@ -45,9 +45,7 @@ function wheelLegend() {
       (s) =>
         `<li><i style="background:${s.color}" aria-hidden="true"></i>${esc(s.short)} <b>${probabilityLabel(s.fraction)}</b></li>`,
     )
-    .join(
-      "",
-    )}</ul><p class="wheel-note">조각의 넓이가 실제 추첨 확률이에요.</p>`;
+    .join("")}</ul>`;
 }
 
 function renderWheel() {

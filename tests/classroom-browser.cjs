@@ -64,7 +64,7 @@ const { join } = require("node:path");
       [alice, "봄이", "reading_writing_01"],
       [bob, "가람", "dancing_hansam_02"],
     ]) {
-      await p.locator('[data-action="backFromBoard"]').click();
+      await p.locator('[data-action="start"]').click();
       assert.equal(await p.evaluate(() => step), 0);
       await p.evaluate(
         ({ name, pose }) => {

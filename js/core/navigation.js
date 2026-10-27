@@ -39,6 +39,8 @@ function next() {
 
 function newCharacter() {
   state = { ...DEFAULT };
+  step = returnStep = FLOW.STATUS;
+  styleTab = "outfit";
   draws = 0;
   drawHistory = [];
   selectedDraw = -1;

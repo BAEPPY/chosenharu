@@ -152,7 +152,7 @@ const root = path.resolve(__dirname, "..");
     await page.locator('[data-action="addCurrent"]').click();
     assert.equal(await page.locator("[data-person]").count(), 1);
     await page.locator('[data-action="home"]').first().click();
-    await page.locator('[data-action="start"]').click();
+    await page.locator('[data-action="resume"]').click();
     while (await page.locator('.chapter-footer [data-action="prev"]').count())
       await page.locator('.chapter-footer [data-action="prev"]').click();
     assert.equal(
